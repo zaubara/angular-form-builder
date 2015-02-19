@@ -17,9 +17,16 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder;
+      var $builder, _i, _results;
       $builder = $injector.get('$builder');
       $scope.date = Date.now();
+      if ($scope.formObject.component === 'datePicker') {
+        $scope.nextDays = (function() {
+          _results = [];
+          for (_i = 1; _i <= 30; _i++){ _results.push(_i); }
+          return _results;
+        }).apply(this);
+      }
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       $scope.fields = $builder.forms.skipLogic;
       $scope.setupScope = function(formObject) {
@@ -53,16 +60,16 @@
         $scope.$watch('optionsText', function(text) {
           var x;
           $scope.options = (function() {
-            var _i, _len, _ref, _results;
+            var _j, _len, _ref, _results1;
             _ref = text.split('\n');
-            _results = [];
-            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-              x = _ref[_i];
+            _results1 = [];
+            for (_j = 0, _len = _ref.length; _j < _len; _j++) {
+              x = _ref[_j];
               if (x.length > 0) {
-                _results.push(x);
+                _results1.push(x);
               }
             }
-            return _results;
+            return _results1;
           })();
           return $scope.inputText = $scope.options[0];
         });
@@ -202,8 +209,6 @@
         restrict: 'E',
         template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" min-date=\"min\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"dt\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" ng-required=\"true\" close-text=\"Close\"/>\n  <span class=\"input-group-btn\">\n    <button type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
         link: function(scope, element, attrs) {
-          scope.min = '2000-01-01';
-          scope.max = '2100-01-01';
           scope.open = function($event) {
             $event.preventDefault();
             $event.stopPropagation();
@@ -214,6 +219,13 @@
           });
           scope.$watch('maxDate', function() {
             return scope.max = scope.maxDate;
+          });
+          scope.$watch('nextXDays', function() {
+            var next, string, today;
+            today = new Date();
+            next = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate() + scope.nextXDays);
+            string = next.getFullYear().toString() + '-' + ('0' + next.getMonth()).slice(-2) + '-' + ('0' + next.getDate()).slice(-2);
+            return scope.maxDate = string;
           });
           return scope.$watch('disableWeekends', function() {
             if (scope.disableWeekends) {
