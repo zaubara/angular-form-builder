@@ -17,7 +17,7 @@ angular.module 'builder.directive', [
     template:
         """
         <p class="input-group">
-          <input type="text" class="form-control" min-date="min" max-date="max" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+          <input type="text" class="form-control" min-date="min" max-date="max" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
@@ -337,14 +337,6 @@ angular.module 'builder.directive', [
             view = $compile(template) scope
             $(element).html view
 ]
-
-# ----------------------------------------
-# email field
-# ----------------------------------------
-.directive 'emailField', ->
-    restrict: 'E'
-    template: '<input type="email" ng-model="email" placeholder="Email" class="form-control" id="email">
-                <input type="email" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">'
 
 # ----------------------------------------
 # signature pad

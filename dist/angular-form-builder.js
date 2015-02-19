@@ -31,7 +31,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, minDate, maxDate]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, minDate, maxDate, readOnly, requireConfirmation]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -43,7 +43,9 @@
           formObject.maxLength = $scope.maxLength;
           formObject.disableWeekends = $scope.disableWeekends;
           formObject.minDate = $scope.minDate;
-          return formObject.maxDate = $scope.maxDate;
+          formObject.maxDate = $scope.maxDate;
+          formObject.readOnly = $scope.readOnly;
+          return formObject.requireConfirmation = $scope.requireConfirmation;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -83,7 +85,9 @@
             maxLength: $scope.maxLength,
             disableWeekends: $scope.disableWeekends,
             minDate: $scope.minDate,
-            maxDate: $scope.maxDate
+            maxDate: $scope.maxDate,
+            readOnly: $scope.readOnly,
+            requireConfirmation: $scope.requireConfirmation
           };
         },
         rollback: function() {
@@ -105,7 +109,9 @@
           $scope.maxLength = this.model.maxLength;
           $scope.disableWeekends = this.model.disableWeekends;
           $scope.minDate = this.model.minDate;
-          return $scope.maxDate = this.model.maxDate;
+          $scope.maxDate = this.model.maxDate;
+          $scope.readOnly = this.model.readOnly;
+          return $scope.requireConfirmation = this.model.requireConfirmation;
         }
       };
     }
@@ -191,7 +197,7 @@
     '$injector', function($injector) {
       return {
         restrict: 'E',
-        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" min-date=\"min\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"dt\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" ng-required=\"true\" close-text=\"Close\" />\n  <span class=\"input-group-btn\">\n    <button type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
+        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" min-date=\"min\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"dt\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" ng-required=\"true\" close-text=\"Close\"/>\n  <span class=\"input-group-btn\">\n    <button type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
         link: function(scope, element, attrs) {
           scope.min = '2000-01-01';
           scope.max = '2100-01-01';
@@ -499,12 +505,7 @@
         }
       };
     }
-  ]).directive('emailField', function() {
-    return {
-      restrict: 'E',
-      template: '<input type="email" ng-model="email" placeholder="Email" class="form-control" id="email"> <input type="email" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">'
-    };
-  }).directive('signaturePad', [
+  ]).directive('signaturePad', [
     '$injector', function($injector) {
       return {
         restrict: 'E',

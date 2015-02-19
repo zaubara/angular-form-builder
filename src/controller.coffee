@@ -34,7 +34,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, minDate, maxDate]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, minDate, maxDate, readOnly, requireConfirmation]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -47,6 +47,8 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.disableWeekends = $scope.disableWeekends
             formObject.minDate = $scope.minDate
             formObject.maxDate = $scope.maxDate
+            formObject.readOnly = $scope.readOnly
+            formObject.requireConfirmation = $scope.requireConfirmation
 
         , yes
 
@@ -76,6 +78,8 @@ angular.module 'builder.controller', ['builder.provider']
                 disableWeekends: $scope.disableWeekends
                 minDate: $scope.minDate
                 maxDate: $scope.maxDate
+                readOnly: $scope.readOnly
+                requireConfirmation: $scope.requireConfirmation
         rollback: ->
             ###
             Rollback input value.
@@ -93,6 +97,8 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.disableWeekends = @model.disableWeekends
             $scope.minDate = @model.minDate
             $scope.maxDate = @model.maxDate
+            $scope.readOnly = @model.readOnly
+            $scope.requireConfirmation = @model.requireConfirmation
 ]
 
 
