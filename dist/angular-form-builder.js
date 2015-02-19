@@ -16,9 +16,10 @@
   };
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
-    '$scope', '$injector', function($scope, $injector) {
+    '$scope', '$injector', '$rootScope', function($scope, $injector, $rootScope) {
       var $builder;
       $builder = $injector.get('$builder');
+      $scope.fields = $builder.forms[$rootScope.selected];
       $scope.date = Date.now();
       $scope.setupScope = function(formObject) {
 
@@ -520,7 +521,7 @@
       };
     }
   ]).directive('fbMultiple', [
-    '$injector', function($injector) {
+    '$injector', '$rootScope', function($injector, $rootScope) {
       var $builder;
       $builder = $injector.get('$builder');
       return {
@@ -534,7 +535,8 @@
             return console.log($builder.forms);
           };
           scope.select = function(item) {
-            return scope.selected = item;
+            scope.selected = item;
+            return $rootScope.selected = item;
           };
           return scope.addPage = function() {
             return scope.array.push(scope.array.length + 1);

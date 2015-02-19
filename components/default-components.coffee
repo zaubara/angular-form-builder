@@ -8,6 +8,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'textMessage',
         group: 'Basic'
         placeholder: 'Text Message'
+        label: 'Text Message'
         template:
             """
             <div class="form-group text-center">
@@ -31,6 +32,10 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
+                                <label class='control-label'>Label</label>
+                                <input type='text' ng-model="label" class='form-control'/>
+                            </div>
+                            <div class="form-group">
                                 <label class='control-label'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
@@ -40,7 +45,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control">
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control">
                                     <option>equal</option>
@@ -126,8 +131,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
-                    </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                 </div>
 
                 <hr/>
@@ -192,7 +211,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -254,7 +288,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     Required</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -342,7 +391,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -438,7 +502,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -506,7 +585,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     Required</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -582,7 +676,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -650,7 +759,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -731,7 +855,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     Multiple Select</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -804,7 +943,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
+                            <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                                <div class="form-group">
+                                    Hide this element if
+                                    <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                    </select>
+                                    <select class="form-control">
+                                        <option>equal</option>
+                                        <option>not equal</option>
+                                        <option>less than</option>
+                                        <option>less than or equal to</option>
+                                        <option>greater than</option>
+                                        <option>greater than or equal to</option>
+                                    </select>
+                                    <input type="text" class="form-control" placeholder="Value">
+                                </div>
+                            </div>
                         </div>
 
                     </div>

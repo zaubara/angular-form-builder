@@ -355,7 +355,7 @@ angular.module 'builder.directive', [
 # ----------------------------------------
 # fb-multiple
 # ----------------------------------------
-.directive 'fbMultiple', ['$injector', ($injector) ->
+.directive 'fbMultiple', ['$injector', '$rootScope', ($injector, $rootScope) ->
     $builder = $injector.get '$builder'
 
     restrict: 'E'
@@ -366,6 +366,7 @@ angular.module 'builder.directive', [
             console.log $builder.forms
         scope.select = (item) ->
             scope.selected = item
+            $rootScope.selected = item
         scope.addPage = ->
             scope.array.push(scope.array.length + 1)
 ]

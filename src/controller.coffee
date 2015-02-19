@@ -19,9 +19,10 @@ angular.module 'builder.controller', ['builder.provider']
 # ----------------------------------------
 # fbFormObjectEditableController
 # ----------------------------------------
-.controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
+.controller 'fbFormObjectEditableController', ['$scope', '$injector', '$rootScope', ($scope, $injector, $rootScope) ->
     $builder = $injector.get '$builder'
 
+    $scope.fields = $builder.forms[$rootScope.selected]
     $scope.date = Date.now()
 
     $scope.setupScope = (formObject) ->
