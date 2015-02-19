@@ -21,7 +21,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -92,7 +92,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -163,7 +163,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -229,7 +229,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -300,7 +300,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -392,7 +392,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -477,7 +477,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -552,7 +552,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -626,7 +626,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -698,7 +698,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div role="tabpanel">
 
                     <!-- Nav tabs -->
-                    <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
@@ -775,7 +775,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div role="tabpanel">
 
                         <!-- Nav tabs -->
-                        <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
+                        <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                             <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                             <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                             <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
