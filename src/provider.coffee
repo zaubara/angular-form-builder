@@ -32,6 +32,7 @@ angular.module 'builder.provider', []
     #   form mode: `fb-form` this is the form for end-user to input value.
     @forms =
         default: []
+        skipLogic: []
 
 
     # ----------------------------------------

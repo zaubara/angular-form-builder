@@ -16,11 +16,12 @@
   };
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
-    '$scope', '$injector', '$rootScope', function($scope, $injector, $rootScope) {
+    '$scope', '$injector', function($scope, $injector) {
       var $builder;
       $builder = $injector.get('$builder');
-      $scope.fields = $builder.forms[$rootScope.selected];
       $scope.date = Date.now();
+      $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
+      $scope.fields = $builder.forms.skipLogic;
       $scope.setupScope = function(formObject) {
 
         /*
@@ -521,7 +522,7 @@
       };
     }
   ]).directive('fbMultiple', [
-    '$injector', '$rootScope', function($injector, $rootScope) {
+    '$injector', function($injector) {
       var $builder;
       $builder = $injector.get('$builder');
       return {
@@ -535,8 +536,7 @@
             return console.log($builder.forms);
           };
           scope.select = function(item) {
-            scope.selected = item;
-            return $rootScope.selected = item;
+            return scope.selected = item;
           };
           return scope.addPage = function() {
             return scope.array.push(scope.array.length + 1);
@@ -1096,7 +1096,8 @@
       updateInput: '$updateInput'
     };
     this.forms = {
-      "default": []
+      "default": [],
+      skipLogic: []
     };
     this.convertComponent = function(name, component) {
       var result, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
