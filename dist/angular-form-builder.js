@@ -19,6 +19,7 @@
     '$scope', '$injector', function($scope, $injector) {
       var $builder;
       $builder = $injector.get('$builder');
+      $scope.date = Date.now();
       $scope.setupScope = function(formObject) {
 
         /*

@@ -22,6 +22,8 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
 
+    $scope.date = Date.now()
+
     $scope.setupScope = (formObject) ->
         ###
         1. Copy origin formObject (ng-repeat="object in formObjects") to scope.
@@ -100,7 +102,6 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.readOnly = @model.readOnly
             $scope.requireConfirmation = @model.requireConfirmation
 ]
-
 
 # ----------------------------------------
 # fbComponentsController

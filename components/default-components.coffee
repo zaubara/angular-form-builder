@@ -22,22 +22,37 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                            <div class="form-group">
+                                Hide this element if
+                                <select class="form-control">
+                                </select>
+                                <select class="form-control">
+                                    <option>equal</option>
+                                    <option>not equal</option>
+                                    <option>less than</option>
+                                    <option>less than or equal to</option>
+                                    <option>greater than</option>
+                                    <option>greater than or equal to</option>
+                                </select>
+                                <input type="text" class="form-control" placeholder="Value">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -78,14 +93,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -95,7 +110,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="description" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
@@ -111,7 +126,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -149,14 +164,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -166,7 +181,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="description" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
@@ -177,7 +192,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -215,14 +230,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -232,14 +247,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="description" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
                                     Required</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -286,14 +301,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -303,7 +318,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="description" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
@@ -327,7 +342,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -378,14 +393,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -399,7 +414,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
@@ -423,7 +438,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -463,14 +478,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -484,14 +499,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
                                     Required</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -538,14 +553,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -559,7 +574,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <textarea class="form-control" rows="3" ng-model="optionsText"/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
@@ -567,7 +582,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -612,14 +627,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -633,9 +648,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <textarea class="form-control" rows="3" ng-model="optionsText"/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -684,14 +699,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="properties">
+                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                             <div class="form-group">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -705,7 +720,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <textarea class="form-control" rows="3" ng-model="optionsText"/>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="validations">
+                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="form-group" ng-if="validationOptions.length > 0">
                                 <label class='control-label'>Validation</label>
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
@@ -716,7 +731,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     Multiple Select</label>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="logic"></div>
+                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                     </div>
                 </div>
 
@@ -761,14 +776,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-justified" role="tablist" style="margin-left:-10px">
-                            <li role="presentation" class="active"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab">Properties</a></li>
-                            <li role="presentation"><a href="#validations" aria-controls="validations" role="tab" data-toggle="tab">Validations</a></li>
-                            <li role="presentation"><a href="#logic" aria-controls="logic" role="tab" data-toggle="tab">Logic</a></li>
+                            <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                            <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                            <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="properties">
+                            <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
                                 <div class="form-group">
                                     <label class='control-label'>Label</label>
                                     <input type='text' ng-model="label" validator="[required]" class='form-control'/>
@@ -778,7 +793,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <input type='text' ng-model="description" class='form-control'/>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="validations">
+                            <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                                 <div class="checkbox">
                                     <label>
                                         <input type='checkbox' ng-model="required" />
@@ -789,7 +804,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="logic"></div>
+                            <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}"></div>
                         </div>
 
                     </div>
