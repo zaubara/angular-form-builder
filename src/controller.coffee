@@ -23,6 +23,8 @@ angular.module 'builder.controller', ['builder.provider']
     $builder = $injector.get '$builder'
 
     $scope.date = Date.now()
+    if $scope.formObject.component is 'datePicker'
+        $scope.nextDays = [1..30]
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     $scope.fields = $builder.forms.skipLogic
 

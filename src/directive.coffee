@@ -24,8 +24,8 @@ angular.module 'builder.directive', [
         </p>
         """
     link: (scope, element, attrs) ->
-        scope.min = '2000-01-01'
-        scope.max = '2100-01-01'
+        # scope.min = '2000-01-01'
+        # scope.max = '2100-01-01'
 
         scope.open = ($event) ->
             $event.preventDefault()
@@ -37,6 +37,13 @@ angular.module 'builder.directive', [
             )
         scope.$watch('maxDate', ->
             scope.max = scope.maxDate
+            )
+
+        scope.$watch('nextXDays', ->
+            today = new Date()
+            next = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate() + scope.nextXDays)
+            string = next.getFullYear().toString() + '-' + ('0' + next.getMonth()).slice(-2) + '-' + ('0' + next.getDate()).slice(-2)
+            scope.maxDate = string
             )
 
         scope.$watch('disableWeekends', ->

@@ -332,6 +332,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         disableWeekends: no
         minDate: '2000-01-01'
         maxDate: '2100-01-01'
+        nextDays: 0
         template:
             """
             <div class="form-group">
@@ -388,6 +389,19 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <input type="text" placeholder="Max Date" ng-model="maxDate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        Date is in next
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <select class="form-control" ng-model="nextXDays" ng-options="value for value in nextDays"></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        days
+                                    </div>
                                 </div>
                             </div>
                         </div>
