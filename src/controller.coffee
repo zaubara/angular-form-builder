@@ -26,6 +26,20 @@ angular.module 'builder.controller', ['builder.provider']
     if $scope.formObject.component is 'datePicker'
         $scope.nextDays = [1..30]
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
+    countElements = 0
+    for form of $builder.forms
+            unless form is 'skipLogic'
+                countElements = countElements + $builder.forms[form].length
+    unless countElements is $builder.forms.skipLogic.length
+        $builder.forms.skipLogic = []
+        for form of $builder.forms
+            unless form is 'skipLogic'
+                angular.forEach($builder.forms[form], (element) ->
+                    $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
+                    )
+    countElements = 0
+
+
     $scope.fields = $builder.forms.skipLogic
 
 

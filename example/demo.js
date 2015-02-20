@@ -7,22 +7,12 @@
     }
   ]).controller('DemoController', [
     '$scope', '$builder', '$validator', function($scope, $builder, $validator) {
-      var checkbox;
-      checkbox = $builder.addFormObject('default', {
-        id: 'checkbox',
-        component: 'checkbox',
-        label: 'Pets',
-        description: 'Do you have any pets?',
-        options: ['Dog', 'Cat']
-      });
-      $scope.form = $builder.forms['default'];
       $scope.pages = ['1', '2'];
       $scope.select = function(page) {
         return $scope.selected = page;
       };
       $scope.input = [];
       $scope.defaultValue = {};
-      $scope.defaultValue[checkbox.id] = [true, true];
       return $scope.submit = function() {
         return $validator.validate($scope, 'default').success(function() {
           return console.log('success');

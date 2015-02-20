@@ -100,16 +100,16 @@ angular.module 'app', ['builder', 'builder.components', 'validator.rules', 'ui.b
     #     placeholder: 'Your name'
     #     required: yes
     #     editable: no
-    checkbox = $builder.addFormObject 'default',
-        id: 'checkbox'
-        component: 'checkbox'
-        label: 'Pets'
-        description: 'Do you have any pets?'
-        options: ['Dog', 'Cat']
+    # checkbox = $builder.addFormObject 'default',
+    #     id: 'checkbox'
+    #     component: 'checkbox'
+    #     label: 'Pets'
+    #     description: 'Do you have any pets?'
+    #     options: ['Dog', 'Cat']
     # $builder.addFormObject 'default',
     #     component: 'sampleInput'
     # formObjects
-    $scope.form = $builder.forms['default']
+    # $scope.form = $builder.forms['default']
 
     # ----------------------------------------
     # form
@@ -122,7 +122,7 @@ angular.module 'app', ['builder', 'builder.components', 'validator.rules', 'ui.b
     $scope.defaultValue = {}
     # formObjectId: default value
     # $scope.defaultValue[textbox.id] = 'default value'
-    $scope.defaultValue[checkbox.id] = [yes, yes]
+    # $scope.defaultValue[checkbox.id] = [yes, yes]
 
     $scope.submit = ->
         $validator.validate $scope, 'default'

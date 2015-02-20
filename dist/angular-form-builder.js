@@ -17,7 +17,7 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, _i, _results;
+      var $builder, countElements, form, _i, _results;
       $builder = $injector.get('$builder');
       $scope.date = Date.now();
       if ($scope.formObject.component === 'datePicker') {
@@ -28,6 +28,23 @@
         }).apply(this);
       }
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
+      countElements = 0;
+      for (form in $builder.forms) {
+        if (form !== 'skipLogic') {
+          countElements = countElements + $builder.forms[form].length;
+        }
+      }
+      if (countElements !== $builder.forms.skipLogic.length) {
+        $builder.forms.skipLogic = [];
+        for (form in $builder.forms) {
+          if (form !== 'skipLogic') {
+            angular.forEach($builder.forms[form], function(element) {
+              return $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element);
+            });
+          }
+        }
+      }
+      countElements = 0;
       $scope.fields = $builder.forms.skipLogic;
       $scope.setupScope = function(formObject) {
 
@@ -1108,7 +1125,6 @@
       updateInput: '$updateInput'
     };
     this.forms = {
-      "default": [],
       skipLogic: []
     };
     this.convertComponent = function(name, component) {
