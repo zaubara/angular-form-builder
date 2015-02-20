@@ -602,6 +602,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+                            <div class="checkbox">
+                                <label>
+                                    <input type='checkbox' ng-model="required" />
+                                    Required
+                                </label>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
@@ -640,6 +646,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         description: 'description'
         placeholder: 'placeholder'
         multiple: no
+        required: no
         options: ['value one', 'value two']
         # multiple: no
         # validationOptions: [
@@ -649,7 +656,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label">{{label}}</label>
+                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
                     <select ng-hide="multiple" ng-options="value for value in options" id="{{formName+index}}" class="form-control"
                         ng-model="inputText" ng-init="inputText = options[0]"/>
@@ -689,6 +696,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+                            <div class="checkbox">
+                                <label>
+                                    <input type='checkbox' ng-model="required" />
+                                    Required
+                                </label>
+                            </div>
                             <div class="form-group" ng-if="validationOptions.length > 0">
                                 <label class='control-label'>Validation</label>
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
