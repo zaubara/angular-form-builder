@@ -157,169 +157,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 </div>
             </form>
             """
-    # ----------------------------------------
-    # upload photo button
-    # ----------------------------------------
-    $builderProvider.registerComponent 'uploadPhoto',
-        group: 'Advanced'
-        label: 'Upload Photo'
-        description: 'description'
-        required: no
-        template:
-            """
-            <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                <div class="col-sm-8">
-                    <input type="file" accept="image/*" capture="camera">
-                    <p class='help-block'>{{description}}</p>
-                </div>
-            </div>
-            """
-        popoverTemplate:
-            """
-            <form>
 
-                <div role="tabpanel">
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
-                                <label class='control-label'>Label</label>
-                                <input type='text' ng-model="label" validator="[required]" class='form-control'/>
-                            </div>
-                            <div class="form-group">
-                                <label class='control-label'>Description</label>
-                                <input type='text' ng-model="description" class='form-control'/>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
-                                <label>
-                                    <input type='checkbox' ng-model="required" />
-                                    Required</label>
-                            </div>
-                            <div class="form-group" ng-if="validationOptions.length > 0">
-                                <label class='control-label'>Validation</label>
-                                <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
-                            <div class="form-group">
-                                Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
-                                </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Value">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr/>
-                <div class='form-group'>
-                    <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
-                    <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
-                    <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
-                </div>
-            </form>
-            """
-
-    # ----------------------------------------
-    # signature pad
-    # ----------------------------------------
-    $builderProvider.registerComponent 'signaturePad',
-        group: 'Advanced'
-        label: 'Signature Pad'
-        decription: 'description'
-        required: no
-        template:
-            """
-            <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                <div class="col-sm-8">
-                    <signature-pad></signature-pad>
-                </div>
-            </div>
-            """
-        popoverTemplate:
-            """
-            <form>
-
-                <div role="tabpanel">
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
-                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
-                                <label class='control-label'>Label</label>
-                                <input type='text' ng-model="label" validator="[required]" class='form-control'/>
-                            </div>
-                            <div class="form-group">
-                                <label class='control-label'>Description</label>
-                                <input type='text' ng-model="description" class='form-control'/>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
-                                <label>
-                                    <input type='checkbox' ng-model="required" />
-                                    Required</label>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
-                            <div class="form-group">
-                                Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
-                                </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Value">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" ng-if="validationOptions.length > 0">
-                    <label class='control-label'>Validation</label>
-                    <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
-                </div>
-
-                <hr/>
-                <div class='form-group'>
-                    <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
-                    <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
-                    <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
-                </div>
-            </form>
-            """
 
     # ----------------------------------------
     # date picker
@@ -985,4 +823,169 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     </div>
                 </form>
                 """
+
+
+            # ----------------------------------------
+            # upload photo button
+            # ----------------------------------------
+            $builderProvider.registerComponent 'uploadPhoto',
+                group: 'Advanced'
+                label: 'Upload Photo'
+                description: 'description'
+                required: no
+                template:
+                    """
+                    <div class="form-group">
+                        <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
+                        <div class="col-sm-8">
+                            <input type="file" accept="image/*" capture="camera">
+                            <p class='help-block'>{{description}}</p>
+                        </div>
+                    </div>
+                    """
+                popoverTemplate:
+                    """
+                    <form>
+
+                        <div role="tabpanel">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
+                                <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                                <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                                <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
+                                    <div class="form-group">
+                                        <label class='control-label'>Label</label>
+                                        <input type='text' ng-model="label" validator="[required]" class='form-control'/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='control-label'>Description</label>
+                                        <input type='text' ng-model="description" class='form-control'/>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type='checkbox' ng-model="required" />
+                                            Required</label>
+                                    </div>
+                                    <div class="form-group" ng-if="validationOptions.length > 0">
+                                        <label class='control-label'>Validation</label>
+                                        <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                                    <div class="form-group">
+                                        Hide this element if
+                                        <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                        </select>
+                                        <select class="form-control">
+                                            <option>equal</option>
+                                            <option>not equal</option>
+                                            <option>less than</option>
+                                            <option>less than or equal to</option>
+                                            <option>greater than</option>
+                                            <option>greater than or equal to</option>
+                                        </select>
+                                        <input type="text" class="form-control" placeholder="Value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr/>
+                        <div class='form-group'>
+                            <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
+                            <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
+                            <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
+                        </div>
+                    </form>
+                    """
+
+            # ----------------------------------------
+            # signature pad
+            # ----------------------------------------
+            $builderProvider.registerComponent 'signaturePad',
+                group: 'Advanced'
+                label: 'Signature Pad'
+                decription: 'description'
+                required: no
+                template:
+                    """
+                    <div class="form-group">
+                        <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
+                        <div class="col-sm-8">
+                            <signature-pad></signature-pad>
+                        </div>
+                    </div>
+                    """
+                popoverTemplate:
+                    """
+                    <form>
+
+                        <div role="tabpanel">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
+                                <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+                                <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                                <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
+                                    <div class="form-group">
+                                        <label class='control-label'>Label</label>
+                                        <input type='text' ng-model="label" validator="[required]" class='form-control'/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='control-label'>Description</label>
+                                        <input type='text' ng-model="description" class='form-control'/>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type='checkbox' ng-model="required" />
+                                            Required</label>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+                                    <div class="form-group">
+                                        Hide this element if
+                                        <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                        </select>
+                                        <select class="form-control">
+                                            <option>equal</option>
+                                            <option>not equal</option>
+                                            <option>less than</option>
+                                            <option>less than or equal to</option>
+                                            <option>greater than</option>
+                                            <option>greater than or equal to</option>
+                                        </select>
+                                        <input type="text" class="form-control" placeholder="Value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-if="validationOptions.length > 0">
+                            <label class='control-label'>Validation</label>
+                            <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
+                        </div>
+
+                        <hr/>
+                        <div class='form-group'>
+                            <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
+                            <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
+                            <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
+                        </div>
+                    </form>
+                    """
 ]
