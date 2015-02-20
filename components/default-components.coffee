@@ -168,8 +168,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         description: 'description'
         required: no
         disableWeekends: no
-        minDate: '2000-01-01'
-        maxDate: '2100-01-01'
+        # minDate: '2000-01-01'
+        # maxDate: '2100-01-01'
         nextDays: 0
         template:
             """
@@ -220,14 +220,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group" ng-if="validationOptions.length > 0">
                                 <label class='control-label'>Validation</label>
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 form-group">
-                                    <input type="text" placeholder="Min Date" ng-model="minDate" class="form-control">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input type="text" placeholder="Max Date" ng-model="maxDate" class="form-control">
-                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
