@@ -1146,7 +1146,7 @@
       return result;
     };
     this.convertFormObject = function(name, formObject) {
-      var component, result, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (formObject == null) {
         formObject = {};
       }
@@ -1164,7 +1164,13 @@
         placeholder: (_ref4 = formObject.placeholder) != null ? _ref4 : component.placeholder,
         options: (_ref5 = formObject.options) != null ? _ref5 : component.options,
         required: (_ref6 = formObject.required) != null ? _ref6 : component.required,
-        validation: (_ref7 = formObject.validation) != null ? _ref7 : component.validation
+        validation: (_ref7 = formObject.validation) != null ? _ref7 : component.validation,
+        multiple: (_ref8 = formObject.multiple) != null ? _ref8 : component.multiple,
+        minLength: (_ref9 = formObject.minLength) != null ? _ref9 : component.minLength,
+        maxLength: (_ref10 = formObject.maxLength) != null ? _ref10 : component.maxLength,
+        disableWeekends: (_ref11 = formObject.disableWeekends) != null ? _ref11 : component.disableWeekends,
+        maxDate: (_ref12 = formObject.maxDate) != null ? _ref12 : component.maxDate,
+        requireConfirmation: (_ref13 = formObject.requireConfirmation) != null ? _ref13 : component.requireConfirmation
       };
       return result;
     };
