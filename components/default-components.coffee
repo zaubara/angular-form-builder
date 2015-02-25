@@ -271,23 +271,24 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         label: 'Text Input'
         description: 'description'
         placeholder: 'placeholder'
+        readOnly: no
         minLength: 0
         maxLength: 999
+        minRange: 0
+        maxRange: 99999
         required: no
         validationOptions: [
-            {label: 'text', rule: '[text]'}
-            {label: 'number', rule: '[number]'}
-            {label: 'email', rule: '[email]'}
-            {label: 'url', rule: '[url]'}
-            {label: 'age', rule: '[age]'}
+            {label: 'None', rule: '/.*/'}
+            {label: 'Text', rule: '[text]'}
+            {label: 'Number', rule: '[numberRange]'}
         ]
         template:
             """
-            <div class="form-group" ng-init="editable=false">
+            <div class="form-group">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
-                    <input type="text" ng-if="!editable" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}"/>
-                    <input type="text" ng-if="editable" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}" disabled/>
+                    <input type="text" ng-if="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}"/>
+                    <input type="text" ng-if="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}" disabled/>
                     <p class='help-block'>{{description}}</p>
                 </div>
             </div>
@@ -320,17 +321,17 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <label class='control-label'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type='checkbox' ng-model="readOnly" />
+                                    Read Only</label>
+                            </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
                                     <input type='checkbox' ng-model="required" />
                                     Required</label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type='checkbox' ng-model="editable" />
-                                    Read Only</label>
                             </div>
                             <div class="form-group" ng-if="validationOptions.length > 0">
                                 <label class='control-label'>Validation</label>
@@ -342,6 +343,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <input type="text" class="form-control" ng-model="maxLength" placeholder="Max Length">
+                                </div>
+                            </div>
+                            <div class="row" ng-show="validation==='[numberRange]'">
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" ng-model="minRange" placeholder="Min">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" ng-model="maxRange" placeholder="Max">
                                 </div>
                             </div>
                         </div>

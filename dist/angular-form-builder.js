@@ -58,7 +58,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -70,7 +70,10 @@
           formObject.maxLength = $scope.maxLength;
           formObject.disableWeekends = $scope.disableWeekends;
           formObject.maxDate = $scope.maxDate;
-          return formObject.requireConfirmation = $scope.requireConfirmation;
+          formObject.requireConfirmation = $scope.requireConfirmation;
+          formObject.readOnly = $scope.readOnly;
+          formObject.minRange = $scope.minRange;
+          return formObject.maxRange = $scope.maxRange;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -110,7 +113,10 @@
             maxLength: $scope.maxLength,
             disableWeekends: $scope.disableWeekends,
             maxDate: $scope.maxDate,
-            requireConfirmation: $scope.requireConfirmation
+            requireConfirmation: $scope.requireConfirmation,
+            readOnly: $scope.readOnly,
+            minRange: $scope.minRange,
+            maxRange: $scope.maxRange
           };
         },
         rollback: function() {
@@ -132,7 +138,10 @@
           $scope.maxLength = this.model.maxLength;
           $scope.disableWeekends = this.model.disableWeekends;
           $scope.maxDate = this.model.maxDate;
-          return $scope.requireConfirmation = this.model.requireConfirmation;
+          $scope.requireConfirmation = this.model.requireConfirmation;
+          $scope.readOnly = this.model.readOnly;
+          $scope.minRange = this.model.minRange;
+          return $scope.maxRange = this.model.maxRange;
         }
       };
     }
@@ -1067,19 +1076,19 @@
 
 (function() {
   angular.module('builder', ['builder.directive']).run(function($validator) {
-    $validator.register('age', {
-      invoke: 'watch',
-      validator: function(value) {
-        return value > 18 && value < 76;
-      },
-      error: 'Age must be between 18 and 76'
-    });
-    return $validator.register('text', {
+    $validator.register('text', {
       invoke: 'watch',
       validator: function(value, scope, element, attrs, $injector) {
         return scope.minLength === 0 || (value.length >= scope.minLength && value.length <= scope.maxLength);
       },
       error: 'There\'s a length restriction on this field'
+    });
+    return $validator.register('numberRange', {
+      invoke: 'watch',
+      validator: function(value, scope, element, attrs, $injector) {
+        return value >= scope.minRange && value <= scope.maxRange;
+      },
+      error: 'There\'s a range restriction on this field'
     });
   });
 
