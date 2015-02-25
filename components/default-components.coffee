@@ -749,7 +749,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             required: no
             template:
                 """
-    <input type="text" ng-if="!editable" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}"/>
                 <div class="form-group">
                     <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                     <div class="col-sm-8">
