@@ -84,7 +84,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="form-group">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
-                    <input type="email" ng-model="email" placeholder="Email" class="form-control" id="email">
+                    <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="email" validator-required="{{required}}" validator-group="{{formName}}">
                                 <input type="email" ng-if="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">
                     <p class='help-block'>{{description}}</p>
                 </div>
@@ -753,13 +753,13 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                     <div class="col-sm-8">
                         <p class='help-block'>{{description}}</p>
-                        <input type="text" ng-model="streetName" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="Street Name"/>
-                        <input type="text" ng-model="number" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="Number"/>
+                        <input type="text" ng-model="streetName" id="{{formName+index}}" class="form-control" placeholder="Street Name"/>
+                        <input type="text" ng-model="number" id="{{formName+index}}" class="form-control" placeholder="Number"/>
                         <input type="text" ng-model="letter" id="{{formName+index}}" class="form-control" placeholder="Letter"/>
                         <input type="text" ng-model="floor" id="{{formName+index}}" class="form-control" placeholder="Floor"/>
                         <input type="text" ng-model="placeName" id="{{formName+index}}" class="form-control" placeholder="Place Name"/>
                         <input type="text" ng-model="postCode" id="{{formName+index}}" class="form-control" placeholder="Post Code"/>
-                        <input type="text" ng-model="city" id="{{formName+index}}" class="form-control" placeholder="City"/>
+                        <input type="text" ng-model="inputText" id="{{formName+index}}" class="form-control" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                 </div>
                 """
