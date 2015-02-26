@@ -483,9 +483,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-8">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}"/>
                     <div class='checkbox' ng-repeat="item in options track by $index">
-                        <label><input type='checkbox' ng-model="$parent.inputArray[$index]" value='item'/>
+                        <input type='checkbox' ng-model="$parent.inputArray[$index]" value='item'/>
                             {{item}}
-                        </label>
                     </div>
                     <p class='help-block'>{{description}}</p>
                 </div>
