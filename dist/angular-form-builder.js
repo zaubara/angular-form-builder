@@ -541,11 +541,18 @@
     '$injector', function($injector) {
       return {
         restrict: 'E',
-        template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas class="pad" width="198" height="100"></canvas> <input type="hidden" name="output" class="output"> </div> </form>',
+        template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas class="pad" width="198" height="100"></canvas> <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}"> </div> </form>',
         link: function(scope, elem, attrs) {
-          return elem.signaturePad({
+          var saveSig, sigPad;
+          saveSig = function() {
+            return scope.$apply(function() {
+              return scope.inputText = sigPad.getSignatureString();
+            });
+          };
+          return sigPad = elem.signaturePad({
             drawOnly: true,
-            lineColour: '#fff'
+            lineColour: '#fff',
+            onDrawEnd: saveSig
           });
         }
       };

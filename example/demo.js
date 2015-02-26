@@ -12,6 +12,7 @@
         return $scope.selected = page;
       };
       $scope.input = [];
+      $scope.data = 'salut';
       $scope.defaultValue = {};
       return $scope.submit = function() {
         return $validator.validate($scope, 'default').success(function() {

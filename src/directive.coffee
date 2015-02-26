@@ -348,11 +348,15 @@ angular.module 'builder.directive', [
     template: '<form method="post" action="" class="sigPad">
                     <div style="border: 1px solid black">
                         <canvas class="pad" width="198" height="100"></canvas>
-                        <input type="hidden" name="output" class="output">
+                        <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}">
                     </div>
                 </form>'
     link: (scope, elem, attrs) ->
-        elem.signaturePad({drawOnly: true, lineColour: '#fff'})
+        saveSig = ->
+            scope.$apply(->
+                scope.inputText = sigPad.getSignatureString()
+                )
+        sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig})
 ]
 # ----------------------------------------
 # fb-multiple
