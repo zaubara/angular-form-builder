@@ -84,7 +84,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="form-group">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
-                    <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="email" validator-required="{{required}}" validator-group="{{formName}}">
+                    <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
                     <input type="email" ng-if="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">
                     <p class='help-block'>{{description}}</p>
                 </div>
@@ -481,7 +481,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="form-group">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
-                    <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
+                    <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}"/>
                     <div class='checkbox' ng-repeat="item in options track by $index">
                         <label><input type='checkbox' ng-model="$parent.inputArray[$index]" value='item'/>
                             {{item}}
@@ -572,7 +572,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
                     <div class='radio' ng-repeat="item in options track by $index">
-                        <label><input name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio'/>
+                        <label><input name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' id="{{formName+index}}" type='radio'/>
                             {{item}}
                         </label>
                     </div>
@@ -852,7 +852,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class="form-group">
                         <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                         <div class="col-sm-8">
-                            <input type="file" accept="image/*" capture="camera">
+                            <input type="file" accept="image/*" capture="camera" id="{{formName+index}}">
                             <p class='help-block'>{{description}}</p>
                         </div>
                     </div>
