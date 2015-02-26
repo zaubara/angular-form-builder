@@ -119,7 +119,6 @@ angular.module 'app', ['builder', 'builder.components', 'validator.rules', 'ui.b
     $scope.select = (page) ->
         $scope.selected = page
     $scope.input = []
-    $scope.data = 'salut'
     $scope.defaultValue = {}
     # formObjectId: default value
     # $scope.defaultValue[textbox.id] = 'default value'
