@@ -182,7 +182,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <br>
-                    <small class="help-block text-muted custom-small'>{{description}}</small>
+                    <small class="help-block text-muted custom-small">{{description}}</small>
                 </label>
                 <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
