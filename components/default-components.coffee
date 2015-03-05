@@ -298,7 +298,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <br>
                     <small class="help-block text-muted custom-small">{{description}}</small>
                 </label>
-                <div class="col-sm-8">
+                <div class="col-sm-10">
                     <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                     <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}" disabled/>
                 </div>
@@ -410,7 +410,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <br>
                     <small class="help-block text-muted custom-small">{{description}}</small>
                 </label>
-                <div class="col-sm-8">
+                <div class="col-sm-10">
                     <textarea type="text" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" rows='6' placeholder="{{placeholder}}"/>
                     <p class='help-block'>{{description}}</p>
                 </div>
@@ -789,7 +789,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <input type="text" ng-model="$parent.inputText.StreetName" class="form-control m-b" placeholder="Street Name"/>
                         <input type="text" ng-model="$parent.inputText.Number" class="form-control m-b" placeholder="Number"/>
                         <input type="text" ng-model="$parent.inputText.Letter" class="form-control m-b" placeholder="Letter"/>
-                        <input type="text" ng-model="$parent.inputText.Floor" class="form-contro m-b" placeholder="Floor"/>
+                        <input type="text" ng-model="$parent.inputText.Floor" class="form-control m-b" placeholder="Floor"/>
                         <input type="text" ng-model="$parent.inputText.PlaceName" class="form-control m-b" placeholder="Place Name"/>
                         <input type="text" ng-model="$parent.inputText.PostCode" class="form-control m-b" placeholder="Post Code"/>
                         <input type="text" ng-model="$parent.inputText.City" id="{{formName+index}}" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
@@ -964,7 +964,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <small class="help-block text-muted custom-small"></small>
                         </label>
                         <div class="col-sm-10">
-                            <signature-pad></signature-pad>
+                            <signature-pad class="m-b"></signature-pad>
                         </div>
                     </div>
                     """
