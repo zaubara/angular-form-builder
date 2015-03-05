@@ -81,7 +81,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         required: no
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                     </label>
@@ -178,7 +178,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         nextDays: 0
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <br>
@@ -292,7 +292,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         ]
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <br>
@@ -404,7 +404,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         required: no
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <br>
@@ -493,7 +493,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         arrayToText: yes
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}"/>
@@ -582,7 +582,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         options: ['value one', 'value two']
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-8">
                     <div class='radio' ng-repeat="item in options track by $index">
@@ -677,7 +677,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # ]
         template:
             """
-            <div class="form-group">
+            <div class="row">
                 <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <br>
@@ -778,7 +778,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             options: []
             template:
                 """
-                <div class="form-group">
+                <div class="row">
                     <label class="col-sm-2 control-label">
                         <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                         <br>
@@ -872,7 +872,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 required: no
                 template:
                     """
-                    <div class="form-group">
+                    <div class="row">
                         <label class="col-sm-2 control-label">
                             <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                             <br>
@@ -957,14 +957,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 required: no
                 template:
                     """
-                    <div class="form-group">
+                    <div class="row">
                         <label class="col-sm-2 control-label">
                             <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                             <br>
                             <small class="help-block text-muted custom-small"></small>
                         </label>
                         <div class="col-sm-10">
-                            <signature-pad class="m-b"></signature-pad>
+                            <div class="m-b">
+                                <signature-pad></signature-pad> 
+                            </div>
                         </div>
                     </div>
                     """
