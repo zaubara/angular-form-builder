@@ -81,16 +81,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         required: no
         template:
             """
-            <div class="row col-lg-12 form-group">
-                <label class="col-lg-4 col-sm-4 control-label">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                     </label>
                     <br>
-                    <small class='help-block text-muted custom-small'>{{description}}</small>test
+                    <small class='help-block text-muted custom-small'>{{description}}</small>
                 </label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
-                    <input type="email" ng-if="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">
+                <div class="col-sm-10">
+                    <input type="email" ng-model="inputText" placeholder="Email" class="form-control m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
+                    <input type="email" ng-if="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
                     
                 </div>
             </div>
