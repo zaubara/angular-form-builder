@@ -82,11 +82,15 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
+                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}
+                    <br>
+                    <small class='help-block text-navy'>{{description}}</small>
+                </label>
+                
                 <div class="col-sm-8">
                     <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
                     <input type="email" ng-if="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control" id="confirmEmail">
-                    <p class='help-block'>{{description}}</p>
+                    
                 </div>
             </div>
             """
