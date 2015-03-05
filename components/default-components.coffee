@@ -86,7 +86,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                     </label>
                     <br>
-                    <small class='help-block text-muted custom-small'>{{description}}</small>
+                    <small class='help-block text-muted custom-small'>{{description}}</small>test
                 </label>
                 <div class="col-xs-12 col-sm-8">
                     <input type="email" ng-model="inputText" placeholder="Email" class="form-control" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
