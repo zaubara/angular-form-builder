@@ -179,9 +179,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                <div class="col-sm-8">
-                    <p class='help-block'>{{description}}</p>
+                <label class="col-sm-2 control-label">
+                    <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                    <br>
+                    <small class="help-block text-muted custom-small'>{{description}}</small>
+                </label>
+                <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
                 </div>
             </div>
@@ -290,11 +293,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
+                <label class="col-sm-2 control-label">
+                    <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                    <br>
+                    <small class="help-block text-muted custom-small">{{description}}</small>
+                </label>
                 <div class="col-sm-8">
-                    <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}"/>
-                    <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" placeholder="{{placeholder}}" disabled/>
-                    <p class='help-block'>{{description}}</p>
+                    <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}"/>
+                    <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}" disabled/>
                 </div>
             </div>
             """
@@ -399,7 +405,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
+                <label class="col-sm-2 control-label">
+                    <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                    <br>
+                    <small class="help-block text-muted custom-small">{{description}}</small>
+                </label>
                 <div class="col-sm-8">
                     <textarea type="text" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control" rows='6' placeholder="{{placeholder}}"/>
                     <p class='help-block'>{{description}}</p>
@@ -668,12 +678,17 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group">
-                <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                <div class="col-sm-8">
-                    <select ng-hide="multiple" ng-options="value for value in options" id="{{formName+index}}" class="form-control"
+                <label class="col-sm-2 control-label">
+                    <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                    <br>
+                    <small class="help-block text-muted custom-small">{{description}}</small>
+                </label>
+
+                <div class="col-sm-10">
+                    <select ng-hide="multiple" ng-options="value for value in options" id="{{formName+index}}" class="form-control m-b"
                         ng-model="inputText" ng-init="inputText = options[0]"/>
-                    <p class='help-block'>{{description}}</p>
-                    <select ng-show="multiple" ng-options="value for value in options" id="{{formName+index}}" class="form-control"
+
+                    <select ng-show="multiple" ng-options="value for value in options" id="{{formName+index}}" class="form-control m-b"
                         ng-model="inputText" multiple ng-init="inputText = options[0]"/>
                 </div>
             </div>
@@ -764,16 +779,20 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             template:
                 """
                 <div class="form-group">
-                    <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                    <div class="col-sm-8">
-                        <p class='help-block'>{{description}}</p>
-                        <input type="text" ng-model="$parent.inputText.StreetName" class="form-control" placeholder="Street Name"/>
-                        <input type="text" ng-model="$parent.inputText.Number" class="form-control" placeholder="Number"/>
-                        <input type="text" ng-model="$parent.inputText.Letter" class="form-control" placeholder="Letter"/>
-                        <input type="text" ng-model="$parent.inputText.Floor" class="form-control" placeholder="Floor"/>
-                        <input type="text" ng-model="$parent.inputText.PlaceName" class="form-control" placeholder="Place Name"/>
-                        <input type="text" ng-model="$parent.inputText.PostCode" class="form-control" placeholder="Post Code"/>
-                        <input type="text" ng-model="$parent.inputText.City" id="{{formName+index}}" class="form-control" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
+                    <label class="col-sm-2 control-label">
+                        <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                        <br>
+                        <small class="help-block text-muted custom-small">{{description}}</small>
+                    </label>
+
+                    <div class="col-sm-10">
+                        <input type="text" ng-model="$parent.inputText.StreetName" class="form-control m-b" placeholder="Street Name"/>
+                        <input type="text" ng-model="$parent.inputText.Number" class="form-control m-b" placeholder="Number"/>
+                        <input type="text" ng-model="$parent.inputText.Letter" class="form-control m-b" placeholder="Letter"/>
+                        <input type="text" ng-model="$parent.inputText.Floor" class="form-contro m-b" placeholder="Floor"/>
+                        <input type="text" ng-model="$parent.inputText.PlaceName" class="form-control m-b" placeholder="Place Name"/>
+                        <input type="text" ng-model="$parent.inputText.PostCode" class="form-control m-b" placeholder="Post Code"/>
+                        <input type="text" ng-model="$parent.inputText.City" id="{{formName+index}}" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                 </div>
                 """
@@ -854,10 +873,13 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 template:
                     """
                     <div class="form-group">
-                        <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                        <div class="col-sm-8">
-                            <input type="file" accept="image/*" capture="camera" id="{{formName+index}}">
-                            <p class='help-block'>{{description}}</p>
+                        <label class="col-sm-2 control-label">
+                            <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                            <br>
+                            <small class="help-block text-muted custom-small">{{descriprion}}</small>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="file" class="m-b" accept="image/*" capture="camera" id="{{formName+index}}">
                         </div>
                     </div>
                     """
@@ -936,8 +958,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 template:
                     """
                     <div class="form-group">
-                        <label for="{{formName+index}}" class="col-sm-4 control-label" ng-class="{'fb-required':required}">{{label}}</label>
-                        <div class="col-sm-8">
+                        <label class="col-sm-2 control-label">
+                            <label for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                            <br>
+                            <small class="help-block text-muted custom-small"></small>
+                        </label>
+                        <div class="col-sm-10">
                             <signature-pad></signature-pad>
                         </div>
                     </div>
