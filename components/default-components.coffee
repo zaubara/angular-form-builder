@@ -295,8 +295,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <label class="col-sm-12 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
                 <div class="col-sm-12">
-                    <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}"/>
-                    <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}" disabled/>
+                    <input type="text" ng-if="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}"/>
+                    <input type="text" ng-if="readOnly===true || readOnly === ''" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}" disabled/>
                 </div>
                 <div class="col-sm-12">
                   <small class="help-block text-muted custom-small">{{description}}</small>
