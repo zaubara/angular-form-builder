@@ -537,15 +537,7 @@
         }
       };
     }
-  ]).directive('textInput', function() {
-    return {
-      restrict: 'E',
-      template: '<input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}"/> <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}" disabled/>',
-      link: function(scope, elem, attrs) {
-        return scope.readOnly = attrs.read;
-      }
-    };
-  }).directive('signaturePad', [
+  ]).directive('signaturePad', [
     '$injector', function($injector) {
       return {
         restrict: 'E',

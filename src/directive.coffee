@@ -340,13 +340,6 @@ angular.module 'builder.directive', [
             $(element).html view
 ]
 
-.directive 'textInput', ->
-  restrict: 'E',
-  template: '<input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}"/>
-            <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control custom-m-b" placeholder="{{placeholder}}" disabled/>'
-  link: (scope, elem, attrs) ->
-    scope.readOnly = attrs.read
-
 # ----------------------------------------
 # signature pad
 # ----------------------------------------
