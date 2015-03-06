@@ -177,8 +177,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="row m-b">
-                
-                    <label class="col-sm-12 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>                                        
+
+                    <label class="col-sm-12 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
                 <div class="col-sm-12">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
@@ -877,7 +877,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <input type="file" class="custom-m-b" accept="image/*" capture="camera" id="{{formName+index}}">
                         </div>
                         <div class="col-sm-12">
-                            <small class="help-block text-muted custom-small">{{descriprion}}</small>
+                            <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
                     """
@@ -960,7 +960,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </label>
                         <div class="col-sm-12">
                             <div class="custom-m-b">
-                                <signature-pad></signature-pad> 
+                                <signature-pad></signature-pad>
                             </div>
                         </div>
                         <div class="col-sm-12">
