@@ -348,7 +348,7 @@ angular.module 'builder.directive', [
     template: '<form method="post" action="" class="sigPad">
                     <div style="border: 1px solid black">
                         <canvas class="pad" width="198" height="100"></canvas>
-                        <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}">
+                        <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
                     </div>
                 </form>'
     link: (scope, elem, attrs) ->
