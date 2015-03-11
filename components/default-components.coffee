@@ -2,69 +2,69 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
 .config ['$builderProvider', ($builderProvider) ->
 
-    # ----------------------------------------
-    # static text field
-    # ----------------------------------------
-    $builderProvider.registerComponent 'textMessage',
-        group: 'Basic'
-        placeholder: 'Rich Content'
-        label: 'Rich Content'
-        template:
-            """
-            <div class="form-group text-center">
-                <p><b>{{placeholder}}</b></p>
-            </div>
-            """
-        popoverTemplate:
-            """
-            <form>
-
-                <div role="tabpanel">
-
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
-                        <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation" class="disabled"><a>Validations</a></li>
-                        <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
-                                <label class='control-label'>Placeholder</label>
-                                <input type='text' ng-model="placeholder" class='form-control'/>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
-                            <div class="form-group">
-                                Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
-                                </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Value">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr/>
-                <div class='form-group'>
-                    <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
-                    <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
-                    <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
-                </div>
-            </form>
-            """
+    # # ----------------------------------------
+    # # static text field
+    # # ----------------------------------------
+    # $builderProvider.registerComponent 'textMessage',
+    #     group: 'Basic'
+    #     placeholder: 'Rich Content'
+    #     label: 'Rich Content'
+    #     template:
+    #         """
+    #         <div class="form-group text-center">
+    #             <p><b>{{placeholder}}</b></p>
+    #         </div>
+    #         """
+    #     popoverTemplate:
+    #         """
+    #         <form>
+    #
+    #             <div role="tabpanel">
+    #
+    #                 <!-- Nav tabs -->
+    #                 <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
+    #                     <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+    #                     <li role="presentation" class="disabled"><a>Validations</a></li>
+    #                     <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+    #                 </ul>
+    #
+    #                 <!-- Tab panes -->
+    #                 <div class="tab-content">
+    #                     <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
+    #                         <div class="form-group">
+    #                             <label class='control-label'>Placeholder</label>
+    #                             <input type='text' ng-model="placeholder" class='form-control'/>
+    #                         </div>
+    #                     </div>
+    #                     <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+    #                     </div>
+    #                     <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+    #                         <div class="form-group">
+    #                             Hide this element if
+    #                             <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+    #                             </select>
+    #                             <select class="form-control">
+    #                                 <option>equal</option>
+    #                                 <option>not equal</option>
+    #                                 <option>less than</option>
+    #                                 <option>less than or equal to</option>
+    #                                 <option>greater than</option>
+    #                                 <option>greater than or equal to</option>
+    #                             </select>
+    #                             <input type="text" class="form-control" placeholder="Value">
+    #                         </div>
+    #                     </div>
+    #                 </div>
+    #             </div>
+    #
+    #             <hr/>
+    #             <div class='form-group'>
+    #                 <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
+    #                 <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
+    #                 <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
+    #             </div>
+    #         </form>
+    #         """
 
     # ----------------------------------------
     # email field

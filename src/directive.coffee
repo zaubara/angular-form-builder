@@ -306,6 +306,8 @@ angular.module 'builder.directive', [
                 <a href='#' ng-click="selectGroup($event, group)">{{group}}</a>
             </li>
         </ul>
+        <br>
+        <button class="btn btn-success btn-block" ng-click="openSummerNote()">Open Rich Text Editor</button>
         <div class='form-horizontal'>
             <div class='fb-component' ng-repeat="component in components"
                 fb-component="component"></div>

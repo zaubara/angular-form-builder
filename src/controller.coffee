@@ -138,6 +138,25 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbComponentsController', ['$scope', '$injector', ($scope, $injector) ->
     # providers
     $builder = $injector.get '$builder'
+    $modal = $injector.get '$modal'
+    $builder = $injector.get '$builder'
+
+    $scope.cancel = ->
+      $scope.modalInstance.dismiss('cancel')
+
+    $scope.save = ->
+      $scope.modalInstance.close()
+
+    $scope.openSummerNote = () ->
+      $scope.modalInstance = $modal.open({
+        template: '<div summernote></div>' +
+                  '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' +
+                  '<button class="btn btn-success btn-sm" ng-click="save()"></button>',
+        scope: $scope
+        })
+      $scope.modalInstance.result.then(->
+
+        )
 
     # action
     $scope.selectGroup = ($event, group) ->
