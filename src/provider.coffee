@@ -82,6 +82,8 @@ angular.module 'builder.provider', []
             nextXDays: formObject.nextXDays ? component.nextXDays
             maxDate: formObject.maxDate ? component.maxDate
             requireConfirmation: formObject.requireConfirmation ? component.requireConfirmation
+            minRange: formObject.minRange ? component.minRange
+            maxRange: formObject.maxRange ? component.maxRange
         result
 
     @reindexFormObject = (name) =>
