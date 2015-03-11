@@ -84,6 +84,7 @@ angular.module 'builder.provider', []
             requireConfirmation: formObject.requireConfirmation ? component.requireConfirmation
             minRange: formObject.minRange ? component.minRange
             maxRange: formObject.maxRange ? component.maxRange
+            performCreditCheck: formObject.performCreditCheck ? component.performCreditCheck
         result
 
     @reindexFormObject = (name) =>
