@@ -23,8 +23,6 @@ angular.module 'builder.controller', ['builder.provider']
     $builder = $injector.get '$builder'
 
     $scope.date = Date.now()
-    if $scope.formObject.component is 'datePicker'
-        $scope.nextDays = [1..30]
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     countElements = 0
     for form of $builder.forms
@@ -55,7 +53,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -71,6 +69,7 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.readOnly = $scope.readOnly
             formObject.minRange = $scope.minRange
             formObject.maxRange = $scope.maxRange
+            formObject.nextXDays = $scope.nextXDays
 
         , yes
 
@@ -103,6 +102,7 @@ angular.module 'builder.controller', ['builder.provider']
                 readOnly: $scope.readOnly
                 minRange: $scope.minRange
                 maxRange: $scope.maxRange
+                nextXDays: $scope.nextXDays
         rollback: ->
             ###
             Rollback input value.
@@ -123,6 +123,7 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.readOnly = @model.readOnly
             $scope.minRange = @model.minRange
             $scope.maxRange = @model.maxRange
+            $scope.nextXDays = @model.nextXDays
 ]
 
 # ----------------------------------------

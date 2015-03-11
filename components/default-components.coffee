@@ -182,7 +182,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         # minDate: '2000-01-01'
         # maxDate: '2100-01-01'
-        nextDays: 0
         template:
             """
             <div class="row m-b">
@@ -248,7 +247,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         Date is in next
                                     </div>
                                     <div class="col-sm-7">
-                                        <select class="form-control" ng-model="nextXDays" ng-options="value for value in nextDays"></select>
+                                        <select class="form-control" ng-model="nextXDays" ng-options="value for value in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]"></select>
                                     </div>
                                     <div class="col-sm-2">
                                         days

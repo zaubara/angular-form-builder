@@ -17,16 +17,9 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, countElements, form, _i, _results;
+      var $builder, countElements, form;
       $builder = $injector.get('$builder');
       $scope.date = Date.now();
-      if ($scope.formObject.component === 'datePicker') {
-        $scope.nextDays = (function() {
-          _results = [];
-          for (_i = 1; _i <= 30; _i++){ _results.push(_i); }
-          return _results;
-        }).apply(this);
-      }
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
       for (form in $builder.forms) {
@@ -58,7 +51,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -73,21 +66,22 @@
           formObject.requireConfirmation = $scope.requireConfirmation;
           formObject.readOnly = $scope.readOnly;
           formObject.minRange = $scope.minRange;
-          return formObject.maxRange = $scope.maxRange;
+          formObject.maxRange = $scope.maxRange;
+          return formObject.nextXDays = $scope.nextXDays;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
           $scope.options = (function() {
-            var _j, _len, _ref, _results1;
+            var _i, _len, _ref, _results;
             _ref = text.split('\n');
-            _results1 = [];
-            for (_j = 0, _len = _ref.length; _j < _len; _j++) {
-              x = _ref[_j];
+            _results = [];
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              x = _ref[_i];
               if (x.length > 0) {
-                _results1.push(x);
+                _results.push(x);
               }
             }
-            return _results1;
+            return _results;
           })();
           return $scope.inputText = $scope.options[0];
         });
@@ -116,7 +110,8 @@
             requireConfirmation: $scope.requireConfirmation,
             readOnly: $scope.readOnly,
             minRange: $scope.minRange,
-            maxRange: $scope.maxRange
+            maxRange: $scope.maxRange,
+            nextXDays: $scope.nextXDays
           };
         },
         rollback: function() {
@@ -141,7 +136,8 @@
           $scope.requireConfirmation = this.model.requireConfirmation;
           $scope.readOnly = this.model.readOnly;
           $scope.minRange = this.model.minRange;
-          return $scope.maxRange = this.model.maxRange;
+          $scope.maxRange = this.model.maxRange;
+          return $scope.nextXDays = this.model.nextXDays;
         }
       };
     }
