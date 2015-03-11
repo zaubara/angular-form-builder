@@ -51,7 +51,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -67,7 +67,8 @@
           formObject.readOnly = $scope.readOnly;
           formObject.minRange = $scope.minRange;
           formObject.maxRange = $scope.maxRange;
-          return formObject.nextXDays = $scope.nextXDays;
+          formObject.nextXDays = $scope.nextXDays;
+          return formObject.performCreditCheck = $scope.performCreditCheck;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -111,7 +112,8 @@
             readOnly: $scope.readOnly,
             minRange: $scope.minRange,
             maxRange: $scope.maxRange,
-            nextXDays: $scope.nextXDays
+            nextXDays: $scope.nextXDays,
+            performCreditCheck: $scope.performCreditCheck
           };
         },
         rollback: function() {
@@ -137,7 +139,8 @@
           $scope.readOnly = this.model.readOnly;
           $scope.minRange = this.model.minRange;
           $scope.maxRange = this.model.maxRange;
-          return $scope.nextXDays = this.model.nextXDays;
+          $scope.nextXDays = this.model.nextXDays;
+          return $scope.performCreditCheck = this.model.performCreditCheck;
         }
       };
     }
