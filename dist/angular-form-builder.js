@@ -51,7 +51,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -68,7 +68,8 @@
           formObject.minRange = $scope.minRange;
           formObject.maxRange = $scope.maxRange;
           formObject.nextXDays = $scope.nextXDays;
-          return formObject.performCreditCheck = $scope.performCreditCheck;
+          formObject.performCreditCheck = $scope.performCreditCheck;
+          return formObject.cprCountry = $scope.cprCountry;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -113,7 +114,8 @@
             minRange: $scope.minRange,
             maxRange: $scope.maxRange,
             nextXDays: $scope.nextXDays,
-            performCreditCheck: $scope.performCreditCheck
+            performCreditCheck: $scope.performCreditCheck,
+            cprCountry: $scope.cprCountry
           };
         },
         rollback: function() {
@@ -140,7 +142,8 @@
           $scope.minRange = this.model.minRange;
           $scope.maxRange = this.model.maxRange;
           $scope.nextXDays = this.model.nextXDays;
-          return $scope.performCreditCheck = this.model.performCreditCheck;
+          $scope.performCreditCheck = this.model.performCreditCheck;
+          return $scope.cprCountry = this.model.cprCountry;
         }
       };
     }
@@ -1173,7 +1176,7 @@
       return result;
     };
     this.convertFormObject = function(name, formObject) {
-      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (formObject == null) {
         formObject = {};
       }
@@ -1202,7 +1205,8 @@
         requireConfirmation: (_ref15 = formObject.requireConfirmation) != null ? _ref15 : component.requireConfirmation,
         minRange: (_ref16 = formObject.minRange) != null ? _ref16 : component.minRange,
         maxRange: (_ref17 = formObject.maxRange) != null ? _ref17 : component.maxRange,
-        performCreditCheck: (_ref18 = formObject.performCreditCheck) != null ? _ref18 : component.performCreditCheck
+        performCreditCheck: (_ref18 = formObject.performCreditCheck) != null ? _ref18 : component.performCreditCheck,
+        cprCountry: (_ref19 = formObject.cprCountry) != null ? _ref19 : component.cprCountry
       };
       return result;
     };

@@ -53,7 +53,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -71,6 +71,7 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.maxRange = $scope.maxRange
             formObject.nextXDays = $scope.nextXDays
             formObject.performCreditCheck = $scope.performCreditCheck
+            formObject.cprCountry = $scope.cprCountry
 
         , yes
 
@@ -105,6 +106,7 @@ angular.module 'builder.controller', ['builder.provider']
                 maxRange: $scope.maxRange
                 nextXDays: $scope.nextXDays
                 performCreditCheck: $scope.performCreditCheck
+                cprCountry: $scope.cprCountry
         rollback: ->
             ###
             Rollback input value.
@@ -127,6 +129,7 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.maxRange = @model.maxRange
             $scope.nextXDays = @model.nextXDays
             $scope.performCreditCheck = @model.performCreditCheck
+            $scope.cprCountry = @model.cprCountry
 ]
 
 # ----------------------------------------
