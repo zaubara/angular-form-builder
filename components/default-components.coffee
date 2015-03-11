@@ -12,7 +12,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group text-center">
-                <rich-text>Rich</rich-text>
+                <rich-text><strong>Text Message</strong></rich-text>
             </div>
             """
         popoverTemplate:
