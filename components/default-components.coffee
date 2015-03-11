@@ -7,8 +7,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     $builderProvider.registerComponent 'textMessage',
         group: 'Basic'
-        placeholder: 'Text Message'
-        label: 'Text Message'
+        placeholder: 'Rich Content'
+        label: 'Rich Content'
         template:
             """
             <div class="form-group text-center">
@@ -24,17 +24,13 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
-                                <label class='control-label'>Label</label>
-                                <input type='text' ng-model="label" class='form-control'/>
-                            </div>
                             <div class="form-group">
                                 <label class='control-label'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
@@ -631,7 +627,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Nav tabs -->
                     <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                        <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+                        <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
                     </ul>
 
