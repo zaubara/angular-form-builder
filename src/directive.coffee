@@ -10,6 +10,23 @@ angular.module 'builder.directive', [
 ]
 
 # ----------------------------------------
+# rich text directive
+# ----------------------------------------
+.directive 'richText', ['$injector', ($injector) ->
+  restrict: 'E',
+  link: (scope, elem, attrs) ->
+    scope.text = scope.placeholder
+    scope.$watch('placeholder', ->
+        scope.text = scope.placeholder
+      )
+
+    scope.$watch('text', ->
+      unless scope.text is 'Rich Content'
+        elem[0].innerHTML = scope.text
+      )
+]
+
+# ----------------------------------------
 # date picker directive
 # ----------------------------------------
 .directive 'uiDate', ['$injector', ($injector) ->
@@ -306,8 +323,6 @@ angular.module 'builder.directive', [
                 <a href='#' ng-click="selectGroup($event, group)">{{group}}</a>
             </li>
         </ul>
-        <br>
-        <button class="btn btn-success btn-block" ng-click="openSummerNote()">Open Rich Text Editor</button>
         <div class='form-horizontal'>
             <div class='fb-component' ng-repeat="component in components"
                 fb-component="component"></div>

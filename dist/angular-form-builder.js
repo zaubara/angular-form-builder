@@ -17,8 +17,22 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, countElements, form;
+      var $builder, $modal, countElements, form;
       $builder = $injector.get('$builder');
+      $modal = $injector.get('$modal');
+      $scope.cancel = function() {
+        return $scope.modalInstance.dismiss('cancel');
+      };
+      $scope.save = function(text) {
+        $scope.placeholder = text;
+        return $scope.modalInstance.close();
+      };
+      $scope.openSummerNote = function() {
+        return $scope.modalInstance = $modal.open({
+          template: '<div summernote ng-model="summerNoteText"></div>' + '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' + '<button class="btn btn-success btn-sm" ng-click="save(summerNoteText)"></button>',
+          scope: $scope
+        });
+      };
       $scope.date = Date.now();
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
@@ -149,23 +163,8 @@
     }
   ]).controller('fbComponentsController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $modal;
+      var $builder;
       $builder = $injector.get('$builder');
-      $modal = $injector.get('$modal');
-      $builder = $injector.get('$builder');
-      $scope.cancel = function() {
-        return $scope.modalInstance.dismiss('cancel');
-      };
-      $scope.save = function() {
-        return $scope.modalInstance.close();
-      };
-      $scope.openSummerNote = function() {
-        $scope.modalInstance = $modal.open({
-          template: '<div summernote></div>' + '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' + '<button class="btn btn-success btn-sm" ng-click="save()"></button>',
-          scope: $scope
-        });
-        return $scope.modalInstance.result.then(function() {});
-      };
       $scope.selectGroup = function($event, group) {
         var component, name, _ref, _results;
         if ($event != null) {
@@ -240,7 +239,24 @@
 }).call(this);
 
 (function() {
-  angular.module('builder.directive', ['builder.provider', 'builder.controller', 'builder.drag', 'validator']).directive('uiDate', [
+  angular.module('builder.directive', ['builder.provider', 'builder.controller', 'builder.drag', 'validator']).directive('richText', [
+    '$injector', function($injector) {
+      return {
+        restrict: 'E',
+        link: function(scope, elem, attrs) {
+          scope.text = scope.placeholder;
+          scope.$watch('placeholder', function() {
+            return scope.text = scope.placeholder;
+          });
+          return scope.$watch('text', function() {
+            if (scope.text !== 'Rich Content') {
+              return elem[0].innerHTML = scope.text;
+            }
+          });
+        }
+      };
+    }
+  ]).directive('uiDate', [
     '$injector', function($injector) {
       return {
         restrict: 'E',
@@ -519,7 +535,7 @@
   ]).directive('fbComponents', function() {
     return {
       restrict: 'A',
-      template: "<ul ng-if=\"groups.length > 1\" class=\"nav nav-tabs nav-justified\">\n    <li ng-repeat=\"group in groups\" ng-class=\"{active:activeGroup==group}\">\n        <a href='#' ng-click=\"selectGroup($event, group)\">{{group}}</a>\n    </li>\n</ul>\n<br>\n<button class=\"btn btn-success btn-block\" ng-click=\"openSummerNote()\">Open Rich Text Editor</button>\n<div class='form-horizontal'>\n    <div class='fb-component' ng-repeat=\"component in components\"\n        fb-component=\"component\"></div>\n</div>",
+      template: "<ul ng-if=\"groups.length > 1\" class=\"nav nav-tabs nav-justified\">\n    <li ng-repeat=\"group in groups\" ng-class=\"{active:activeGroup==group}\">\n        <a href='#' ng-click=\"selectGroup($event, group)\">{{group}}</a>\n    </li>\n</ul>\n<div class='form-horizontal'>\n    <div class='fb-component' ng-repeat=\"component in components\"\n        fb-component=\"component\"></div>\n</div>",
       controller: 'fbComponentsController'
     };
   }).directive('fbComponent', [

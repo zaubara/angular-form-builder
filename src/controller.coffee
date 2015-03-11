@@ -21,6 +21,22 @@ angular.module 'builder.controller', ['builder.provider']
 # ----------------------------------------
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
+    $modal = $injector.get '$modal'
+
+    $scope.cancel = ->
+      $scope.modalInstance.dismiss('cancel')
+
+    $scope.save = (text) ->
+      $scope.placeholder = text
+      $scope.modalInstance.close()
+
+    $scope.openSummerNote = ->
+      $scope.modalInstance = $modal.open({
+        template: '<div summernote ng-model="summerNoteText"></div>' +
+                        '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' +
+                        '<button class="btn btn-success btn-sm" ng-click="save(summerNoteText)"></button>',
+        scope: $scope
+      })
 
     $scope.date = Date.now()
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
@@ -138,25 +154,6 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbComponentsController', ['$scope', '$injector', ($scope, $injector) ->
     # providers
     $builder = $injector.get '$builder'
-    $modal = $injector.get '$modal'
-    $builder = $injector.get '$builder'
-
-    $scope.cancel = ->
-      $scope.modalInstance.dismiss('cancel')
-
-    $scope.save = ->
-      $scope.modalInstance.close()
-
-    $scope.openSummerNote = () ->
-      $scope.modalInstance = $modal.open({
-        template: '<div summernote></div>' +
-                  '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' +
-                  '<button class="btn btn-success btn-sm" ng-click="save()"></button>',
-        scope: $scope
-        })
-      $scope.modalInstance.result.then(->
-
-        )
 
     # action
     $scope.selectGroup = ($event, group) ->
