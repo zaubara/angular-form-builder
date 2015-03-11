@@ -715,7 +715,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <label class="col-sm-12 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
 
-                <div class="col-sm-12">
+                <div class="col-sm-12 dropdown">
                     <select ng-if="!multiple && !readOnly" ng-options="value for value in options" id="{{formName+index}}" class="form-control custom-m-b"
                         ng-model="inputText" ng-init="inputText = options[0]"/>
                     <select ng-if="!multiple && readOnly" ng-options="value for value in options" id="{{formName+index}}" class="form-control custom-m-b"

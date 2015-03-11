@@ -17,10 +17,10 @@ angular.module 'builder.directive', [
     template:
         """
         <p class="input-group">
-          <input type="text" ng-if="!readOnly" class="form-control" max-date="max" datepicker-popup="{{format}}" ng-model="inputText" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close"  validator-required="{{required}}" validator-group="{{required}}" id="{{formName+index}}"/>
-          <input type="text" ng-if="readOnly" class="form-control" max-date="max" datepicker-popup="{{format}}" ng-model="inputText" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close"  validator-required="{{required}}" validator-group="{{required}}" id="{{formName+index}}" disabled/>
+          <input type="text" class="form-control" max-date="max" datepicker-popup="{{format}}" ng-model="inputText" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close"  validator-required="{{required}}" validator-group="{{required}}" id="{{formName+index}}" disabled/>
           <span class="input-group-btn">
-            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            <button ng-if="!readOnly" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            <button ng-if="readOnly" type="button" class="btn btn-default" ng-click="open($event)" disabled><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
         </p>
         """
