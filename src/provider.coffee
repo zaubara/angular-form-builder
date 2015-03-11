@@ -79,7 +79,7 @@ angular.module 'builder.provider', []
             maxLength: formObject.maxLength ? component.maxLength
             disableWeekends: formObject.disableWeekends ? component.disableWeekends
             readOnly: formObject.readOnly ? component.readOnly
-            nextDays: formObject.readOnly ? component.readOnly
+            nextXDays: formObject.nextXDays ? component.nextXDays
             maxDate: formObject.maxDate ? component.maxDate
             requireConfirmation: formObject.requireConfirmation ? component.requireConfirmation
         result

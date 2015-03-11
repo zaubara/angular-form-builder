@@ -1198,7 +1198,7 @@
         maxLength: (_ref10 = formObject.maxLength) != null ? _ref10 : component.maxLength,
         disableWeekends: (_ref11 = formObject.disableWeekends) != null ? _ref11 : component.disableWeekends,
         readOnly: (_ref12 = formObject.readOnly) != null ? _ref12 : component.readOnly,
-        nextDays: (_ref13 = formObject.readOnly) != null ? _ref13 : component.readOnly,
+        nextXDays: (_ref13 = formObject.nextXDays) != null ? _ref13 : component.nextXDays,
         maxDate: (_ref14 = formObject.maxDate) != null ? _ref14 : component.maxDate,
         requireConfirmation: (_ref15 = formObject.requireConfirmation) != null ? _ref15 : component.requireConfirmation
       };
