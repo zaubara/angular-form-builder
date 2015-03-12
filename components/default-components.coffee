@@ -82,10 +82,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                   </label>
                     <div class="col-sm-10">
-                        <input ng-show="!readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
-                        <input type="email" ng-show="requireConfirmation && !readOnly" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
-                        <input ng-show="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}" disabled>
-                        <input type="email" ng-show="requireConfirmation && readOnly" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail" disabled>
+                        <input ng-readonly="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
+                        <input type="email" ng-show="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
                     </div>
                 <div class="col-sm-10 col-sm-offset-2">
                   <small class='help-block text-muted custom-small'>{{description}}</small>
@@ -291,8 +289,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="row" id="{{formName+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
-                    <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}" disabled/>
+                    <input type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                 </div>
               <div class="col-sm-10 col-sm-offset-2">
                 <small class="help-block text-muted custom-small">{{description}}</small>
@@ -398,8 +395,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="row" id="{{formName+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
-                    <textarea type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
-                    <textarea type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}" disabled/>
+                    <textarea type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
                   <small class="help-block text-muted custom-small">{{description}}</small>
@@ -583,7 +579,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class='radio' ng-repeat="item in options track by $index">
                         <label>
                         <input ng-show="!readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio'/>
-                        <input ng-show="readOnly" validator-group="{{formName}}" value='{{item}}' type='radio' disabled/>
+                        <input ng-show="readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio' disabled/>
                             {{item}}
                         </label>
                     </div>
@@ -680,14 +676,10 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="row" id="{{formName+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10 dropdown">
-                    <select ng-show="!multiple && !readOnly" ng-options="value for value in options" class="form-control m-b"
+                    <select ng-show="!multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
                         ng-model="inputText" ng-init="inputText = options[0]"/>
-                    <select ng-show="!multiple && readOnly" ng-options="value for value in options" class="form-control m-b"
-                        ng-model="inputText" ng-init="inputText = options[0]" disabled/>
-                    <select ng-show="multiple && !readOnly" ng-options="value for value in options" class="form-control m-b"
+                    <select ng-show="multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
                         ng-model="inputText" multiple ng-init="inputText = options[0]"/>
-                    <select ng-show="multiple && readOnly" ng-options="value for value in options" class="form-control m-b"
-                        ng-model="inputText" multiple ng-init="inputText = options[0]" disabled/>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
                   <small class="help-block text-muted custom-small">{{description}}</small>
@@ -782,23 +774,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 """
                 <div class="row" id="{{formName+index}}">
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                    <div ng-show="!readOnly" class="col-sm-10">
-                        <input type="text" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
-                        <input type="text" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
-                        <input type="text" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter"/>
-                        <input type="text" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor"/>
-                        <input type="text" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name"/>
-                        <input type="text" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code"/>
-                        <input type="text" ng-model="inputText.City" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
-                    </div>
-                    <div ng-show="readOnly" class="col-sm-10">
-                        <input type="text" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name" disabled/>
-                        <input type="text" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number" disabled/>
-                        <input type="text" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter" disabled/>
-                        <input type="text" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor" disabled/>
-                        <input type="text" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name" disabled/>
-                        <input type="text" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code" disabled/>
-                        <input type="text" ng-model="inputText.City" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}} disabled/>
+                    <div class="col-sm-10">
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.City" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                     <div class="col-sm-10 col-sm-offset-2">
                         <small class="help-block text-muted custom-small">{{description}}</small>
@@ -886,8 +869,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
 
                         <div class="col-sm-10">
-                            <input ng-show="!readOnly" type="file" class="m-b" accept="image/*" capture="camera">
-                            <input ng-show="readOnly" type="file" class="m-b" accept="image/*" capture="camera" disabled>
+                            <input ng-readonly="readOnly" type="file" class="m-b" accept="image/*" capture="camera">
                         </div>
                         <div class="col-sm-10 col-sm-offset-2">
                             <small class="help-block text-muted custom-small">{{description}}</small>

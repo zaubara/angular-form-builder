@@ -37,7 +37,7 @@ angular.module 'builder.directive', [
           <input type="text" class="form-control" max-date="max" datepicker-popup="{{format}}" ng-model="inputText" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close"  validator-required="{{required}}" validator-group="{{required}}" id="{{formName+index}}" disabled/>
           <span class="input-group-btn">
             <button ng-show="!readOnly" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-            <button ng-show="readOnly" type="button" class="btn btn-default" ng-click="open($event)" disabled><i class="glyphicon glyphicon-calendar"></i></button>
+            <button ng-show="readOnly" disabled type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
         </p>
         """
@@ -365,7 +365,7 @@ angular.module 'builder.directive', [
   restrict: 'E'
   template: '<form method="post" action="" class="sigPad">
     <div style="border: 1px solid black">
-    <canvas class="pad" width="198" height="100"></canvas>
+    <canvas ng-readonly="readOnly" class="pad" width="198" height="100"></canvas>
     <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
     </div>
     </form>'
