@@ -339,7 +339,7 @@
         scope: {
           fbBuilder: '@'
         },
-        template: "<div class='form-horizontal'>\n    <div class='fb-form-object-editable' ng-repeat=\"object in formObjects\"\n        fb-form-object-editable=\"object\"></div>\n</div>\n<div class=\"hr-line-dashed\"></div>",
+        template: "<div class='form-horizontal'>\n    <div class='fb-form-object-editable' ng-repeat=\"object in formObjects\"\n        fb-form-object-editable=\"object\"></div>\n</div>        ",
         link: function(scope, element, attrs) {
           var beginMove, _base, _name;
           scope.formName = attrs.fbBuilder;
@@ -684,7 +684,7 @@
           input: '=ngModel',
           "default": '=fbDefault'
         },
-        template: "<div class='fb-form-object' ng-repeat=\"object in form\" fb-form-object=\"object\"></div>\n<div class=\"hr-line-dashed\"></div>",
+        template: "<div class='fb-form-object' ng-repeat=\"object in form\" fb-form-object=\"object\"></div>",
         controller: 'fbFormController',
         link: function(scope, element, attrs) {
           var $builder, _base, _name;

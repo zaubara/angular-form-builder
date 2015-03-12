@@ -85,8 +85,7 @@ angular.module 'builder.directive', [
         <div class='form-horizontal'>
             <div class='fb-form-object-editable' ng-repeat="object in formObjects"
                 fb-form-object-editable="object"></div>
-        </div>
-        <div class="hr-line-dashed"></div>
+        </div>        
         """
     link: (scope, element, attrs) ->
         # ----------------------------------------
@@ -420,7 +419,6 @@ angular.module 'builder.directive', [
     template:
         """
         <div class='fb-form-object' ng-repeat="object in form" fb-form-object="object"></div>
-        <div class="hr-line-dashed"></div>
         """
     controller: 'fbFormController'
     link: (scope, element, attrs) ->

@@ -14,6 +14,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="form-group text-center">
                 <rich-text><strong>Text Message</strong></rich-text>                
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -88,7 +89,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class='help-block text-muted custom-small'>{{description}}</small>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -182,7 +183,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -297,7 +298,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <small class="help-block text-muted custom-small">{{description}}</small>
               </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -405,7 +406,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -497,7 +498,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <p class='help-block'>{{description}}</p>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -589,7 +590,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <p class='help-block'>{{description}}</p>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -692,7 +693,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -805,7 +806,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <small class="help-block text-muted custom-small">{{description}}</small>
                     </div>
                 </div>
-                
+                <div class="hr-line-dashed"></div>
                 """
             popoverTemplate:
                 """
@@ -894,7 +895,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
-                    
+                    <div class="hr-line-dashed"></div>
                     """
                 popoverTemplate:
                     """
@@ -982,7 +983,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <small class="help-block text-muted custom-small"></small>
                         </div>
                     </div>
-                    
+                    <div class="hr-line-dashed"></div>
                     """
                 popoverTemplate:
                     """
