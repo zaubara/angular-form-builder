@@ -777,22 +777,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="row">
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <div ng-show="!readOnly" class="col-sm-10">
-                        <input type="text" ng-model="inputText.StreetName" class="form-control m-b" placeholder="Street Name"/>
-                        <input type="text" ng-model="inputText.Number" class="form-control m-b" placeholder="Number"/>
-                        <input type="text" ng-model="inputText.Letter" class="form-control m-b" placeholder="Letter"/>
-                        <input type="text" ng-model="inputText.Floor" class="form-control m-b" placeholder="Floor"/>
-                        <input type="text" ng-model="inputText.PlaceName" class="form-control m-b" placeholder="Place Name"/>
-                        <input type="text" ng-model="inputText.PostCode" class="form-control m-b" placeholder="Post Code"/>
-                        <input type="text" ng-model="inputText.City" id="{{formName+index}}" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
+                        <input type="text" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
+                        <input type="text" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
+                        <input type="text" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter"/>
+                        <input type="text" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor"/>
+                        <input type="text" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name"/>
+                        <input type="text" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code"/>
+                        <input type="text" ng-model="inputText.City" id="{{formName+index}}" class="form-control custom-m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                     <div ng-show="readOnly" class="col-sm-10">
-                        <input type="text" ng-model="inputText.StreetName" class="form-control m-b" placeholder="Street Name" disabled/>
-                        <input type="text" ng-model="inputText.Number" class="form-control m-b" placeholder="Number" disabled/>
-                        <input type="text" ng-model="inputText.Letter" class="form-control m-b" placeholder="Letter" disabled/>
-                        <input type="text" ng-model="inputText.Floor" class="form-control m-b" placeholder="Floor" disabled/>
-                        <input type="text" ng-model="inputText.PlaceName" class="form-control m-b" placeholder="Place Name" disabled/>
-                        <input type="text" ng-model="inputText.PostCode" class="form-control m-b" placeholder="Post Code" disabled/>
-                        <input type="text" ng-model="inputText.City" id="{{formName+index}}" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}} disabled/>
+                        <input type="text" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name" disabled/>
+                        <input type="text" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number" disabled/>
+                        <input type="text" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter" disabled/>
+                        <input type="text" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor" disabled/>
+                        <input type="text" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name" disabled/>
+                        <input type="text" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code" disabled/>
+                        <input type="text" ng-model="inputText.City" id="{{formName+index}}" class="form-control custom-m-b" placeholder="City" validator-required={{required}} validator-group={{formName}} disabled/>
                     </div>
                     <div class="col-sm-10 col-sm-offset-2">
                         <small class="help-block text-muted custom-small">{{description}}</small>
