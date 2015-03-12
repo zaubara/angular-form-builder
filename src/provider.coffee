@@ -86,7 +86,7 @@ angular.module 'builder.provider', []
             maxRange: formObject.maxRange ? component.maxRange
             performCreditCheck: formObject.performCreditCheck ? component.performCreditCheck
             cprCountry: formObject.cprCountry ? component.cprCountry
-            hideIf: formObject.hideIf ? component.hideIf
+            logic: formObject.logic ? component.logic
         result
 
     @reindexFormObject = (name) =>

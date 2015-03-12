@@ -33,8 +33,11 @@
           scope: $scope
         });
       };
+      debugger;
       $scope.date = Date.now();
-      $scope.formObject.hideIf = {};
+      $scope.formObject.logic = {
+        hide: true
+      };
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
       for (form in $builder.forms) {
@@ -66,7 +69,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry. hideIf]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -85,7 +88,7 @@
           formObject.nextXDays = $scope.nextXDays;
           formObject.performCreditCheck = $scope.performCreditCheck;
           formObject.cprCountry = $scope.cprCountry;
-          return formObject.hideIf = $scope.hideIf;
+          return formObject.logic = $scope.logic;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -132,7 +135,7 @@
             nextXDays: $scope.nextXDays,
             performCreditCheck: $scope.performCreditCheck,
             cprCountry: $scope.cprCountry,
-            hideIf: $scope.hideIf
+            logic: $scope.logic
           };
         },
         rollback: function() {
@@ -161,7 +164,7 @@
           $scope.nextXDays = this.model.nextXDays;
           $scope.performCreditCheck = this.model.performCreditCheck;
           $scope.cprCountry = this.model.cprCountry;
-          return $scope.hideIf = this.model.hideIf;
+          return $scope.logic = this.model.logic;
         }
       };
     }
@@ -1251,7 +1254,7 @@
         maxRange: (_ref17 = formObject.maxRange) != null ? _ref17 : component.maxRange,
         performCreditCheck: (_ref18 = formObject.performCreditCheck) != null ? _ref18 : component.performCreditCheck,
         cprCountry: (_ref19 = formObject.cprCountry) != null ? _ref19 : component.cprCountry,
-        hideIf: (_ref20 = formObject.hideIf) != null ? _ref20 : component.hideIf
+        logic: (_ref20 = formObject.logic) != null ? _ref20 : component.logic
       };
       return result;
     };

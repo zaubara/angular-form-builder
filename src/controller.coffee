@@ -38,8 +38,14 @@ angular.module 'builder.controller', ['builder.provider']
         scope: $scope
       })
 
+    debugger
+
     $scope.date = Date.now()
-    $scope.formObject.hideIf = {}
+
+    # initialize formObject and id
+    $scope.formObject.logic = {
+      hide: true
+    }
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     countElements = 0
     for form of $builder.forms
@@ -69,7 +75,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry. hideIf]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -88,7 +94,7 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.nextXDays = $scope.nextXDays
             formObject.performCreditCheck = $scope.performCreditCheck
             formObject.cprCountry = $scope.cprCountry
-            formObject.hideIf = $scope.hideIf
+            formObject.logic = $scope.logic
 
         , yes
 
@@ -124,7 +130,7 @@ angular.module 'builder.controller', ['builder.provider']
                 nextXDays: $scope.nextXDays
                 performCreditCheck: $scope.performCreditCheck
                 cprCountry: $scope.cprCountry
-                hideIf: $scope.hideIf
+                logic: $scope.logic
         rollback: ->
             ###
             Rollback input value.
@@ -148,7 +154,7 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.nextXDays = @model.nextXDays
             $scope.performCreditCheck = @model.performCreditCheck
             $scope.cprCountry = @model.cprCountry
-            $scope.hideIf = @model.hideIf
+            $scope.logic = @model.logic
 ]
 
 # ----------------------------------------
