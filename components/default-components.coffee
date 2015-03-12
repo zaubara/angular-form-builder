@@ -85,7 +85,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <input ng-show="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}" disabled>
                         <input type="email" ng-show="requireConfirmation && readOnly" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail" disabled>
                     </div>
-                <div class="col-sm-12">
+                <div class="col-sm-10 col-sm-offset-2">
                   <small class='help-block text-muted custom-small'>{{description}}</small>
                 </div>
             </div>
@@ -178,7 +178,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
                   </div>
-                <div class="col-sm-12">
+                <div class="col-sm-10 col-sm-offset-2">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
@@ -292,7 +292,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <input type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                     <input type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}" disabled/>
                 </div>
-              <div class="col-sm-12">
+              <div class="col-sm-10 col-sm-offset-2">
                 <small class="help-block text-muted custom-small">{{description}}</small>
               </div>
             </div>
@@ -399,7 +399,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <textarea type="text" ng-show="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
                     <textarea type="text" ng-show="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}" disabled/>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-10 col-sm-offset-2">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
@@ -683,7 +683,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <select ng-show="multiple && readOnly" ng-options="value for value in options" id="{{formName+index}}" class="form-control m-b"
                         ng-model="inputText" multiple ng-init="inputText = options[0]" disabled/>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-10 col-sm-offset-2">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
@@ -794,7 +794,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <input type="text" ng-model="inputText.PostCode" class="form-control m-b" placeholder="Post Code" disabled/>
                         <input type="text" ng-model="inputText.City" id="{{formName+index}}" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}} disabled/>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-10 col-sm-offset-2">
                         <small class="help-block text-muted custom-small">{{description}}</small>
                     </div>
                 </div>
@@ -883,7 +883,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <input ng-show="!readOnly" type="file" class="m-b" accept="image/*" capture="camera" id="{{formName+index}}">
                             <input ng-show="readOnly" type="file" class="m-b" accept="image/*" capture="camera" id="{{formName+index}}" disabled>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-10 col-sm-offset-2">
                             <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
@@ -971,8 +971,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <signature-pad></signature-pad>
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <small class="help-block text-muted custom-small"></small>
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
