@@ -24,6 +24,36 @@
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
       }
+      $scope.$watch('formObject.logic.component', function() {
+        if ($scope.formObject.logic.component != null) {
+          switch ($scope.formObject.logic.component.component) {
+            case 'textMessage':
+              return $scope.comparatorChoices = [];
+            case 'emailInput':
+              return $scope.comparatorChoices = [];
+            case 'datePicker':
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to'];
+            case 'textInput':
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to'];
+            case 'textArea':
+              return $scope.comparatorChoices = ['Contains', 'Does not contain'];
+            case 'checkbox':
+              return $scope.comparatorChoices = ['Contains', 'Does not contain'];
+            case 'radio':
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to'];
+            case 'select':
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain'];
+            case 'uploadPhoto':
+              return $scope.comparatorChoices = [];
+            case 'signaturePad':
+              return $scope.comparatorChoices = [];
+            case 'addressField':
+              return $scope.comparatorChoices = ['Contains', 'Does not contain'];
+            case 'cprNumber':
+              return $scope.comparatorChoices = ['Contains', 'Does not contain'];
+          }
+        }
+      });
       $scope.cancel = function() {
         return $scope.modalInstance.dismiss('cancel');
       };

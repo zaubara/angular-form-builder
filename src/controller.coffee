@@ -28,6 +28,34 @@ angular.module 'builder.controller', ['builder.provider']
       $scope.formObject.id = $builder.config.max_id
       $builder.config.max_id = $builder.config.max_id + 1
 
+    $scope.$watch 'formObject.logic.component', ->
+      if $scope.formObject.logic.component?
+        switch $scope.formObject.logic.component.component
+          when 'textMessage'
+            $scope.comparatorChoices = []
+          when 'emailInput'
+            $scope.comparatorChoices = []
+          when 'datePicker'
+            $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to']
+          when 'textInput'
+            $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to']
+          when 'textArea'
+            $scope.comparatorChoices = ['Contains', 'Does not contain']
+          when 'checkbox'
+            $scope.comparatorChoices = ['Contains', 'Does not contain']
+          when 'radio'
+            $scope.comparatorChoices = ['Equal to', 'Not equal to']
+          when 'select'
+            $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain']
+          when 'uploadPhoto'
+            $scope.comparatorChoices = []
+          when 'signaturePad'
+            $scope.comparatorChoices = []
+          when 'addressField'
+            $scope.comparatorChoices = ['Contains', 'Does not contain']
+          when 'cprNumber'
+            $scope.comparatorChoices = ['Contains', 'Does not contain']
+
     $scope.cancel = ->
       $scope.modalInstance.dismiss('cancel')
 

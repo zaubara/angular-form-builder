@@ -47,7 +47,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -142,7 +142,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -173,7 +173,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # maxDate: '2100-01-01'
         template:
             """
-            <div class="row m-b">       
+            <div class="row m-b">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                   </label>
                   <div class="col-sm-10">
@@ -249,7 +249,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -366,7 +366,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -454,7 +454,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -486,7 +486,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="row">
-              
+
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}"/>
@@ -547,7 +547,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -639,7 +639,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -751,7 +751,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 Hide this element if
                                 <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
@@ -854,7 +854,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     Hide this element if
                                     <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                     </select>
-                                    <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                    <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                     </select>
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                 </div>
@@ -943,7 +943,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         Hide this element if
                                         <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                         </select>
-                                        <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                        <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                         </select>
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                     </div>
@@ -1027,7 +1027,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         Hide this element if
                                         <select class="form-control" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                         </select>
-                                        <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in ['equal', 'not equal', 'great than', 'less than', 'contains']">
+                                        <select class="form-control" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                         </select>
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                     </div>
