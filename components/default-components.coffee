@@ -485,8 +485,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
                     <div class='checkbox' ng-repeat="item in options track by $index">
-                        <input ng-show="!readOnly" type='checkbox' ng-model="inputArray[$index]" value='item'/>
-                        <input ng-show="readOnly" type='checkbox' ng-model="inputArray[$index]" value='item' disabled/>
+                        <input ng-disabled="readOnly" type='checkbox' ng-model="inputArray[$index]" value='item'/>
                             {{item}}
                     </div>
                 </div>
@@ -578,8 +577,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-10">
                     <div class='radio' ng-repeat="item in options track by $index">
                         <label>
-                        <input ng-show="!readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio'/>
-                        <input ng-show="readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio' disabled/>
+                        <input ng-disabled="readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio'/>
                             {{item}}
                         </label>
                     </div>

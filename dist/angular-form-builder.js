@@ -300,7 +300,7 @@
     '$injector', function($injector) {
       return {
         restrict: 'E',
-        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"inputText\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" close-text=\"Close\"  validator-required=\"{{required}}\" validator-group=\"{{required}}\" id=\"{{formName+index}}\" disabled/>\n  <span class=\"input-group-btn\">\n    <button ng-show=\"!readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n    <button ng-show=\"readOnly\" disabled type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
+        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"inputText\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" close-text=\"Close\"  validator-required=\"{{required}}\" validator-group=\"{{required}}\" id=\"{{formName+index}}\" disabled/>\n  <span class=\"input-group-btn\">\n    <button ng-disabled=\"readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
         link: function(scope, element, attrs) {
           scope.open = function($event) {
             $event.preventDefault();
@@ -614,7 +614,7 @@
     '$injector', function($injector) {
       return {
         restrict: 'E',
-        template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas ng-readonly="readOnly" class="pad" width="198" height="100"></canvas> <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden> </div> </form>',
+        template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas class="pad" width="198" height="100"></canvas> <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden> </div> </form>',
         link: function(scope, elem, attrs) {
           var saveSig, sigPad;
           saveSig = function() {
