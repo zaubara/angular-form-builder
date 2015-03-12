@@ -11,7 +11,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         label: 'Rich Content'
         template:
             """
-            <div class="form-group text-center">
+            <div class="form-group text-center"> test this
                 <rich-text><strong>Text Message</strong></rich-text>
                 <div class="hr-line-dashed"></div>
             </div>
