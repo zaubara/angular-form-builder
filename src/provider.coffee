@@ -20,6 +20,7 @@ angular.module 'builder.provider', []
 
     @config =
         popoverPlacement: 'right'
+        max_id: 0
     # all components
     @components = {}
     # all groups of components

@@ -20,6 +20,8 @@
       var $builder, $modal, countElements, form;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
+      $scope.formObject.id = $builder.config.max_id;
+      $builder.config.max_id = $builder.config.max_id + 1;
       $scope.cancel = function() {
         return $scope.modalInstance.dismiss('cancel');
       };
@@ -33,7 +35,6 @@
           scope: $scope
         });
       };
-      debugger;
       $scope.date = Date.now();
       $scope.formObject.logic = {
         hide: true
@@ -1185,7 +1186,8 @@
     $http = null;
     $templateCache = null;
     this.config = {
-      popoverPlacement: 'right'
+      popoverPlacement: 'right',
+      max_id: 0
     };
     this.components = {};
     this.groups = [];

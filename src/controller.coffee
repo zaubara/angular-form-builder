@@ -23,6 +23,10 @@ angular.module 'builder.controller', ['builder.provider']
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
 
+    # initialize formObject id
+    $scope.formObject.id = $builder.config.max_id
+    $builder.config.max_id = $builder.config.max_id + 1
+
     $scope.cancel = ->
       $scope.modalInstance.dismiss('cancel')
 
@@ -38,11 +42,8 @@ angular.module 'builder.controller', ['builder.provider']
         scope: $scope
       })
 
-    debugger
-
     $scope.date = Date.now()
 
-    # initialize formObject and id
     $scope.formObject.logic = {
       hide: true
     }
