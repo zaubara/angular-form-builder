@@ -24,8 +24,11 @@ angular.module 'builder.controller', ['builder.provider']
     $modal = $injector.get '$modal'
 
     # initialize formObject id
-    $scope.formObject.id = $builder.config.max_id
-    $builder.config.max_id = $builder.config.max_id + 1
+    if $scope.formObject.id is undefined
+      $scope.formObject.id = $builder.config.max_id
+      $builder.config.max_id = $builder.config.max_id + 1
+
+    debugger
 
     $scope.cancel = ->
       $scope.modalInstance.dismiss('cancel')

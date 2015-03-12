@@ -20,8 +20,11 @@
       var $builder, $modal, countElements, form;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
-      $scope.formObject.id = $builder.config.max_id;
-      $builder.config.max_id = $builder.config.max_id + 1;
+      if ($scope.formObject.id === void 0) {
+        $scope.formObject.id = $builder.config.max_id;
+        $builder.config.max_id = $builder.config.max_id + 1;
+      }
+      debugger;
       $scope.cancel = function() {
         return $scope.modalInstance.dismiss('cancel');
       };
