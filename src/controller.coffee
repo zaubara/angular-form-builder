@@ -28,8 +28,6 @@ angular.module 'builder.controller', ['builder.provider']
       $scope.formObject.id = $builder.config.max_id
       $builder.config.max_id = $builder.config.max_id + 1
 
-    debugger
-
     $scope.cancel = ->
       $scope.modalInstance.dismiss('cancel')
 

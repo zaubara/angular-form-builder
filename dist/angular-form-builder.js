@@ -24,7 +24,6 @@
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
       }
-      debugger;
       $scope.cancel = function() {
         return $scope.modalInstance.dismiss('cancel');
       };
