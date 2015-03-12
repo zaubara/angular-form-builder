@@ -46,7 +46,7 @@ angular.module 'builder.controller', ['builder.provider']
     $scope.date = Date.now()
 
     $scope.formObject.logic = {
-      hide: true
+      action: 'hide'
     }
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     countElements = 0
