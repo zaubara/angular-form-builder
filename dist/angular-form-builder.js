@@ -34,6 +34,7 @@
         });
       };
       $scope.date = Date.now();
+      $scope.formObject.hideIf = {};
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
       for (form in $builder.forms) {
@@ -65,7 +66,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry. hideIf]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -83,7 +84,8 @@
           formObject.maxRange = $scope.maxRange;
           formObject.nextXDays = $scope.nextXDays;
           formObject.performCreditCheck = $scope.performCreditCheck;
-          return formObject.cprCountry = $scope.cprCountry;
+          formObject.cprCountry = $scope.cprCountry;
+          return formObject.hideIf = $scope.hideIf;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -129,7 +131,8 @@
             maxRange: $scope.maxRange,
             nextXDays: $scope.nextXDays,
             performCreditCheck: $scope.performCreditCheck,
-            cprCountry: $scope.cprCountry
+            cprCountry: $scope.cprCountry,
+            hideIf: $scope.hideIf
           };
         },
         rollback: function() {
@@ -157,7 +160,8 @@
           $scope.maxRange = this.model.maxRange;
           $scope.nextXDays = this.model.nextXDays;
           $scope.performCreditCheck = this.model.performCreditCheck;
-          return $scope.cprCountry = this.model.cprCountry;
+          $scope.cprCountry = this.model.cprCountry;
+          return $scope.hideIf = this.model.hideIf;
         }
       };
     }
@@ -576,29 +580,38 @@
         restrict: 'E',
         template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas class="pad" width="198" height="100"></canvas> <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden> </div> </form>',
         link: function(scope, elem, attrs) {
-          var saveSig;
-          return saveSig = function() {
-            scope.$apply(function() {
+          var saveSig, sigPad;
+          sigPad = elem.signaturePad({
+            drawOnly: true,
+            lineColour: '#fff',
+            onDrawEnd: saveSig,
+            displayOnly: false
+          });
+          sigPad = null;
+          sigPad = elem.signaturePad({
+            drawOnly: true,
+            lineColour: '#fff',
+            onDrawEnd: saveSig,
+            displayOnly: true
+          });
+          saveSig = function() {
+            return scope.$apply(function() {
               return scope.inputText = sigPad.getSignatureString();
             });
-            return scope.$watch('readOnly', function() {
-              var sigPad;
-              if (readOnly === false) {
-                return sigPad = elem.signaturePad({
-                  drawOnly: true,
-                  lineColour: '#fff',
-                  onDrawEnd: saveSig
-                });
-              } else {
-                return sigPad = elem.signaturePad({
-                  drawOnly: true,
-                  lineColour: '#fff',
-                  onDrawEnd: saveSig,
+          };
+          return scope.$watch('readOnly', function() {
+            if (scope.readOnly !== void 0) {
+              if (scope.readOnly) {
+                return sigPad.updateOptions({
                   displayOnly: true
                 });
+              } else {
+                return sigPad.updateOptions({
+                  displayOnly: false
+                });
               }
-            });
-          };
+            }
+          });
         }
       };
     }
@@ -1207,7 +1220,7 @@
       return result;
     };
     this.convertFormObject = function(name, formObject) {
-      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (formObject == null) {
         formObject = {};
       }
@@ -1237,7 +1250,8 @@
         minRange: (_ref16 = formObject.minRange) != null ? _ref16 : component.minRange,
         maxRange: (_ref17 = formObject.maxRange) != null ? _ref17 : component.maxRange,
         performCreditCheck: (_ref18 = formObject.performCreditCheck) != null ? _ref18 : component.performCreditCheck,
-        cprCountry: (_ref19 = formObject.cprCountry) != null ? _ref19 : component.cprCountry
+        cprCountry: (_ref19 = formObject.cprCountry) != null ? _ref19 : component.cprCountry,
+        hideIf: (_ref20 = formObject.hideIf) != null ? _ref20 : component.hideIf
       };
       return result;
     };

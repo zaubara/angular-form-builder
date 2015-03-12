@@ -362,24 +362,29 @@ angular.module 'builder.directive', [
 # signature pad
 # ----------------------------------------
 .directive 'signaturePad', ['$injector', ($injector) ->
-    restrict: 'E'
-    template: '<form method="post" action="" class="sigPad">
-                    <div style="border: 1px solid black">
-                        <canvas class="pad" width="198" height="100"></canvas>
-                        <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
-                    </div>
-                </form>'
-    link: (scope, elem, attrs) ->
-        saveSig = ->
-            scope.$apply(->
-                scope.inputText = sigPad.getSignatureString()
-                )
-            scope.$watch('readOnly', ->
-              if readOnly is false
-                sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig})
-              else
-                sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig, displayOnly: true})
-              )
+  restrict: 'E'
+  template: '<form method="post" action="" class="sigPad">
+    <div style="border: 1px solid black">
+    <canvas class="pad" width="198" height="100"></canvas>
+    <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
+    </div>
+    </form>'
+  link: (scope, elem, attrs) ->
+    sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig, displayOnly: false})
+    sigPad = null
+    sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig, displayOnly: true})
+    saveSig = ->
+      scope.$apply(->
+          scope.inputText = sigPad.getSignatureString()
+        )
+    scope.$watch('readOnly', ->
+        unless scope.readOnly is undefined
+          if scope.readOnly
+            sigPad.updateOptions({displayOnly: true})
+          else
+            sigPad.updateOptions({displayOnly: false})
+      )
+
 
 ]
 # ----------------------------------------

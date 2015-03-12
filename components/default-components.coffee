@@ -44,17 +44,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -144,17 +138,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                 </div>
@@ -257,17 +245,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -379,17 +361,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -472,17 +448,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -569,17 +539,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -666,17 +630,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -783,17 +741,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 Hide this element if
-                                <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                 </select>
-                                <select class="form-control">
-                                    <option>equal</option>
-                                    <option>not equal</option>
-                                    <option>less than</option>
-                                    <option>less than or equal to</option>
-                                    <option>greater than</option>
-                                    <option>greater than or equal to</option>
+                                <select ng-model="formObject.hideIf.comparator" class="form-control" ng-options="comparator for comparator in ['equal', 'not equal', 'less than', 'greater than', 'less than or equal to', 'greater than or equal to', 'greater than']">
                                 </select>
-                                <input type="text" class="form-control" placeholder="Value">
+                                <input ng-model="formObject.hideIf.value" type="text" class="form-control" placeholder="Value">
                             </div>
                         </div>
                     </div>
@@ -891,7 +843,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                 <div class="form-group">
                                     Hide this element if
-                                    <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                    <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                     </select>
                                     <select class="form-control">
                                         <option>equal</option>
@@ -985,7 +937,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group">
                                         Hide this element if
-                                        <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                        <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                         </select>
                                         <select class="form-control">
                                             <option>equal</option>
@@ -1074,7 +1026,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group">
                                         Hide this element if
-                                        <select class="form-control" ng-model="skipField" ng-options="field.label for field in fields">
+                                        <select class="form-control" ng-model="formObject.hideIf.component" ng-options="field.label for field in fields">
                                         </select>
                                         <select class="form-control">
                                             <option>equal</option>
