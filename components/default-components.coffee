@@ -490,9 +490,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <input ng-show="!readOnly" type='checkbox' ng-model="inputArray[$index]" value='item'/>
                         <input ng-show="readOnly" type='checkbox' ng-model="inputArray[$index]" value='item' disabled/>
                             {{item}}
-                    </div>
-                    <p class='help-block'>{{description}}</p>
+                    </div>                    
                 </div>
+                <div class="col-sm-10 col-sm-offset-2">
+                  <small class="help-block text-muted custom-small">{{description}}</small>
+                </div>                
             </div>
             <div class="hr-line-dashed"></div>
             """
@@ -583,8 +585,10 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             {{item}}
                         </label>
                     </div>
-                    <p class='help-block'>{{description}}</p>
                 </div>
+                <div class="col-sm-10 col-sm-offset-2">
+                  <small class="help-block text-muted custom-small">{{description}}</small>
+                </div>                
             </div>
             <div class="hr-line-dashed"></div>
             """
