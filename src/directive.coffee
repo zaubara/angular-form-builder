@@ -36,8 +36,8 @@ angular.module 'builder.directive', [
         <p class="input-group">
           <input type="text" class="form-control" max-date="max" datepicker-popup="{{format}}" ng-model="inputText" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close"  validator-required="{{required}}" validator-group="{{required}}" id="{{formName+index}}" disabled/>
           <span class="input-group-btn">
-            <button ng-if="!readOnly" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-            <button ng-if="readOnly" type="button" class="btn btn-default" ng-click="open($event)" disabled><i class="glyphicon glyphicon-calendar"></i></button>
+            <button ng-show="!readOnly" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            <button ng-show="readOnly" type="button" class="btn btn-default" ng-click="open($event)" disabled><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
         </p>
         """
@@ -85,7 +85,7 @@ angular.module 'builder.directive', [
         <div class='form-horizontal'>
             <div class='fb-form-object-editable' ng-repeat="object in formObjects"
                 fb-form-object-editable="object"></div>
-        </div>        
+        </div>
         """
     link: (scope, element, attrs) ->
         # ----------------------------------------
@@ -370,9 +370,6 @@ angular.module 'builder.directive', [
     </div>
     </form>'
   link: (scope, elem, attrs) ->
-    sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig, displayOnly: false})
-    sigPad = null
-    sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig, displayOnly: true})
     saveSig = ->
       scope.$apply(->
           scope.inputText = sigPad.getSignatureString()
@@ -384,6 +381,7 @@ angular.module 'builder.directive', [
           else
             sigPad.updateOptions({displayOnly: false})
       )
+    sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig})
 
 
 ]

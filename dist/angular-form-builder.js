@@ -300,7 +300,7 @@
     '$injector', function($injector) {
       return {
         restrict: 'E',
-        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"inputText\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" close-text=\"Close\"  validator-required=\"{{required}}\" validator-group=\"{{required}}\" id=\"{{formName+index}}\" disabled/>\n  <span class=\"input-group-btn\">\n    <button ng-if=\"!readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n    <button ng-if=\"readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\" disabled><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
+        template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"inputText\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" close-text=\"Close\"  validator-required=\"{{required}}\" validator-group=\"{{required}}\" id=\"{{formName+index}}\" disabled/>\n  <span class=\"input-group-btn\">\n    <button ng-show=\"!readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n    <button ng-show=\"readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\" disabled><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
         link: function(scope, element, attrs) {
           scope.open = function($event) {
             $event.preventDefault();
@@ -339,7 +339,7 @@
         scope: {
           fbBuilder: '@'
         },
-        template: "<div class='form-horizontal'>\n    <div class='fb-form-object-editable' ng-repeat=\"object in formObjects\"\n        fb-form-object-editable=\"object\"></div>\n</div>        ",
+        template: "<div class='form-horizontal'>\n    <div class='fb-form-object-editable' ng-repeat=\"object in formObjects\"\n        fb-form-object-editable=\"object\"></div>\n</div>",
         link: function(scope, element, attrs) {
           var beginMove, _base, _name;
           scope.formName = attrs.fbBuilder;
@@ -617,25 +617,12 @@
         template: '<form method="post" action="" class="sigPad"> <div style="border: 1px solid black"> <canvas class="pad" width="198" height="100"></canvas> <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden> </div> </form>',
         link: function(scope, elem, attrs) {
           var saveSig, sigPad;
-          sigPad = elem.signaturePad({
-            drawOnly: true,
-            lineColour: '#fff',
-            onDrawEnd: saveSig,
-            displayOnly: false
-          });
-          sigPad = null;
-          sigPad = elem.signaturePad({
-            drawOnly: true,
-            lineColour: '#fff',
-            onDrawEnd: saveSig,
-            displayOnly: true
-          });
           saveSig = function() {
             return scope.$apply(function() {
               return scope.inputText = sigPad.getSignatureString();
             });
           };
-          return scope.$watch('readOnly', function() {
+          scope.$watch('readOnly', function() {
             if (scope.readOnly !== void 0) {
               if (scope.readOnly) {
                 return sigPad.updateOptions({
@@ -647,6 +634,11 @@
                 });
               }
             }
+          });
+          return sigPad = elem.signaturePad({
+            drawOnly: true,
+            lineColour: '#fff',
+            onDrawEnd: saveSig
           });
         }
       };
