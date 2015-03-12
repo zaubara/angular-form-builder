@@ -175,7 +175,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             """
             <div class="row">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                  </label>
                   <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
                   </div>
@@ -289,7 +288,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             """
             <div class="row">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                </label>
                 <div class="col-sm-10">
                     <input type="text" ng-if="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                     <input type="text" ng-if="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" placeholder="{{placeholder}}" disabled/>
@@ -397,7 +395,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             """
             <div class="row">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                </label>
                 <div class="col-sm-10">
                     <textarea type="text" ng-if="!readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
                     <textarea type="text" ng-if="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}" disabled/>
@@ -486,7 +483,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="row">
-
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" id="{{formName+index}}"/>
@@ -676,9 +672,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="row">
-                    <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                </label>
-
+                <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10 dropdown">
                     <select ng-if="!multiple && !readOnly" ng-options="value for value in options" id="{{formName+index}}" class="form-control m-b"
                         ng-model="inputText" ng-init="inputText = options[0]"/>
@@ -781,9 +775,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             template:
                 """
                 <div class="row">
-                        <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                    </label>
-
+                    <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <div ng-if="!readOnly" class="col-sm-10">
                         <input type="text" ng-model="$parent.inputText.StreetName" class="form-control m-b" placeholder="Street Name"/>
                         <input type="text" ng-model="$parent.inputText.Number" class="form-control m-b" placeholder="Number"/>
@@ -885,8 +877,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 template:
                     """
                     <div class="row">
-                            <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                        </label>
+                        <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                        
                         <div class="col-sm-10">
                             <input ng-if="!readOnly" type="file" class="m-b" accept="image/*" capture="camera" id="{{formName+index}}">
                             <input ng-if="readOnly" type="file" class="m-b" accept="image/*" capture="camera" id="{{formName+index}}" disabled>
@@ -972,8 +964,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 template:
                     """
                     <div class="row">
-                            <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                        </label>
+                        <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+                        
                         <div class="col-sm-10">
                             <div class="m-b">
                                 <signature-pad></signature-pad>
