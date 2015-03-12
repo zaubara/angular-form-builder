@@ -12,8 +12,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="form-group text-center">
-                <rich-text><strong>Text Message</strong></rich-text>
-                <div class="hr-line-dashed"></div>
+                <rich-text><strong>Text Message</strong></rich-text>                
             </div>
             """
         popoverTemplate:
@@ -76,7 +75,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row m-b">
+            <div class="row">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                   </label>
                     <div class="col-sm-10">
@@ -89,7 +88,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class='help-block text-muted custom-small'>{{description}}</small>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -173,7 +172,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # maxDate: '2100-01-01'
         template:
             """
-            <div class="row m-b">
+            <div class="row">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                   </label>
                   <div class="col-sm-10">
@@ -183,7 +182,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -287,7 +286,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         ]
         template:
             """
-            <div class="row m-b">
+            <div class="row">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
                 <div class="col-sm-10">
@@ -298,7 +297,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <small class="help-block text-muted custom-small">{{description}}</small>
               </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -395,7 +394,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row m-b">
+            <div class="row">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
                 <div class="col-sm-10">
@@ -406,7 +405,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -498,7 +497,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <p class='help-block'>{{description}}</p>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -590,7 +589,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <p class='help-block'>{{description}}</p>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -675,7 +674,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # ]
         template:
             """
-            <div class="row m-b">
+            <div class="row">
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 </label>
 
@@ -693,7 +692,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
-            <div class="hr-line-dashed"></div>
+            
             """
         popoverTemplate:
             """
@@ -780,7 +779,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             options: []
             template:
                 """
-                <div class="row m-b">
+                <div class="row">
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     </label>
 
@@ -806,7 +805,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <small class="help-block text-muted custom-small">{{description}}</small>
                     </div>
                 </div>
-                <div class="hr-line-dashed"></div>
+                
                 """
             popoverTemplate:
                 """
@@ -884,7 +883,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 readOnly: no
                 template:
                     """
-                    <div class="row m-b">
+                    <div class="row">
                             <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                         </label>
                         <div class="col-sm-10">
@@ -895,7 +894,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
-                    <div class="hr-line-dashed"></div>
+                    
                     """
                 popoverTemplate:
                     """
@@ -971,7 +970,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 readOnly: no
                 template:
                     """
-                    <div class="row m-b">
+                    <div class="row">
                             <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                         </label>
                         <div class="col-sm-10">
@@ -983,7 +982,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <small class="help-block text-muted custom-small"></small>
                         </div>
                     </div>
-                    <div class="hr-line-dashed"></div>
+                    
                     """
                 popoverTemplate:
                     """
