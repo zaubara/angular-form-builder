@@ -88,8 +88,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-12">
                   <small class='help-block text-muted custom-small'>{{description}}</small>
                 </div>
-                <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -182,8 +182,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-12">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
-                <div class="hr-line-dashe"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -297,8 +297,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
               <div class="col-sm-12">
                 <small class="help-block text-muted custom-small">{{description}}</small>
               </div>
-              <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -405,8 +405,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-12">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
-                <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -497,8 +497,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     </div>
                     <p class='help-block'>{{description}}</p>
                 </div>
-                <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -589,8 +589,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     </div>
                     <p class='help-block'>{{description}}</p>
                 </div>
-                <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -692,8 +692,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-12">
                   <small class="help-block text-muted custom-small">{{description}}</small>
                 </div>
-                <div class="hr-line-dashed"></div>
             </div>
+            <div class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
@@ -805,8 +805,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class="col-sm-12">
                         <small class="help-block text-muted custom-small">{{description}}</small>
                     </div>
-                    <div class="hr-line-dashed"></div>
                 </div>
+                <div class="hr-line-dashed"></div>
                 """
             popoverTemplate:
                 """
@@ -894,8 +894,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div class="col-sm-12">
                             <small class="help-block text-muted custom-small">{{description}}</small>
                         </div>
-                        <div class="hr-line-dashed"></div>
                     </div>
+                    <div class="hr-line-dashed"></div>
                     """
                 popoverTemplate:
                     """
@@ -982,8 +982,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div class="col-sm-12">
                             <small class="help-block text-muted custom-small"></small>
                         </div>
-                        <div class="hr-line-dashed"></div>
                     </div>
+                    <div class="hr-line-dashed"></div>
                     """
                 popoverTemplate:
                     """
