@@ -80,9 +80,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                   </label>
                     <div class="col-sm-10">
-                        <input ng-show="!readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
+                        <input ng-show="!readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}">
                         <input type="email" ng-show="requireConfirmation && !readOnly" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
-                        <input ng-show="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}" disabled>
+                        <input ng-show="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" id="{{formName+index}}" validator-required="{{required}}" validator-group="{{formName}}" disabled>
                         <input type="email" ng-show="requireConfirmation && readOnly" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail" disabled>
                     </div>
                 <div class="col-sm-10 col-sm-offset-2">
