@@ -84,11 +84,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class="col-sm-10">
                         <div class="input-group m-b">
                          <span class="input-group-addon">@</span>
-                         <input ng-readonly="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
+                         <input ng-readonly="readOnly" type="email" ng-model="inputText.email" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
                        </div>
                        <div class="input-group m-b">
                          <span ng-show="requireConfirmation" class="input-group-addon">@</span>
-                         <input ng-readonly="readOnly" type="email" ng-show="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
+                         <input ng-readonly="readOnly" type="email" ng-show="requireConfirmation" ng-model="inputText.confirmation" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
                        </div>
                     </div>
                 <div class="col-sm-10 col-sm-offset-2">
