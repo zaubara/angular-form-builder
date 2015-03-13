@@ -11,7 +11,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         label: 'Rich Content'
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
               <div class="form-group text-center">
                   <rich-text><strong>Text Message</strong></rich-text>
                 </div>
@@ -78,7 +78,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                   </label>
                     <div class="col-sm-10">
@@ -179,7 +179,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # maxDate: '2100-01-01'
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                   <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
@@ -292,7 +292,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         ]
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
@@ -398,7 +398,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <textarea type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
@@ -486,7 +486,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
@@ -581,7 +581,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         options: ['value one', 'value two']
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <div class='radio' ng-repeat="item in options track by $index">
@@ -680,7 +680,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # ]
         template:
             """
-            <div class="row" id="{{formName+index}}">
+            <div class="row" id="{{formName.split(' ').join('')+index}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10 dropdown">
                     <select ng-show="!multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
@@ -779,7 +779,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             options: []
             template:
                 """
-                <div class="row" id="{{formName+index}}">
+                <div class="row" id="{{formName.split(' ').join('')+index}}">
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <div class="col-sm-10">
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
@@ -872,7 +872,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 readOnly: no
                 template:
                     """
-                    <div class="row" id="{{formName+index}}">
+                    <div class="row" id="{{formName.split(' ').join('')+index}}">
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
 
                         <div class="col-sm-10">
@@ -958,7 +958,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 readOnly: no
                 template:
                     """
-                    <div class="row" id="{{formName+index}}">
+                    <div class="row" id="{{formName.split(' ').join('')+index}}">
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
 
                         <div class="col-sm-10">
