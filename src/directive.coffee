@@ -490,3 +490,10 @@ angular.module 'builder.directive', [
             else
                 scope.inputText = value
 ]
+
+.directive 'uploadPhoto', ->
+  restrict: 'A'
+  link: (scope, element, attrs) ->
+    angular.element('#uploadBtn').onchange = -> 
+      angular.element('#uploadFile').value = this.value
+    

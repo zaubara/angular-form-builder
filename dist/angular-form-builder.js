@@ -754,7 +754,16 @@
         }
       };
     }
-  ]);
+  ]).directive('uploadPhoto', function() {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+        return angular.element('#uploadBtn').onchange = function() {
+          return angular.element('#uploadFile').value = this.value;
+        };
+      }
+    };
+  });
 
 }).call(this);
 

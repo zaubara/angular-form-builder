@@ -874,9 +874,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     """
                     <div class="row" id="{{formName.split(' ').join('')+index}}">
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-
                         <div class="col-sm-10">
-                            <input ng-readonly="readOnly" type="file" class="m-b" accept="image/*" capture="camera">
+                            <div class="fileUpload btn btn-primary">
+                                <span>Upload</span>
+                                <input id="uploadBtn" ng-readonly="readOnly" type="file" class="m-b btn-upload btn-active" accept="image/*" capture="camera" upload-photo />
+                            </div>
+                            <input id="uploadFile" class="uploadLabel" ng-readonly="readOnly" placeholder="Choose File" disabled="disabled" />
                         </div>
                         <div class="col-sm-10 col-sm-offset-2">
                             <small class="help-block text-muted custom-small">{{description}}</small>
