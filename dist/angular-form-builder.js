@@ -1173,15 +1173,13 @@
       invoke: 'watch',
       validator: function(value, scope, element, attrs, $injector) {
         return scope.minLength === 0 || (value.length >= scope.minLength && value.length <= scope.maxLength);
-      },
-      error: 'There\'s a length restriction on this field'
+      }
     });
     return $validator.register('numberRange', {
       invoke: 'watch',
       validator: function(value, scope, element, attrs, $injector) {
         return value >= scope.minRange && value <= scope.maxRange;
-      },
-      error: 'There\'s a range restriction on this field'
+      }
     });
   });
 
