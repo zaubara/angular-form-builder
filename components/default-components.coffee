@@ -82,8 +82,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}
                   </label>
                     <div class="col-sm-10">
-                        <input ng-readonly="readOnly" type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
-                        <input type="email" ng-show="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
+                        <div ng-readonly="readOnly" class="input-group m-b">
+                          <span class="input-group-addon">@</span> 
+                          <input type="email" ng-model="inputText" placeholder="Email" class="form-control custom-m-b" validator-required="{{required}}" validator-group="{{formName}}">
+                        </div>
+                        <div ng-readonly="readOnly" class="input-group m-b">
+                          <span class="input-group-addon">@</span> 
+                          <input type="email" ng-show="requireConfirmation" ng-model="confirmEmail" placeholder="Confirm email" class="form-control m-b" id="confirmEmail">
+                        </div>
                     </div>
                 <div class="col-sm-10 col-sm-offset-2">
                   <small class='help-block text-muted custom-small'>{{description}}</small>
