@@ -74,7 +74,7 @@ angular.module 'builder.controller', ['builder.provider']
                     '</div>'+
                     '<div class="modal-footer">'+
                         '<button class="btn btn-white pull-left" ng-click="cancel()">Cancel</button>' +
-                        '<button class="btn btn-success pull-right" ng-click="save(summerNoteText)">Add</button>'+
+                        '<button class="btn btn-primary pull-right" ng-click="save(summerNoteText)">Apply</button>'+
                     '</div>',     
         scope: $scope
       })
