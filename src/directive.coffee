@@ -42,6 +42,8 @@ angular.module 'builder.directive', [
         """
     link: (scope, element, attrs) ->
 
+        scope.inputText = ''
+
         scope.open = ($event) ->
             $event.preventDefault()
             $event.stopPropagation()
@@ -494,6 +496,5 @@ angular.module 'builder.directive', [
 .directive 'uploadPhoto', ->
   restrict: 'A'
   link: (scope, element, attrs) ->
-    angular.element('#uploadBtn').onchange = -> 
+    angular.element('#uploadBtn').onchange = ->
       angular.element('#uploadFile').value = this.value
-    

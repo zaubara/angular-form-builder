@@ -302,6 +302,7 @@
         restrict: 'E',
         template: "<p class=\"input-group\">\n  <input type=\"text\" class=\"form-control\" max-date=\"max\" datepicker-popup=\"{{format}}\" ng-model=\"inputText\" is-open=\"opened\" min-date=\"minDate\" max-date=\"'2015-06-22'\" datepicker-options=\"dateOptions\" date-disabled=\"disabled(date, mode)\" close-text=\"Close\"  validator-required=\"{{required}}\" validator-group=\"{{required}}\" id=\"{{formName+index}}\" disabled/>\n  <span class=\"input-group-btn\">\n    <button ng-disabled=\"readOnly\" type=\"button\" class=\"btn btn-default\" ng-click=\"open($event)\"><i class=\"glyphicon glyphicon-calendar\"></i></button>\n  </span>\n</p>",
         link: function(scope, element, attrs) {
+          scope.inputText = '';
           scope.open = function($event) {
             $event.preventDefault();
             $event.stopPropagation();
