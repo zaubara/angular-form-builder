@@ -63,7 +63,7 @@
       };
       $scope.openSummerNote = function() {
         return $scope.modalInstance = $modal.open({
-          template: '<div summernote ng-model="summerNoteText"></div>' + '<button class="btn btn-danger btn-sm" ng-click="cancel()"></button>' + '<button class="btn btn-success btn-sm" ng-click="save(summerNoteText)"></button>',
+          template: '<div class="modal-body">' + '<div summernote ng-model="summerNoteText"></div>' + '</div>' + '<div class="modal-footer">' + '<button class="btn btn-danger btn-sm" ng-click="cancel()">Cancel</button>' + '<button class="btn btn-success btn-sm" ng-click="save(summerNoteText)">Add</button>' + '</div>',
           scope: $scope
         });
       };
