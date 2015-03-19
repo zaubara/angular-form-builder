@@ -28,7 +28,7 @@ angular.module 'builder.controller', ['builder.provider']
       $scope.formObject.id = $builder.config.max_id
       $builder.config.max_id = $builder.config.max_id + 1
 
-    $scope.actions = ['Hide', 'Show']
+    $scope.actions = ['hide', 'show']
 
     $scope.$watch 'formObject.logic.component', ->
       if $scope.formObject.logic.component?
@@ -84,7 +84,7 @@ angular.module 'builder.controller', ['builder.provider']
     $scope.date = Date.now()
 
     $scope.formObject.logic = {
-      action: 'Hide'
+      action: 'hide'
     }
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     countElements = 0
