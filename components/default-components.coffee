@@ -46,7 +46,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -145,7 +145,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -251,7 +251,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -366,7 +366,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -452,7 +452,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -548,7 +548,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -641,7 +641,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control ng-model="formObject.logic.action" ng-options="action for action in ['Hide', 'Show']"></select><p> this element if</p>
                                 <select class="form-control  custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control  custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -747,7 +747,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <p>Hide this element if</p>
+                                <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -839,7 +839,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                 <div class="form-group m-t">
-                                    <p>Hide this element if</p>
+                                    <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                     </select>
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -930,7 +930,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group m-t">
-                                        <p>Hide this element if</p>
+                                        <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                         </select>
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -1014,7 +1014,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group m-t">
-                                        <p>Hide this element if</p>
+                                        <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.label for field in fields">
                                         </select>
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">

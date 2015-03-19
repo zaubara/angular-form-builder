@@ -24,6 +24,7 @@
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
       }
+      $scope.actions = ['Hide', 'Show'];
       $scope.$watch('formObject.logic.component', function() {
         if ($scope.formObject.logic.component != null) {
           switch ($scope.formObject.logic.component.component) {
@@ -69,7 +70,7 @@
       };
       $scope.date = Date.now();
       $scope.formObject.logic = {
-        action: 'hide'
+        action: 'Hide'
       };
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
