@@ -185,7 +185,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
                   </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class="help-block text-muted custom-small">{{description}}</small>
+                  <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -298,7 +298,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <input type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                 </div>
               <div class="col-sm-10 col-sm-offset-2">
-                <small class="help-block text-muted custom-small">{{description}}</small>
+                <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
               </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -404,7 +404,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <textarea type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" rows='6' placeholder="{{placeholder}}"/>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class="help-block text-muted custom-small">{{description}}</small>
+                  <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -499,7 +499,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     </div>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class="help-block text-muted custom-small">{{description}}</small>
+                  <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -592,7 +592,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     </div>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class="help-block text-muted custom-small">{{description}}</small>
+                  <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -689,7 +689,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         ng-model="inputText" multiple ng-init="inputText = options[0]"/>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class="help-block text-muted custom-small">{{description}}</small>
+                  <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
@@ -791,7 +791,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.City" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                     <div class="col-sm-10 col-sm-offset-2">
-                        <small class="help-block text-muted custom-small">{{description}}</small>
+                        <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                     </div>
                 </div>
                 <div id="dashedline" class="hr-line-dashed"></div>
@@ -882,7 +882,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <input id="uploadFile" class="uploadLabel" ng-readonly="readOnly" placeholder="Choose File" disabled="disabled" />
                         </div>
                         <div class="col-sm-10 col-sm-offset-2">
-                            <small class="help-block text-muted custom-small">{{description}}</small>
+                            <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
                     <div id="dashedline" class="hr-line-dashed"></div>
@@ -970,7 +970,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div class="col-sm-10 col-sm-offset-2">
-                            <small class="help-block text-muted custom-small">{{description}}</small>
+                            <small ng-show="description class="help-block text-muted custom-small">{{description}}</small>
                         </div>
                     </div>
                     <div id="dashedline" class="hr-line-dashed"></div>
