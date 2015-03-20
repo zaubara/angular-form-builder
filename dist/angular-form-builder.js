@@ -17,9 +17,19 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $modal, countElements, form;
+      var $builder, $modal, countElements, form, logic;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
+      logic = $builder.forms.skipLogic.filter(function(item) {
+        return item.id === $scope.formObject.id;
+      });
+      if (logic.length > 0) {
+        $scope.formObject.logic = logic[0].logic;
+      } else {
+        $scope.formObject.logic = {
+          action: 'hide'
+        };
+      }
       if ($scope.formObject.id === void 0) {
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
@@ -69,9 +79,6 @@
         });
       };
       $scope.date = Date.now();
-      $scope.formObject.logic = {
-        action: 'hide'
-      };
       $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
       countElements = 0;
       for (form in $builder.forms) {

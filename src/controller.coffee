@@ -23,6 +23,17 @@ angular.module 'builder.controller', ['builder.provider']
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
 
+    # see if logic already exists. if not initialize it
+    logic = $builder.forms.skipLogic.filter((item) ->
+      return item.id is $scope.formObject.id
+      )
+    if logic.length > 0
+      $scope.formObject.logic = logic[0].logic
+    else
+      $scope.formObject.logic = {
+        action: 'hide'
+      }
+
     # initialize formObject id
     if $scope.formObject.id is undefined
       $scope.formObject.id = $builder.config.max_id
@@ -83,9 +94,6 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.date = Date.now()
 
-    $scope.formObject.logic = {
-      action: 'hide'
-    }
     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
     countElements = 0
     for form of $builder.forms
@@ -96,7 +104,6 @@ angular.module 'builder.controller', ['builder.provider']
         for form of $builder.forms
             unless form is 'skipLogic'
                 angular.forEach($builder.forms[form], (element) ->
-
                     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
                     )
     countElements = 0
@@ -107,6 +114,7 @@ angular.module 'builder.controller', ['builder.provider']
       unless element.id is $scope.formObject.id
         $scope.fields.push(element);
       )
+
 
     $scope.setupScope = (formObject) ->
         ###
