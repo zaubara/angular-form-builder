@@ -90,7 +90,13 @@
         }
       }
       countElements = 0;
-      $scope.fields = $builder.forms.skipLogic;
+      $scope.fields = [];
+      $builder.forms.skipLogic.forEach(function(element) {
+        element.niceName = element.component + ' - ' + element.label;
+        if (element.id !== $scope.formObject.id) {
+          return $scope.fields.push(element);
+        }
+      });
       $scope.setupScope = function(formObject) {
 
         /*

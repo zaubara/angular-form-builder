@@ -96,12 +96,17 @@ angular.module 'builder.controller', ['builder.provider']
         for form of $builder.forms
             unless form is 'skipLogic'
                 angular.forEach($builder.forms[form], (element) ->
+
                     $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
                     )
     countElements = 0
 
-
-    $scope.fields = $builder.forms.skipLogic
+    $scope.fields = []
+    $builder.forms.skipLogic.forEach((element) ->
+      element.niceName = element.component + ' - ' + element.label
+      unless element.id is $scope.formObject.id
+        $scope.fields.push(element);
+      )
 
     $scope.setupScope = (formObject) ->
         ###
