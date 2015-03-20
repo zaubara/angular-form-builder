@@ -11,7 +11,7 @@
       $builderProvider.registerComponent('emailInput', {
         group: 'Basic',
         label: 'Email Input',
-        description: 'description',
+        description: '',
         requireConfirmation: false,
         required: false,
         readOnly: false,
@@ -21,7 +21,7 @@
       $builderProvider.registerComponent('datePicker', {
         group: 'Basic',
         label: 'Date Picker',
-        description: 'description',
+        description: '',
         required: false,
         disableWeekends: false,
         readOnly: false,
@@ -31,7 +31,7 @@
       $builderProvider.registerComponent('textInput', {
         group: 'Basic',
         label: 'Text Input',
-        description: 'description',
+        description: '',
         placeholder: 'placeholder',
         readOnly: false,
         minLength: 0,
@@ -57,7 +57,7 @@
       $builderProvider.registerComponent('textArea', {
         group: 'Basic',
         label: 'Text Area',
-        description: 'description',
+        description: '',
         placeholder: 'placeholder',
         required: false,
         readOnly: false,
@@ -67,7 +67,7 @@
       $builderProvider.registerComponent('checkbox', {
         group: 'Choice',
         label: 'Checkbox',
-        description: 'description',
+        description: '',
         placeholder: 'placeholder',
         required: false,
         options: ['value one', 'value two'],
@@ -79,7 +79,7 @@
       $builderProvider.registerComponent('radio', {
         group: 'Choice',
         label: 'Radio',
-        description: 'description',
+        description: '',
         placeholder: 'placeholder',
         required: false,
         readOnly: false,
@@ -90,7 +90,7 @@
       return $builderProvider.registerComponent('select', {
         group: 'Choice',
         label: 'Select',
-        description: 'description',
+        description: '',
         placeholder: 'placeholder',
         multiple: false,
         required: false,
@@ -101,7 +101,7 @@
       }, $builderProvider.registerComponent('addressField', {
         group: 'Advanced',
         label: 'Address Field',
-        description: 'description',
+        description: '',
         required: false,
         readOnly: false,
         options: [],
@@ -110,7 +110,7 @@
       }, $builderProvider.registerComponent('uploadPhoto', {
         group: 'Advanced',
         label: 'Upload Photo',
-        description: 'description',
+        description: '',
         required: false,
         readOnly: false,
         template: "<div class=\"row\" id=\"{{formName.split(' ').join('')+index}}\">\n    <label class=\"col-sm-2 control-label\" for=\"{{formName+index}}\" ng-class=\"{'fb-required':required}\">{{label}}</label>\n    <div class=\"col-sm-10\">\n        <div class=\"fileUpload btn btn-primary\">\n            <span>Upload</span>\n            <input id=\"uploadBtn\" ng-readonly=\"readOnly\" type=\"file\" class=\"m-b btn-upload btn-active\" accept=\"image/*\" capture=\"camera\" upload-photo />\n        </div>\n        <input id=\"uploadFile\" class=\"uploadLabel\" ng-readonly=\"readOnly\" placeholder=\"Choose File\" disabled=\"disabled\" />\n    </div>\n    <div class=\"col-sm-10 col-sm-offset-2\">\n        <small class=\"help-block text-muted custom-small\">{{description}}</small>\n    </div>\n</div>\n<div id=\"dashedline\" class=\"hr-line-dashed\"></div>",

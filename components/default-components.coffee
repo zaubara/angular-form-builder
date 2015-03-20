@@ -72,7 +72,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'emailInput',
         group: 'Basic'
         label: 'Email Input'
-        description: 'description'
+        description: ''
         requireConfirmation: no
         required: no
         readOnly: no
@@ -171,7 +171,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'datePicker',
         group: 'Basic'
         label: 'Date Picker'
-        description: 'description'
+        description: ''
         required: no
         disableWeekends: no
         readOnly: no
@@ -277,7 +277,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'textInput',
         group: 'Basic'
         label: 'Text Input'
-        description: 'description'
+        description: ''
         placeholder: 'placeholder'
         readOnly: no
         minLength: 0
@@ -392,7 +392,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'textArea',
         group: 'Basic'
         label: 'Text Area'
-        description: 'description'
+        description: ''
         placeholder: 'placeholder'
         required: no
         readOnly: no
@@ -478,7 +478,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'checkbox',
         group: 'Choice'
         label: 'Checkbox'
-        description: 'description'
+        description: ''
         placeholder: 'placeholder'
         required: no
         options: ['value one', 'value two']
@@ -574,7 +574,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'radio',
         group: 'Choice'
         label: 'Radio'
-        description: 'description'
+        description: ''
         placeholder: 'placeholder'
         required: no
         readOnly: no
@@ -667,7 +667,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     $builderProvider.registerComponent 'select',
         group: 'Choice'
         label: 'Select'
-        description: 'description'
+        description: ''
         placeholder: 'placeholder'
         multiple: no
         required: no
@@ -773,7 +773,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         $builderProvider.registerComponent 'addressField',
             group: 'Advanced'
             label: 'Address Field'
-            description: 'description'
+            description: ''
             required: no
             readOnly: no
             options: []
@@ -867,7 +867,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             $builderProvider.registerComponent 'uploadPhoto',
                 group: 'Advanced'
                 label: 'Upload Photo'
-                description: 'description'
+                description: ''
                 required: no
                 readOnly: no
                 template:
