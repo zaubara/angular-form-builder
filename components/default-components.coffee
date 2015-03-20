@@ -92,7 +92,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                        </div>
                     </div>
                 <div class="col-sm-10 col-sm-offset-2">
-                  <small class='help-block text-muted custom-small'>{{description}}</small>
+                  <small ng-show="description" class='help-block text-muted custom-small'>{{description}}</small>
                 </div>
             </div>
             <div id="dashedline" class="hr-line-dashed"></div>
