@@ -31,7 +31,7 @@ angular.module 'builder.controller', ['builder.provider']
       $scope.formObject.logic = logic[0].logic
     else
       $scope.formObject.logic = {
-        action: 'hide'
+        action: 'Hide'
       }
 
     # initialize formObject id
@@ -39,7 +39,7 @@ angular.module 'builder.controller', ['builder.provider']
       $scope.formObject.id = $builder.config.max_id
       $builder.config.max_id = $builder.config.max_id + 1
 
-    $scope.actions = ['hide', 'show']
+    $scope.actions = ['Hide', 'Show']
 
     $scope.$watch 'formObject.logic.component', ->
       if $scope.formObject.logic.component?
