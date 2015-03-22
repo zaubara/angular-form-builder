@@ -34,9 +34,13 @@ angular.module 'builder.controller', ['builder.provider']
     #     action: 'Hide'
     #   }
 
-    $scope.formObject.logic = {
-      action: 'Hide'
-    }
+    if !$scope.formObject.logic?
+      $scope.formObject.logic = {
+        action: 'Hide'
+      }
+    else
+      if $scope.formObject.logic.component?
+        $scope.formObject.logic.component = angular.fromJson($scope.formObject.logic.component)
 
     # initialize formObject id
     if $scope.formObject.id is undefined
@@ -47,8 +51,8 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.$watch 'formObject.logic.component', ->
       if $scope.formObject.logic.component?
-        objectComponent = angular.fromJson($scope.formObject.logic.component)
-        switch objectComponent.component
+        objectized = angular.fromJson($scope.formObject.logic.component)
+        switch objectized.component
           when 'textMessage'
             $scope.comparatorChoices = []
           when 'emailInput'
@@ -117,6 +121,12 @@ angular.module 'builder.controller', ['builder.provider']
         return yes
       else if keys.indexOf(groupName) is keys.indexOf($scope.currentForm) and item.index < $scope.formObject.index
         return yes
+      else
+        return no
+
+    $scope.isEqual = (item) ->
+      if $scope.formObject.logic? and $scope.formObject.logic.component?
+        return angular.equals(item, $scope.formObject.logic.component)
       else
         return no
 

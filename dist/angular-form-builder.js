@@ -20,19 +20,25 @@
       var $builder, $modal, form, inThisForm;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
-      $scope.formObject.logic = {
-        action: 'Hide'
-      };
+      if ($scope.formObject.logic == null) {
+        $scope.formObject.logic = {
+          action: 'Hide'
+        };
+      } else {
+        if ($scope.formObject.logic.component != null) {
+          $scope.formObject.logic.component = angular.fromJson($scope.formObject.logic.component);
+        }
+      }
       if ($scope.formObject.id === void 0) {
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
       }
       $scope.actions = ['Hide', 'Show'];
       $scope.$watch('formObject.logic.component', function() {
-        var objectComponent;
+        var objectized;
         if ($scope.formObject.logic.component != null) {
-          objectComponent = angular.fromJson($scope.formObject.logic.component);
-          switch (objectComponent.component) {
+          objectized = angular.fromJson($scope.formObject.logic.component);
+          switch (objectized.component) {
             case 'textMessage':
               return $scope.comparatorChoices = [];
             case 'emailInput':
@@ -89,6 +95,13 @@
           return true;
         } else if (keys.indexOf(groupName) === keys.indexOf($scope.currentForm) && item.index < $scope.formObject.index) {
           return true;
+        } else {
+          return false;
+        }
+      };
+      $scope.isEqual = function(item) {
+        if (($scope.formObject.logic != null) && ($scope.formObject.logic.component != null)) {
+          return angular.equals(item, $scope.formObject.logic.component);
         } else {
           return false;
         }

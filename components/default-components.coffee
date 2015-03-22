@@ -48,9 +48,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                      <option ng-selected="isEqual(item)" ng-show="canSee(item, groupName)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
@@ -151,7 +151,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
@@ -261,7 +261,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
@@ -380,7 +380,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
@@ -470,7 +470,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
@@ -570,7 +570,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
@@ -773,7 +773,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control">
-                                  
+
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                     <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
                                   </optgroup>
