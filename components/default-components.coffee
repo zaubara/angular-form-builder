@@ -63,9 +63,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                 <hr/>
                 <div class='form-group'>
-                    <input type='submit' ng-click="popover.save($event)" class='btn btn-primary' value='Apply'/>
-                    <input type='button' ng-click="popover.cancel($event)" class='btn btn-default' value='Cancel'/>
-                    <input type='button' ng-click="popover.remove($event)" class='btn btn-danger' value='Delete'/>
+                    <input type='button' ng-click="popover.remove($event)" class='btn btn-danger fa h-c-34 pull-right m-b m-l-xs' value='&#xf1f8'/>
+                    <input type='submit' ng-click="popover.save($event)" class='btn btn-primary f-c-34 pull-right m-b fa' value='&#xf0c7'/>
+                    <input type='button' ng-click="popover.cancel($event)" class='btn btn-white f-c-34 pull-left m-b' value='Cancel'/>
                 </div>
             </form>
             """
