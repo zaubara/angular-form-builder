@@ -47,7 +47,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -127,19 +127,19 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required</label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="requireConfirmation" />
+                                    <input type='checkbox' ng-check ng-model="requireConfirmation" />
                                     Require Email Confirmation</label>
                             </div>
                             <div class="form-group" ng-if="validationOptions.length > 0">
@@ -150,7 +150,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -224,19 +224,19 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required</label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="disableWeekends" />
+                                    <input type='checkbox' ng-check ng-model="disableWeekends" />
                                     Disable Weekends</label>
                             </div>
                             <div class="form-group" ng-if="validationOptions.length > 0">
@@ -260,7 +260,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -345,14 +345,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required</label>
                             </div>
                             <div class="form-group" ng-if="validationOptions.length > 0">
@@ -379,7 +379,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -455,21 +455,21 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -510,9 +510,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
-                    <div class='checkbox i-checks' ng-repeat="item in options track by $index">
+                    <div class='checkbox' ng-repeat="item in options track by $index">
                       <label>
-                        <input checked="" ng-disabled="readOnly" type='checkbox' ng-model="inputArray[$index]" value='item'/>
+                        <input checked="" ng-disabled="readOnly" type='checkbox' ng-check ng-model="inputArray[$index]" value='item'/>
                             <i></i>
                             {{item}}
                       </label>
@@ -554,14 +554,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required
                                 </label>
                             </div>
@@ -569,7 +569,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -651,22 +651,22 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required
                                 </label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
-                                <select class="form-control ng-model="formObject.logic.action" ng-options="action for action in ['Hide', 'Show']"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select class="form-control" ng-model="formObject.logic.action" ng-options="action for action in ['Hide', 'Show']"></select><p> this element if</p>
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -752,14 +752,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="readOnly" />
+                                    <input type='checkbox' ng-check ng-model="readOnly" />
                                     Read Only</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="required" />
+                                    <input type='checkbox' ng-check ng-model="required" />
                                     Required
                                 </label>
                             </div>
@@ -769,14 +769,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type='checkbox' ng-model="multiple" />
+                                    <input type='checkbox' ng-check ng-model="multiple" />
                                     Multiple Select</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control">
+                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                   <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                       <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -854,14 +854,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type='checkbox' ng-model="readOnly" />
+                                        <input type='checkbox' ng-check ng-model="readOnly" />
                                         Read Only</label>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                                 <div class="checkbox">
                                     <label>
-                                        <input type='checkbox' ng-model="required" />
+                                        <input type='checkbox' ng-check ng-model="required" />
                                         Required</label>
                                 </div>
                                 <div class="form-group" ng-if="validationOptions.length > 0">
@@ -872,7 +872,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                 <div class="form-group m-t">
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                    <select ng-model="formObject.logic.component" class="form-control">
+                                    <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                       <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                           <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -949,14 +949,14 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type='checkbox' ng-model="readOnly" />
+                                            <input type='checkbox' ng-check ng-model="readOnly" />
                                             Read Only</label>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                                     <div class="checkbox">
                                         <label>
-                                            <input type='checkbox' ng-model="required" />
+                                            <input type='checkbox' ng-check ng-model="required" />
                                             Required</label>
                                     </div>
                                     <div class="form-group" ng-if="validationOptions.length > 0">
@@ -967,7 +967,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group m-t">
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                        <select ng-model="formObject.logic.component" class="form-control">
+                                        <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                           <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                               <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
@@ -1041,21 +1041,21 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type='checkbox' ng-model="readOnly" />
+                                            <input type='checkbox' ng-check ng-model="readOnly" />
                                             Read Only</label>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                                     <div class="checkbox">
                                         <label>
-                                            <input type='checkbox' ng-model="required"/>
+                                            <input type='checkbox' ng-check ng-model="required"/>
                                             Required</label>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group m-t">
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                        <select ng-model="formObject.logic.component" class="form-control">
+                                        <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
                                           <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
                                               <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName] track by item.id" value="{{item}}">{{item.component}} - {{item.label}}</option>
