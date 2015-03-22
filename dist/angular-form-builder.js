@@ -101,7 +101,7 @@
       };
       $scope.isEqual = function(item) {
         if (($scope.formObject.logic != null) && ($scope.formObject.logic.component != null)) {
-          return angular.equals(item, $scope.formObject.logic.component);
+          return angular.equals(item, $scope.formObject.logic.component) || angular.equals(item, angular.fromJson($scope.formObject.logic.component));
         } else {
           return false;
         }

@@ -126,7 +126,7 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.isEqual = (item) ->
       if $scope.formObject.logic? and $scope.formObject.logic.component?
-        return angular.equals(item, $scope.formObject.logic.component)
+        return angular.equals(item, $scope.formObject.logic.component) or angular.equals(item, angular.fromJson($scope.formObject.logic.component))
       else
         return no
 
