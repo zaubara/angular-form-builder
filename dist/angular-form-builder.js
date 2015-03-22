@@ -88,24 +88,7 @@
           $scope.currentForm = form;
         }
       }
-      $scope.canSee = function(item, groupName) {
-        var keys;
-        keys = Object.keys($builder.forms);
-        if (keys.indexOf(groupName) < keys.indexOf($scope.currentForm)) {
-          return true;
-        } else if (keys.indexOf(groupName) === keys.indexOf($scope.currentForm) && item.index < $scope.formObject.index) {
-          return true;
-        } else {
-          return false;
-        }
-      };
-      $scope.isEqual = function(item) {
-        if (($scope.formObject.logic != null) && ($scope.formObject.logic.component != null)) {
-          return angular.equals(item, $scope.formObject.logic.component) || angular.equals(item, angular.fromJson($scope.formObject.logic.component));
-        } else {
-          return false;
-        }
-      };
+      $scope.keys = Object.keys($builder.forms);
       $scope.fields = $builder.forms;
       $scope.setupScope = function(formObject) {
 

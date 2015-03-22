@@ -115,20 +115,24 @@ angular.module 'builder.controller', ['builder.provider']
       if inThisForm.length > 0
         $scope.currentForm = form
 
-    $scope.canSee = (item, groupName) ->
-      keys = Object.keys $builder.forms
-      if keys.indexOf(groupName) < keys.indexOf($scope.currentForm)
-        return yes
-      else if keys.indexOf(groupName) is keys.indexOf($scope.currentForm) and item.index < $scope.formObject.index
-        return yes
-      else
-        return no
+    # old canSee func, moved to inline
+    $scope.keys = Object.keys $builder.forms
 
-    $scope.isEqual = (item) ->
-      if $scope.formObject.logic? and $scope.formObject.logic.component?
-        return angular.equals(item, $scope.formObject.logic.component) or angular.equals(item, angular.fromJson($scope.formObject.logic.component))
-      else
-        return no
+    # $scope.canSee = (item, groupName) ->
+    #   keys = Object.keys $builder.forms
+    #   if keys.indexOf(groupName) < keys.indexOf($scope.currentForm)
+    #     return yes
+    #   else if keys.indexOf(groupName) is keys.indexOf($scope.currentForm) and item.index < $scope.formObject.index
+    #     return yes
+    #   else
+    #     return no
+
+    # old isEqual func, moved to inline
+    # $scope.isEqual = (item) ->
+    #   if $scope.formObject.logic? and $scope.formObject.logic.component?
+    #     return angular.equals(item, $scope.formObject.logic.component) or angular.equals(item, angular.fromJson($scope.formObject.logic.component))
+    #   else
+    #     return no
 
     $scope.fields = $builder.forms
 
