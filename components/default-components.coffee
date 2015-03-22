@@ -47,7 +47,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                      <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -146,7 +150,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -252,7 +260,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -367,7 +379,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -453,7 +469,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -549,7 +569,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
@@ -748,7 +772,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select class="form-control custom-m-b" ng-model="formObject.logic.component" ng-options="field.niceName for field in fields track by field.id">
+                                <select ng-model="formObject.logic.component" class="form-control">
+                                  
+                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+                                    <option ng-show="canSee(item, groupName)" ng-repeat="item in items" value="{{item}}">{{item.component}} - {{item.label}}</option>
+                                  </optgroup>
                                 </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>

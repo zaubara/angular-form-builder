@@ -17,27 +17,22 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $modal, countElements, form, logic;
+      var $builder, $modal, form, inThisForm;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
-      logic = $builder.forms.skipLogic.filter(function(item) {
-        return item.id === $scope.formObject.id;
-      });
-      if (logic.length > 0) {
-        $scope.formObject.logic = logic[0].logic;
-      } else {
-        $scope.formObject.logic = {
-          action: 'Hide'
-        };
-      }
+      $scope.formObject.logic = {
+        action: 'Hide'
+      };
       if ($scope.formObject.id === void 0) {
         $scope.formObject.id = $builder.config.max_id;
         $builder.config.max_id = $builder.config.max_id + 1;
       }
       $scope.actions = ['Hide', 'Show'];
       $scope.$watch('formObject.logic.component', function() {
+        var objectComponent;
         if ($scope.formObject.logic.component != null) {
-          switch ($scope.formObject.logic.component.component) {
+          objectComponent = angular.fromJson($scope.formObject.logic.component);
+          switch (objectComponent.component) {
             case 'textMessage':
               return $scope.comparatorChoices = [];
             case 'emailInput':
@@ -79,31 +74,26 @@
         });
       };
       $scope.date = Date.now();
-      $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject);
-      countElements = 0;
       for (form in $builder.forms) {
-        if (form !== 'skipLogic') {
-          countElements = countElements + $builder.forms[form].length;
+        inThisForm = $builder.forms[form].filter(function(item) {
+          return item.id === $scope.formObject.id;
+        });
+        if (inThisForm.length > 0) {
+          $scope.currentForm = form;
         }
       }
-      if (countElements !== $builder.forms.skipLogic.length) {
-        $builder.forms.skipLogic = [];
-        for (form in $builder.forms) {
-          if (form !== 'skipLogic') {
-            angular.forEach($builder.forms[form], function(element) {
-              return $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element);
-            });
-          }
+      $scope.canSee = function(item, groupName) {
+        var keys;
+        keys = Object.keys($builder.forms);
+        if (keys.indexOf(groupName) < keys.indexOf($scope.currentForm)) {
+          return true;
+        } else if (keys.indexOf(groupName) === keys.indexOf($scope.currentForm) && item.index < $scope.formObject.index) {
+          return true;
+        } else {
+          return false;
         }
-      }
-      countElements = 0;
-      $scope.fields = [];
-      $builder.forms.skipLogic.forEach(function(element) {
-        element.niceName = element.component + ' - ' + element.label;
-        if (element.id !== $scope.formObject.id) {
-          return $scope.fields.push(element);
-        }
-      });
+      };
+      $scope.fields = $builder.forms;
       $scope.setupScope = function(formObject) {
 
         /*
@@ -1240,9 +1230,8 @@
     this.broadcastChannel = {
       updateInput: '$updateInput'
     };
-    this.forms = {
-      skipLogic: []
-    };
+    this.skipLogicComponents = [];
+    this.forms = {};
     this.convertComponent = function(name, component) {
       var result, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       result = {

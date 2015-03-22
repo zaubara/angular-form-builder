@@ -28,11 +28,13 @@ angular.module 'builder.provider', []
     @broadcastChannel =
         updateInput: '$updateInput'
 
+    @skipLogicComponents = []
+
     # forms
     #   builder mode: `fb-builder` you could drag and drop to build the form.
     #   form mode: `fb-form` this is the form for end-user to input value.
-    @forms =
-        skipLogic: []
+    @forms = {}
+        # skipLogic: []
 
 
     # ----------------------------------------

@@ -24,15 +24,19 @@ angular.module 'builder.controller', ['builder.provider']
     $modal = $injector.get '$modal'
 
     # see if logic already exists. if not initialize it
-    logic = $builder.forms.skipLogic.filter((item) ->
-      return item.id is $scope.formObject.id
-      )
-    if logic.length > 0
-      $scope.formObject.logic = logic[0].logic
-    else
-      $scope.formObject.logic = {
-        action: 'Hide'
-      }
+    # logic = $builder.forms.skipLogic.filter((item) ->
+    #   return item.id is $scope.formObject.id
+    #   )
+    # if logic.length > 0
+    #   $scope.formObject.logic = logic[0].logic
+    # else
+    #   $scope.formObject.logic = {
+    #     action: 'Hide'
+    #   }
+
+    $scope.formObject.logic = {
+      action: 'Hide'
+    }
 
     # initialize formObject id
     if $scope.formObject.id is undefined
@@ -43,7 +47,8 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.$watch 'formObject.logic.component', ->
       if $scope.formObject.logic.component?
-        switch $scope.formObject.logic.component.component
+        objectComponent = angular.fromJson($scope.formObject.logic.component)
+        switch objectComponent.component
           when 'textMessage'
             $scope.comparatorChoices = []
           when 'emailInput'
@@ -94,26 +99,54 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.date = Date.now()
 
-    $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
-    countElements = 0
+    # if i can get the name of the current form
+    # then i can see the previous forms
+    # i can get previous elements from $builder.forms by their index
     for form of $builder.forms
-            unless form is 'skipLogic'
-                countElements = countElements + $builder.forms[form].length
-    unless countElements is $builder.forms.skipLogic.length
-        $builder.forms.skipLogic = []
-        for form of $builder.forms
-            unless form is 'skipLogic'
-                angular.forEach($builder.forms[form], (element) ->
-                    $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
-                    )
-    countElements = 0
 
-    $scope.fields = []
-    $builder.forms.skipLogic.forEach((element) ->
-      element.niceName = element.component + ' - ' + element.label
-      unless element.id is $scope.formObject.id
-        $scope.fields.push(element);
-      )
+      # comment this afterwards
+      inThisForm = $builder.forms[form].filter (item) ->
+        item.id is $scope.formObject.id
+
+      if inThisForm.length > 0
+        $scope.currentForm = form
+
+    $scope.canSee = (item, groupName) ->
+      keys = Object.keys $builder.forms
+      if keys.indexOf(groupName) < keys.indexOf($scope.currentForm)
+        return yes
+      else if keys.indexOf(groupName) is keys.indexOf($scope.currentForm) and item.index < $scope.formObject.index
+        return yes
+      else
+        return no
+
+    $scope.fields = $builder.forms
+
+
+    # dump code from when skipLogic page existed
+
+    # $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
+    # countElements = 0
+    # for form of $builder.forms
+    #         unless form is 'skipLogic'
+    #             countElements = countElements + $builder.forms[form].length
+    # unless countElements is $builder.forms.skipLogic.length
+    #     $builder.forms.skipLogic = []
+    #     for form of $builder.forms
+    #         unless form is 'skipLogic'
+    #             angular.forEach($builder.forms[form], (element) ->
+    #                 $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
+    #                 )
+    # countElements = 0
+
+    # $scope.fields = []
+    # $builder.forms.skipLogic.forEach((element) ->
+    #   element.niceName = element.component + ' - ' + element.label
+    #   unless element.id is $scope.formObject.id
+    #     $scope.fields.push(element);
+    #   )
+
+
 
 
     $scope.setupScope = (formObject) ->
