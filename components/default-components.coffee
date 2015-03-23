@@ -610,7 +610,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <div class="col-sm-10">
                     <div class='radio' ng-repeat="item in options track by $index">
                         <label>
-                        <input ng-disabled="readOnly" name='{{formName+index}}' ng-model="$parent.inputText" validator-group="{{formName}}" value='{{item}}' type='radio' ng-check/>
+                        <input ng-disabled="readOnly" name='{{formName+index}}' ng-model="inputText" validator-group="{{formName}}" value='{{item}}' type='radio' ng-check/>
                             {{item}}
                         </label>
                     </div>
