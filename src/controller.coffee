@@ -101,8 +101,6 @@ angular.module 'builder.controller', ['builder.provider']
         scope: $scope
       })
 
-    $scope.inputText = $scope.$parent.inputText
-
     $scope.date = Date.now()
 
     # if i can get the name of the current form

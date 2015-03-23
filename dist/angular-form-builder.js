@@ -79,7 +79,6 @@
           scope: $scope
         });
       };
-      $scope.inputText = $scope.$parent.inputText;
       $scope.date = Date.now();
       for (form in $builder.forms) {
         inThisForm = $builder.forms[form].filter(function(item) {
