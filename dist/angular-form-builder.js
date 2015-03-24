@@ -39,15 +39,15 @@
         if ($scope.formObject.logic.component != null) {
           objectized = angular.fromJson($scope.formObject.logic.component);
           switch (objectized.component) {
-            case 'textMessage':
+            case 'message':
               return $scope.comparatorChoices = [];
-            case 'emailInput':
+            case 'email':
               return $scope.comparatorChoices = [];
-            case 'datePicker':
+            case 'date':
               return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to'];
-            case 'textInput':
+            case 'text':
               return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to'];
-            case 'textArea':
+            case 'area':
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
             case 'checkbox':
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
@@ -55,13 +55,13 @@
               return $scope.comparatorChoices = ['Equal to', 'Not equal to'];
             case 'select':
               return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain'];
-            case 'uploadPhoto':
+            case 'upload':
               return $scope.comparatorChoices = [];
-            case 'signaturePad':
+            case 'signature':
               return $scope.comparatorChoices = [];
-            case 'addressField':
+            case 'address':
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
-            case 'cprNumber':
+            case 'cpr':
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
           }
         }

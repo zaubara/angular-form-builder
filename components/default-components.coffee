@@ -5,7 +5,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     # static text field
     # ----------------------------------------
-    $builderProvider.registerComponent 'textMessage',
+    $builderProvider.registerComponent 'message',
         group: 'Basic'
         placeholder: 'Rich Content'
         label: 'Rich Content'
@@ -73,7 +73,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     # email field
     # ----------------------------------------
-    $builderProvider.registerComponent 'emailInput',
+    $builderProvider.registerComponent 'email',
         group: 'Basic'
         label: 'Email Input'
         description: ''
@@ -176,7 +176,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     # date picker
     # ----------------------------------------
-    $builderProvider.registerComponent 'datePicker',
+    $builderProvider.registerComponent 'date',
         group: 'Basic'
         label: 'Date Picker'
         description: ''
@@ -286,7 +286,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     # text input
     # ----------------------------------------
-    $builderProvider.registerComponent 'textInput',
+    $builderProvider.registerComponent 'text',
         group: 'Basic'
         label: 'Text Input'
         description: ''
@@ -405,7 +405,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
     # ----------------------------------------
     # Text area
     # ----------------------------------------
-    $builderProvider.registerComponent 'textArea',
+    $builderProvider.registerComponent 'area',
         group: 'Basic'
         label: 'Text Area'
         description: ''
@@ -802,7 +802,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # ----------------------------------------
         # Address field
         # ----------------------------------------
-        $builderProvider.registerComponent 'addressField',
+        $builderProvider.registerComponent 'address',
             group: 'Advanced'
             label: 'Address Field'
             description: ''
@@ -900,7 +900,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             # ----------------------------------------
             # upload photo button
             # ----------------------------------------
-            $builderProvider.registerComponent 'uploadPhoto',
+            $builderProvider.registerComponent 'upload',
                 group: 'Advanced'
                 label: 'Upload Photo'
                 description: ''
@@ -993,7 +993,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             # ----------------------------------------
             # signature pad
             # ----------------------------------------
-            $builderProvider.registerComponent 'signaturePad',
+            $builderProvider.registerComponent 'signature',
                 group: 'Advanced'
                 label: 'Signature Pad'
                 decription: 'description'

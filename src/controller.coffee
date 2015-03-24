@@ -53,15 +53,15 @@ angular.module 'builder.controller', ['builder.provider']
       if $scope.formObject.logic.component?
         objectized = angular.fromJson($scope.formObject.logic.component)
         switch objectized.component
-          when 'textMessage'
+          when 'message'
             $scope.comparatorChoices = []
-          when 'emailInput'
+          when 'email'
             $scope.comparatorChoices = []
-          when 'datePicker'
+          when 'date'
             $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to']
-          when 'textInput'
+          when 'text'
             $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain', 'Less than', 'Less than or equal to', 'Greater than', 'Greater than or equal to']
-          when 'textArea'
+          when 'area'
             $scope.comparatorChoices = ['Contains', 'Does not contain']
           when 'checkbox'
             $scope.comparatorChoices = ['Contains', 'Does not contain']
@@ -69,13 +69,13 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.comparatorChoices = ['Equal to', 'Not equal to']
           when 'select'
             $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain']
-          when 'uploadPhoto'
+          when 'upload'
             $scope.comparatorChoices = []
-          when 'signaturePad'
+          when 'signature'
             $scope.comparatorChoices = []
-          when 'addressField'
+          when 'address'
             $scope.comparatorChoices = ['Contains', 'Does not contain']
-          when 'cprNumber'
+          when 'cpr'
             $scope.comparatorChoices = ['Contains', 'Does not contain']
 
     $scope.cancel = ->
