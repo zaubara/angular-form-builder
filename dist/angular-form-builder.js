@@ -296,7 +296,13 @@
         }
       };
     }
-  ]).directive('uiDate', [
+  ]).filter('nospace', function() {
+    return function(input) {
+      if ((input != null) && angular.isString(input)) {
+        return input.replace(/[^A-Z0-9]/ig, "");
+      }
+    };
+  }).directive('uiDate', [
     '$injector', function($injector) {
       return {
         restrict: 'E',

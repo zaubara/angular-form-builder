@@ -26,6 +26,11 @@ angular.module 'builder.directive', [
       )
 ]
 
+.filter 'nospace', ->
+  (input) ->
+    if input? and angular.isString(input)
+      input.replace(/[^A-Z0-9]/ig, "")
+
 # ----------------------------------------
 # date picker directive
 # ----------------------------------------
