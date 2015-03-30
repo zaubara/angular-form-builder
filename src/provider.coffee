@@ -90,6 +90,7 @@ angular.module 'builder.provider', []
             performCreditCheck: formObject.performCreditCheck ? component.performCreditCheck
             cprCountry: formObject.cprCountry ? component.cprCountry
             logic: formObject.logic ? component.logic
+            category: formObject.category ? component.category
         result
 
     @reindexFormObject = (name) =>

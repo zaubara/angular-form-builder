@@ -1265,7 +1265,7 @@
       return result;
     };
     this.convertFormObject = function(name, formObject) {
-      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var component, result, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (formObject == null) {
         formObject = {};
       }
@@ -1296,7 +1296,8 @@
         maxRange: (_ref17 = formObject.maxRange) != null ? _ref17 : component.maxRange,
         performCreditCheck: (_ref18 = formObject.performCreditCheck) != null ? _ref18 : component.performCreditCheck,
         cprCountry: (_ref19 = formObject.cprCountry) != null ? _ref19 : component.cprCountry,
-        logic: (_ref20 = formObject.logic) != null ? _ref20 : component.logic
+        logic: (_ref20 = formObject.logic) != null ? _ref20 : component.logic,
+        category: (_ref21 = formObject.category) != null ? _ref21 : component.category
       };
       return result;
     };
