@@ -102,7 +102,7 @@
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');
-        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic]', function() {
+        $scope.$watch('[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic, category]', function() {
           formObject.label = $scope.label;
           formObject.description = $scope.description;
           formObject.placeholder = $scope.placeholder;
@@ -121,7 +121,8 @@
           formObject.nextXDays = $scope.nextXDays;
           formObject.performCreditCheck = $scope.performCreditCheck;
           formObject.cprCountry = $scope.cprCountry;
-          return formObject.logic = $scope.logic;
+          formObject.logic = $scope.logic;
+          return formObject.category = $scope.category;
         }, true);
         $scope.$watch('optionsText', function(text) {
           var x;
@@ -168,7 +169,8 @@
             nextXDays: $scope.nextXDays,
             performCreditCheck: $scope.performCreditCheck,
             cprCountry: $scope.cprCountry,
-            logic: $scope.logic
+            logic: $scope.logic,
+            category: $scope.category
           };
         },
         rollback: function() {
@@ -197,7 +199,8 @@
           $scope.nextXDays = this.model.nextXDays;
           $scope.performCreditCheck = this.model.performCreditCheck;
           $scope.cprCountry = this.model.cprCountry;
-          return $scope.logic = this.model.logic;
+          $scope.logic = this.model.logic;
+          return $scope.category = this.model.category;
         }
       };
     }
