@@ -370,10 +370,8 @@ angular.module 'builder.directive', [
 .directive 'signaturePad', ['$injector', ($injector) ->
   restrict: 'E'
   template: '<form method="post" action="" class="sigPad">
-    <div style="border: 1px solid black">
-      <canvas class="pad" width="198" height="100"></canvas>
+      <canvas class="pad" width="198" height="100" style="border: 1px solid black"></canvas>
       <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
-    </div>
     <button type="button" ng-click="clearSig()" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
     </form>'
   link: (scope, elem, attrs) ->
