@@ -269,14 +269,12 @@
         @param value: The input value.
          */
         var input;
-        if ($scope.formObject.component !== 'signature') {
-          input = {
-            id: $scope.formObject.id,
-            label: $scope.formObject.label,
-            value: value != null ? value : ''
-          };
-          return $scope.$parent.input.splice($scope.$index, 1, input);
-        }
+        input = {
+          id: $scope.formObject.id,
+          label: $scope.formObject.label,
+          value: value != null ? value : ''
+        };
+        return $scope.$parent.input.splice($scope.$index, 1, input);
       };
     }
   ]);

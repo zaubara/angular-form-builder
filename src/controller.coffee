@@ -326,10 +326,9 @@ angular.module 'builder.controller', ['builder.provider']
         Copy current scope.input[X] to $parent.input.
         @param value: The input value.
         ###
-        unless $scope.formObject.component is 'signature'
-          input =
-              id: $scope.formObject.id
-              label: $scope.formObject.label
-              value: value ? ''
-          $scope.$parent.input.splice $scope.$index, 1, input
+        input =
+            id: $scope.formObject.id
+            label: $scope.formObject.label
+            value: value ? ''
+        $scope.$parent.input.splice $scope.$index, 1, input
 ]
