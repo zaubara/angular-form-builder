@@ -628,8 +628,8 @@
         link: function(scope, elem, attrs) {
           var saveSig, sigPad;
           scope.clearSig = function() {
-            sigPad.clearCanvas();
-            return scope.inputText = '';
+            scope.inputText = '';
+            return sigPad.regenerate();
           };
           saveSig = function() {
             return scope.$apply(function() {

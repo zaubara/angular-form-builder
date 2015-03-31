@@ -379,8 +379,8 @@ angular.module 'builder.directive', [
   link: (scope, elem, attrs) ->
 
     scope.clearSig = ->
-      sigPad.clearCanvas()
       scope.inputText = ''
+      sigPad.regenerate()
 
     saveSig = ->
       scope.$apply(->
