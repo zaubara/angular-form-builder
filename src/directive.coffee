@@ -374,7 +374,7 @@ angular.module 'builder.directive', [
       <canvas class="pad" width="198" height="100"></canvas>
       <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
     </div>
-    <button ng-click="clearSig()" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+    <button type="button" ng-click="clearSig()" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
     </form>'
   link: (scope, elem, attrs) ->
 
