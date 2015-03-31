@@ -269,12 +269,14 @@
         @param value: The input value.
          */
         var input;
-        input = {
-          id: $scope.formObject.id,
-          label: $scope.formObject.label,
-          value: value != null ? value : ''
-        };
-        return $scope.$parent.input.splice($scope.$index, 1, input);
+        if ($scope.formObject.component !== 'signature') {
+          input = {
+            id: $scope.formObject.id,
+            label: $scope.formObject.label,
+            value: value != null ? value : ''
+          };
+          return $scope.$parent.input.splice($scope.$index, 1, input);
+        }
       };
     }
   ]);
@@ -636,19 +638,6 @@
               return scope.inputText = sigPad.getSignatureString();
             });
           };
-          scope.$watch('readOnly', function() {
-            if (scope.readOnly !== void 0) {
-              if (scope.readOnly) {
-                return sigPad.updateOptions({
-                  displayOnly: true
-                });
-              } else {
-                return sigPad.updateOptions({
-                  displayOnly: false
-                });
-              }
-            }
-          });
           return sigPad = elem.signaturePad({
             drawOnly: true,
             lineColour: '#fff',

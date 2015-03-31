@@ -384,13 +384,13 @@ angular.module 'builder.directive', [
       scope.$apply(->
           scope.inputText = sigPad.getSignatureString()
         )
-    scope.$watch('readOnly', ->
-        unless scope.readOnly is undefined
-          if scope.readOnly
-            sigPad.updateOptions({displayOnly: true})
-          else
-            sigPad.updateOptions({displayOnly: false})
-      )
+    # scope.$watch('readOnly', ->
+    #     unless scope.readOnly is undefined
+    #       if scope.readOnly
+    #         sigPad.updateOptions({displayOnly: true})
+    #       else
+    #         sigPad.updateOptions({displayOnly: false})
+    #   )
     sigPad = elem.signaturePad({drawOnly: true, lineColour: '#fff', onDrawEnd: saveSig})
 
 
