@@ -371,11 +371,17 @@ angular.module 'builder.directive', [
   restrict: 'E'
   template: '<form method="post" action="" class="sigPad">
     <div style="border: 1px solid black">
-    <canvas class="pad" width="198" height="100"></canvas>
-    <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
+      <canvas class="pad" width="198" height="100"></canvas>
+      <input type="text" ng-model="inputText"  name="output" class="output" id="{{formName+index}}" hidden>
     </div>
+    <button ng-click="clearSig()" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
     </form>'
   link: (scope, elem, attrs) ->
+
+    scope.clearSig = ->
+      sigPad.clearCanvas()
+      scope.inputText = ''
+
     saveSig = ->
       scope.$apply(->
           scope.inputText = sigPad.getSignatureString()
