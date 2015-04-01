@@ -900,95 +900,95 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             # ----------------------------------------
             # upload photo button
             # ----------------------------------------
-            $builderProvider.registerComponent 'upload',
-                group: 'Advanced'
-                label: 'Upload Photo'
-                description: ''
-                required: no
-                readOnly: no
-                template:
-                    """
-                    <div class="row" id="{{formName+index | nospace}}">
-                        <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
-                        <div class="col-sm-10">
-                            <div class="fileUpload btn btn-primary">
-                                <span>Upload</span>
-                                <input id="uploadBtn" ng-readonly="readOnly" type="file" class="m-b btn-upload btn-active" accept="image/*" capture="camera" upload-photo />
-                            </div>
-                            <input id="uploadFile" class="uploadLabel" ng-readonly="readOnly" placeholder="Choose File" disabled="disabled" />
-                        </div>
-                        <div class="col-sm-10 col-sm-offset-2">
-                            <small ng-show="description" class="help-block text-muted custom-small">{{description}}</small>
-                        </div>
-                    </div>
-                    <div id="dashedline" class="hr-line-dashed"></div>
-                    """
-                popoverTemplate:
-                    """
-                    <form>
-
-                        <div role="tabpanel">
-
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
-                                <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
-                                <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
-                                <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                                    <div class="form-group">
-                                        <label class='control-label'>Label</label>
-                                        <input type='text' ng-model="label" validator="[required]" class='form-control'/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class='control-label'>Description</label>
-                                        <input type='text' ng-model="description" class='form-control'/>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type='checkbox' ng-check ng-model="readOnly" />
-                                            Read Only</label>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type='checkbox' ng-check ng-model="required" />
-                                            Required</label>
-                                    </div>
-                                    <div class="form-group" ng-if="validationOptions.length > 0">
-                                        <label class='control-label'>Validation</label>
-                                        <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
-                                    <div class="form-group m-t">
-                                        <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                        <select ng-model="formObject.logic.component" class="form-control custom-m-b">
-
-                                          <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                              <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                          </optgroup>
-                                        </select>
-                                        <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
-                                        </select>
-                                        <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr/>
-                        <div class='form-group'>
-                            <input type='button' ng-click="popover.remove($event)" class='btn btn-danger fa h-c-34 pull-right m-b m-l-xs' value='&#xf1f8'/>
-                            <input type='submit' ng-click="popover.save($event)" class='btn btn-primary h-c-34 pull-right m-b fa' value='&#xf0c7'/>
-                            <input type='button' ng-click="popover.cancel($event)" class='btn btn-white h-c-34 pull-left m-b' value='Cancel'/>
-                        </div>
-                    </form>
-                    """
+            # $builderProvider.registerComponent 'upload',
+            #     group: 'Advanced'
+            #     label: 'Upload Photo'
+            #     description: ''
+            #     required: no
+            #     readOnly: no
+            #     template:
+            #         """
+            #         <div class="row" id="{{formName+index | nospace}}">
+            #             <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
+            #             <div class="col-sm-10">
+            #                 <div class="fileUpload btn btn-primary">
+            #                     <span>Upload</span>
+            #                     <input id="uploadBtn" ng-readonly="readOnly" type="file" class="m-b btn-upload btn-active" accept="image/*" capture="camera" upload-photo />
+            #                 </div>
+            #                 <input id="uploadFile" class="uploadLabel" ng-readonly="readOnly" placeholder="Choose File" disabled="disabled" />
+            #             </div>
+            #             <div class="col-sm-10 col-sm-offset-2">
+            #                 <small ng-show="description" class="help-block text-muted custom-small">{{description}}</small>
+            #             </div>
+            #         </div>
+            #         <div id="dashedline" class="hr-line-dashed"></div>
+            #         """
+            #     popoverTemplate:
+            #         """
+            #         <form>
+            #
+            #             <div role="tabpanel">
+            #
+            #                 <!-- Nav tabs -->
+            #                 <ul class="nav nav-justified nav-tabs" role="tablist" style="margin-left:-10px">
+            #                     <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
+            #                     <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
+            #                     <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+            #                 </ul>
+            #
+            #                 <!-- Tab panes -->
+            #                 <div class="tab-content">
+            #                     <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
+            #                         <div class="form-group">
+            #                             <label class='control-label'>Label</label>
+            #                             <input type='text' ng-model="label" validator="[required]" class='form-control'/>
+            #                         </div>
+            #                         <div class="form-group">
+            #                             <label class='control-label'>Description</label>
+            #                             <input type='text' ng-model="description" class='form-control'/>
+            #                         </div>
+            #                         <div class="checkbox">
+            #                             <label>
+            #                                 <input type='checkbox' ng-check ng-model="readOnly" />
+            #                                 Read Only</label>
+            #                         </div>
+            #                     </div>
+            #                     <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
+            #                         <div class="checkbox">
+            #                             <label>
+            #                                 <input type='checkbox' ng-check ng-model="required" />
+            #                                 Required</label>
+            #                         </div>
+            #                         <div class="form-group" ng-if="validationOptions.length > 0">
+            #                             <label class='control-label'>Validation</label>
+            #                             <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
+            #                         </div>
+            #                     </div>
+            #                     <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
+            #                         <div class="form-group m-t">
+            #                             <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
+            #                             <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+            #
+            #                               <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
+            #                                   <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
+            #                               </optgroup>
+            #                             </select>
+            #                             <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
+            #                             </select>
+            #                             <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+            #                         </div>
+            #                     </div>
+            #                 </div>
+            #             </div>
+            #
+            #             <hr/>
+            #             <div class='form-group'>
+            #                 <input type='button' ng-click="popover.remove($event)" class='btn btn-danger fa h-c-34 pull-right m-b m-l-xs' value='&#xf1f8'/>
+            #                 <input type='submit' ng-click="popover.save($event)" class='btn btn-primary h-c-34 pull-right m-b fa' value='&#xf0c7'/>
+            #                 <input type='button' ng-click="popover.cancel($event)" class='btn btn-white h-c-34 pull-left m-b' value='Cancel'/>
+            #             </div>
+            #         </form>
+            #         """
 
             # ----------------------------------------
             # signature pad
