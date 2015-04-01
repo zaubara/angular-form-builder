@@ -1004,7 +1004,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <div class="row" id="{{formName+index | nospace}}">
                         <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
 
-                        <div class="col-sm-10 test" resize>
+                        <div class="col-sm-10">
                             <div class="m-b">
                                 <signature-pad></signature-pad>
                             </div>
