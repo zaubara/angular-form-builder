@@ -369,10 +369,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                             <div class="row" ng-show="validation==='[numberRange]'">
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control" ng-model="minRange" placeholder="Min">
+                                    <input type="text" class="form-control" ng-model="minRange" placeholder="Min Range">
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control" ng-model="maxRange" placeholder="Max">
+                                    <input type="text" class="form-control" ng-model="maxRange" placeholder="Max Range">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" ng-model="minLength" placeholder="Min Length">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" ng-model="maxLength" placeholder="Max Length">
                                 </div>
                             </div>
                         </div>
