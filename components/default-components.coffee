@@ -518,7 +518,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
                     <div class='checkbox' ng-repeat="item in options track by $index">
                       <label>
-                        <input checked="" ng-disabled="readOnly" type='checkbox' ng-check ng-model="inputArray[$index]" value='item'/>
+                        <input checked="" ng-disabled="readOnly" type='checkbox' check-repeat ng-model="inputArray[$index]" ng-value='item'/>
                             <i></i>
                             {{item}}
                       </label>
