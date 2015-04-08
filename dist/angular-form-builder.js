@@ -714,7 +714,9 @@
               checked = [];
               for (index in scope.inputArray) {
                 if (scope.inputArray[index]) {
-                  checked.push((_ref = scope.options[index]) != null ? _ref : scope.inputArray[index]);
+                  if (index !== 'diff') {
+                    checked.push((_ref = scope.options[index]) != null ? _ref : scope.inputArray[index]);
+                  }
                 }
               }
               return scope.inputText = checked.join(', ');
