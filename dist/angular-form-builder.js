@@ -17,9 +17,21 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $modal, form, inThisForm;
+      var $builder, $modal, $rootScope, $timeout, broadcastSave, form, inThisForm, timeout;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
+      $rootScope = $injector.get('$rootScope');
+      $timeout = $injector.get('$timeout');
+      timeout = null;
+      broadcastSave = function() {
+        return $rootScope.$broadcast('saveNeeded');
+      };
+      $scope.$watch('formObject', function() {
+        if (timeout != null) {
+          $timeout.cancel(timeout);
+        }
+        return timeout = $timeout(broadcastSave, 1000);
+      }, true);
       if ($scope.formObject.logic == null) {
         $scope.formObject.logic = {
           action: 'Hide'

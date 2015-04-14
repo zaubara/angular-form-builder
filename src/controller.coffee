@@ -22,17 +22,22 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
+    $rootScope = $injector.get '$rootScope'
+    $timeout = $injector.get '$timeout'
 
-    # see if logic already exists. if not initialize it
-    # logic = $builder.forms.skipLogic.filter((item) ->
-    #   return item.id is $scope.formObject.id
-    #   )
-    # if logic.length > 0
-    #   $scope.formObject.logic = logic[0].logic
-    # else
-    #   $scope.formObject.logic = {
-    #     action: 'Hide'
-    #   }
+    # init timeout for debounce purposes
+    timeout = null
+
+    # broadcast saveNeeded event which will then be intercepted for auto-save
+    broadcastSave = ->
+      $rootScope.$broadcast 'saveNeeded'
+
+    # watch formObject for changes and broadcast to $rootScope for auto-save purposes
+    $scope.$watch 'formObject', ->
+      if timeout?
+        $timeout.cancel timeout
+      timeout = $timeout(broadcastSave, 1000)
+    , yes
 
     if !$scope.formObject.logic?
       $scope.formObject.logic = {
