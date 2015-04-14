@@ -22,22 +22,22 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
-    $rootScope = $injector.get '$rootScope'
-    $timeout = $injector.get '$timeout'
-
-    # init timeout for debounce purposes
-    timeout = null
-
-    # broadcast saveNeeded event which will then be intercepted for auto-save
-    broadcastSave = ->
-      $rootScope.$broadcast 'saveNeeded'
-
-    # watch formObject for changes and broadcast to $rootScope for auto-save purposes
-    $scope.$watch 'formObject', ->
-      if timeout?
-        $timeout.cancel timeout
-      timeout = $timeout(broadcastSave, 1000)
-    , yes
+    # $rootScope = $injector.get '$rootScope'
+    # $timeout = $injector.get '$timeout'
+    #
+    # # init timeout for debounce purposes
+    # timeout = null
+    #
+    # # broadcast saveNeeded event which will then be intercepted for auto-save
+    # broadcastSave = ->
+    #   $rootScope.$broadcast 'saveNeeded'
+    #
+    # # watch formObject for changes and broadcast to $rootScope for auto-save purposes
+    # $scope.$watch 'formObject', ->
+    #   if timeout?
+    #     $timeout.cancel timeout
+    #   timeout = $timeout(broadcastSave, 1000)
+    # , yes
 
     if !$scope.formObject.logic?
       $scope.formObject.logic = {
