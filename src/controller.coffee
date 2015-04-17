@@ -96,7 +96,7 @@ angular.module 'builder.controller', ['builder.provider']
                         '<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>'+
                         '<h4 class="modal-title">Edit Rich Content</div>'+
                     '</div>'+
-                    '<div class="modal-body">'+
+                    '<div class="modal-body no-padding">'+
                         '<div summernote ng-model="summerNoteText"></div>' +
                     '</div>'+
                     '<div class="modal-footer">'+
