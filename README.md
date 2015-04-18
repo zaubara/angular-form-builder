@@ -1,5 +1,7 @@
 #angular-form-builder
 
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
+
 This is an AngularJS form builder written in [CoffeeScript](http://coffeescript.org) by [kelp404](http://kelp404.github.io/angular-form-builder/)
 
 ###Added multiple form support.
