@@ -63,6 +63,8 @@
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
             case 'cpr':
               return $scope.comparatorChoices = ['Contains', 'Does not contain'];
+            case 'graphic':
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain'];
           }
         }
       });

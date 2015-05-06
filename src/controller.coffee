@@ -82,6 +82,8 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.comparatorChoices = ['Contains', 'Does not contain']
           when 'cpr'
             $scope.comparatorChoices = ['Contains', 'Does not contain']
+          when 'graphic'
+            $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain']
 
     $scope.cancel = ->
       $scope.modalInstance.dismiss('cancel')
