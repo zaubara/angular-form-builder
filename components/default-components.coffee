@@ -29,6 +29,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -57,6 +58,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>
                     </div>
                 </div>
@@ -112,6 +134,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -161,6 +184,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
+                        </div>
                 </div>
 
                 <hr/>
@@ -209,6 +253,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -271,6 +316,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -326,6 +392,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -396,6 +463,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -442,6 +530,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -485,6 +574,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>
                     </div>
                 </div>
@@ -541,6 +651,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -585,6 +696,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>
                     </div>
                 </div>
@@ -638,6 +770,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -682,6 +815,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>
                     </div>
                 </div>
@@ -739,6 +893,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -793,6 +948,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group">
+                            <label class="control-label">Add Rule</label>
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label for="">Add</label>
+                                <input ng-model="newRule.points" type="text" class="form-control">
+                                <label for="">points</label>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="from-group">
+                            <label for="">if this field</label>
+                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                          </div>
+                          <div class="input-group">
+                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                          </div>
+                          <p class="text-danger">{{rulesErrorMessage}}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -845,6 +1021,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                             <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                             <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                            <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                         </ul>
 
                         <!-- Tab panes -->
@@ -888,6 +1065,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     </select>
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                 </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                              <div class="form-group">
+                                <label class="control-label">Add Rule</label>
+                                <form class="form-inline">
+                                  <div class="form-group">
+                                    <label for="">Add</label>
+                                    <input ng-model="newRule.points" type="text" class="form-control">
+                                    <label for="">points</label>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="from-group">
+                                <label for="">if this field</label>
+                                <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                              </div>
+                              <div class="input-group">
+                                <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                              </div>
+                              <p class="text-danger">{{rulesErrorMessage}}</p>
                             </div>
                         </div>
 
@@ -940,6 +1138,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             #                     <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
             #                     <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
             #                     <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+            # <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
             #                 </ul>
             #
             #                 <!-- Tab panes -->
@@ -1032,6 +1231,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                                 <li role="presentation"><a href="{{'#validations' + date + index}}" aria-controls="{{'validations' + date + index}}" role="tab" data-toggle="tab">Validations</a></li>
                                 <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
+                                <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
                             </ul>
 
                             <!-- Tab panes -->
@@ -1071,6 +1271,27 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         </select>
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                     </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                                  <div class="form-group">
+                                    <label class="control-label">Add Rule</label>
+                                    <form class="form-inline">
+                                      <div class="form-group">
+                                        <label for="">Add</label>
+                                        <input ng-model="newRule.points" type="text" class="form-control">
+                                        <label for="">points</label>
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="from-group">
+                                    <label for="">if this field</label>
+                                    <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
+                                  </div>
+                                  <div class="input-group">
+                                    <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                                    <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                                  </div>
+                                  <p class="text-danger">{{rulesErrorMessage}}</p>
                                 </div>
                             </div>
                         </div>

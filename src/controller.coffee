@@ -39,6 +39,74 @@ angular.module 'builder.controller', ['builder.provider']
     #   timeout = $timeout(broadcastSave, 1000)
     # , yes
 
+    $scope.newRule = {}
+
+    if !$scope.formObject.pointRules?
+      $scope.formObject.pointRules = []
+
+    $scope.predicates = [
+      {
+        value: 'eq',
+        label: 'Equals'
+      },
+      {
+        value: 'not_eq',
+        label: 'Does not equal'
+      },
+      {
+        value: 'matches',
+        label: 'Matches'
+      },
+      {
+        value: 'does_not_match',
+        label: 'Does not match'
+      },
+      {
+        value: 'contains',
+        label: 'Contains'
+      },
+      {
+        value: 'does_not_contain',
+        label: 'Does not contain'
+      },
+      {
+        value: 'lt',
+        label: 'Less than'
+      },
+      {
+        value: 'lteq',
+        label: 'Less than or equal to'
+      },
+      {
+        value: 'gt',
+        label: 'Greather than'
+      },
+      {
+        value: 'gteq',
+        label: 'Greater than or equal to'
+      },
+      {
+        value: 'not_in',
+        label: 'Not in'
+      },
+      {
+        value: 'not_null',
+        label: 'Not Empty'
+      },
+      {
+        value: 'null',
+        label: 'Empty'
+      }
+    ]
+
+    $scope.addRule = ->
+      if !$scope.newRule.predicate? or !$scope.newRule.value? or !$scope.newRule.points
+        $scope.rulesErrorMessage = 'Please updade all fields.'
+      else
+        $scope.rulesErrorMessage = ''
+        $scope.formObject.pointRules.push $scope.newRule
+        $scope.newRule = {}
+
     if !$scope.formObject.logic?
       $scope.formObject.logic = {
         action: 'Hide'
@@ -182,7 +250,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic, category]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic, category, pointRules]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -203,6 +271,7 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.cprCountry = $scope.cprCountry
             formObject.logic = $scope.logic
             formObject.category = $scope.category
+            formObject.pointRules = $scope.pointRules
 
         , yes
 
@@ -240,6 +309,7 @@ angular.module 'builder.controller', ['builder.provider']
                 cprCountry: $scope.cprCountry
                 logic: $scope.logic
                 category: $scope.category
+                pointRules: $scope.pointRules
         rollback: ->
             ###
             Rollback input value.
@@ -265,6 +335,7 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.cprCountry = @model.cprCountry
             $scope.logic = @model.logic
             $scope.category = @model.category
+            $scope.pointRules = @model.pointRules
 ]
 
 # ----------------------------------------
