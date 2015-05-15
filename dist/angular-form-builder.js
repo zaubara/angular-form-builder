@@ -67,7 +67,7 @@
         }
       ];
       $scope.addRule = function() {
-        if (($scope.newRule.predicate == null) || ($scope.newRule.value == null) || !$scope.newRule.points) {
+        if (($scope.newRule.predicate == null) || !$scope.newRule.points || (($scope.newRule.value == null) && $scope.newRule.predicate !== 'null' && $scope.newRule.predicate !== 'not_null')) {
           return $scope.rulesErrorMessage = 'Please updade all fields.';
         } else {
           $scope.rulesErrorMessage = '';
