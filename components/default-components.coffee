@@ -29,24 +29,24 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                        <li role="presentation" class="disabled"></a>Points</a></li>
+                        <li role="presentation" class="disabled"><a>Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
-                                <label class='control-label'>Placeholder</label>
+                            <div class="form-group m-t">
+                                <label class='control-label m-t'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group m-t">
                               <a class="btn btn-success btn-block" ng-click="openSummerNote()">Open Rich Text Editor</a>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
                                 <select ng-model="formObject.logic.component" class="form-control custom-m-b">
 
@@ -60,13 +60,13 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
-                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                          <div class="form-group m-t" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
-                          <div class="form-group">
+                          <div class="form-group m-t">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
                               <div class="form-group">
@@ -76,7 +76,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                               </div>
                             </form>
                           </div>
-                          <div class="from-group">
+                          <div class="from-group m-t">
                             <label for="">if this field</label>
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
@@ -146,7 +146,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -161,7 +161,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required</label>
@@ -190,7 +190,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -271,7 +271,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -286,7 +286,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required</label>
@@ -328,7 +328,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -421,7 +421,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -440,7 +440,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required</label>
@@ -486,7 +486,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -565,7 +565,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -584,7 +584,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required</label>
@@ -604,7 +604,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -692,7 +692,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -711,7 +711,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required
@@ -732,7 +732,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -817,7 +817,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -836,7 +836,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required
@@ -857,7 +857,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -946,7 +946,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group">
+                            <div class="form-group m-t-">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -965,7 +965,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                            <div class="checkbox">
+                            <div class="checkbox m-t">
                                 <label>
                                     <input type='checkbox' check-repeat ng-model="required" />
                                     Required
@@ -995,7 +995,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
@@ -1080,7 +1080,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                                <div class="form-group">
+                                <div class="form-group m-t">
                                     <label class='control-label'>Label</label>
                                     <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                                 </div>
@@ -1095,7 +1095,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
-                                <div class="checkbox">
+                                <div class="checkbox m-t">
                                     <label>
                                         <input type='checkbox' check-repeat ng-model="required" />
                                         Required</label>
@@ -1119,7 +1119,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                            <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                 <label class="control-label">Active Rules</label>
                                 <div ng-repeat="rule in formObject.pointRules">
