@@ -63,7 +63,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -194,7 +194,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -332,7 +332,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -485,7 +485,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -603,7 +603,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -731,7 +731,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -856,7 +856,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -994,7 +994,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
                           </div>
                           <div class="form-group">
@@ -1118,7 +1118,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                 <label class="control-label">Active Rules</label>
                                 <div ng-repeat="rule in formObject.pointRules">
-                                  Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                                  Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                                 </div>
                               </div>
                               <div class="form-group">
@@ -1330,7 +1330,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                   <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                     <label class="control-label">Active Rules</label>
                                     <div ng-repeat="rule in formObject.pointRules">
-                                      Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                                      Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                                     </div>
                                   </div>
                                   <div class="form-group">

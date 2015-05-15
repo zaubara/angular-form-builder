@@ -365,6 +365,50 @@
         return input.replace(/[^A-Z0-9]/ig, "");
       }
     };
+  }).filter('predicate', function() {
+    return function(input) {
+      switch (input) {
+        case 'eq':
+          input = 'Equals';
+          break;
+        case 'not_eq':
+          input = 'Does not equal';
+          break;
+        case 'matches':
+          input = 'Matches';
+          break;
+        case 'does_not_match':
+          input = 'Does not match';
+          break;
+        case 'contains':
+          input = 'Contains';
+          break;
+        case 'does_not_contain':
+          input = 'Does not contain';
+          break;
+        case 'lt':
+          input = 'Less than';
+          break;
+        case 'lteq':
+          input = 'Less than or equal to';
+          break;
+        case 'gt':
+          input = 'Greater than';
+          break;
+        case 'gteq':
+          input = 'Greater than or equal to';
+          break;
+        case 'not_in':
+          input = 'Not in';
+          break;
+        case 'not_null':
+          input = 'is Not Empty';
+          break;
+        case 'null':
+          input = 'is Empty';
+      }
+      return input;
+    };
   }).directive('uiDate', [
     '$injector', function($injector) {
       return {

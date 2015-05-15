@@ -31,6 +31,37 @@ angular.module 'builder.directive', [
     if input? and angular.isString(input)
       input.replace(/[^A-Z0-9]/ig, "")
 
+.filter 'predicate', ->
+  (input) ->
+    switch input
+      when 'eq'
+        input = 'Equals'
+      when 'not_eq'
+        input = 'Does not equal'
+      when 'matches'
+        input = 'Matches'
+      when 'does_not_match'
+        input = 'Does not match'
+      when 'contains'
+        input = 'Contains'
+      when 'does_not_contain'
+        input = 'Does not contain'
+      when 'lt'
+        input = 'Less than'
+      when 'lteq'
+        input = 'Less than or equal to'
+      when 'gt'
+        input = 'Greater than'
+      when 'gteq'
+        input = 'Greater than or equal to'
+      when 'not_in'
+        input = 'Not in'
+      when 'not_null'
+        input = 'is Not Empty'
+      when 'null'
+        input = 'is Empty'
+    return input
+
 # ----------------------------------------
 # date picker directive
 # ----------------------------------------
