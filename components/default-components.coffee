@@ -29,7 +29,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <li role="presentation" class="active"><a href="{{'#properties' + date + index}}" aria-controls="{{'properties' + date + index}}" role="tab" data-toggle="tab">Properties</a></li>
                         <li role="presentation" class="disabled"><a>Validations</a></li>
                         <li role="presentation"><a href="{{'#logic' + date + index}}" aria-controls="{{'logic' + date + index}}" role="tab" data-toggle="tab">Logic</a></li>
-                        <li role="presentation"><a href="{{'#points' + date + index}}" aria-controls="{{'points' + date + index}}" role="tab" data-toggle="tab">Points</a></li>
+                        <li role="presentation" class="disabled"></a>Points</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -60,7 +60,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
-                          <div class="form-group">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
@@ -191,6 +191,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -206,7 +212,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -323,6 +329,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -338,7 +350,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -470,6 +482,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -485,7 +503,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -582,6 +600,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -597,7 +621,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -704,6 +728,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -719,7 +749,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -823,6 +853,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -838,7 +874,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -955,6 +991,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                          <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                            <label class="control-label">Active Rules</label>
+                            <div ng-repeat="rule in formObject.pointRules">
+                              Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                            </div>
+                          </div>
                           <div class="form-group">
                             <label class="control-label">Add Rule</label>
                             <form class="form-inline">
@@ -970,7 +1012,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                             <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -1073,6 +1115,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                              <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                                <label class="control-label">Active Rules</label>
+                                <div ng-repeat="rule in formObject.pointRules">
+                                  Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                                </div>
+                              </div>
                               <div class="form-group">
                                 <label class="control-label">Add Rule</label>
                                 <form class="form-inline">
@@ -1088,7 +1136,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                               </div>
                               <div class="input-group">
-                                <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                                <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                               </div>
                               <p class="text-danger">{{rulesErrorMessage}}</p>
@@ -1279,6 +1327,12 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
+                                  <div class="form-group" ng-if="formObject.pointRules.length > 0">
+                                    <label class="control-label">Active Rules</label>
+                                    <div ng-repeat="rule in formObject.pointRules">
+                                      Add {{rule.points}} points if this field {{rule.predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
+                                    </div>
+                                  </div>
                                   <div class="form-group">
                                     <label class="control-label">Add Rule</label>
                                     <form class="form-inline">
@@ -1294,7 +1348,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                                   </div>
                                   <div class="input-group">
-                                    <input ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
+                                    <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
                                     <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
                                   </div>
                                   <p class="text-danger">{{rulesErrorMessage}}</p>
