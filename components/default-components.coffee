@@ -350,8 +350,13 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
                           </div>
                           <div class="input-group">
-                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
-                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                            <p class="input-group">
+                              <input aria-describedby="basic-addon2" type="text" ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" class="form-control" datepicker-popup="{{format}}" ng-model="newRule.value" is-open="openedPoints" close-text="Close"/>
+                              <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
+                              <span class="input-group-btn">
+                                <button ng-disabled="readOnly" type="button" class="btn btn-default" ng-click="openPoints($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
+                            </p>
                           </div>
                           <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>

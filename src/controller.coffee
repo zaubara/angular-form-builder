@@ -22,6 +22,7 @@ angular.module 'builder.controller', ['builder.provider']
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
+    $filter = $injector.get '$filter'
     # $rootScope = $injector.get '$rootScope'
     # $timeout = $injector.get '$timeout'
     #
@@ -104,6 +105,8 @@ angular.module 'builder.controller', ['builder.provider']
           $scope.rulesErrorMessage = 'Please updade all fields.'
       else
         $scope.rulesErrorMessage = ''
+        if (angular.isDate($scope.newRule.value))
+          $scope.newRule.value = $filter('date')($scope.newRule.value, 'dd-MM-yyyy')
         $scope.formObject.pointRules.push $scope.newRule
         $scope.newRule = {}
 
@@ -159,6 +162,12 @@ angular.module 'builder.controller', ['builder.provider']
     $scope.save = (text) ->
       $scope.placeholder = text
       $scope.modalInstance.close()
+
+    $scope.openPoints = ($event) ->
+      $event.preventDefault()
+      $event.stopPropagation()
+      $scope.openedPoints = yes
+
 
     $scope.openSummerNote = ->
       $scope.modalInstance = $modal.open({

@@ -17,9 +17,10 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $modal, form, inThisForm;
+      var $builder, $filter, $modal, form, inThisForm;
       $builder = $injector.get('$builder');
       $modal = $injector.get('$modal');
+      $filter = $injector.get('$filter');
       $scope.newRule = {};
       if ($scope.formObject.pointRules == null) {
         $scope.formObject.pointRules = [];
@@ -71,6 +72,9 @@
           return $scope.rulesErrorMessage = 'Please updade all fields.';
         } else {
           $scope.rulesErrorMessage = '';
+          if (angular.isDate($scope.newRule.value)) {
+            $scope.newRule.value = $filter('date')($scope.newRule.value, 'dd-MM-yyyy');
+          }
           $scope.formObject.pointRules.push($scope.newRule);
           return $scope.newRule = {};
         }
@@ -129,6 +133,11 @@
       $scope.save = function(text) {
         $scope.placeholder = text;
         return $scope.modalInstance.close();
+      };
+      $scope.openPoints = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        return $scope.openedPoints = true;
       };
       $scope.openSummerNote = function() {
         return $scope.modalInstance = $modal.open({
