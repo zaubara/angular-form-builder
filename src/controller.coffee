@@ -262,7 +262,7 @@ angular.module 'builder.controller', ['builder.provider']
 
         $scope.optionsText = formObject.options.join '\n'
 
-        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic, category, pointRules]', ->
+        $scope.$watch '[label, description, placeholder, required, options, validation, multiple, minLength, maxLength, disableWeekends, maxDate, requireConfirmation, readOnly, minRange, maxRange, nextXDays, performCreditCheck, cprCountry, logic, category, pointRules, conversionType]', ->
             formObject.label = $scope.label
             formObject.description = $scope.description
             formObject.placeholder = $scope.placeholder
@@ -284,6 +284,7 @@ angular.module 'builder.controller', ['builder.provider']
             formObject.logic = $scope.logic
             formObject.category = $scope.category
             formObject.pointRules = $scope.pointRules
+            formObject.conversionType = $scope.conversionType
 
         , yes
 
@@ -322,6 +323,7 @@ angular.module 'builder.controller', ['builder.provider']
                 logic: $scope.logic
                 category: $scope.category
                 pointRules: $scope.pointRules
+                conversionType: $scope.conversionType
         rollback: ->
             ###
             Rollback input value.
@@ -348,6 +350,7 @@ angular.module 'builder.controller', ['builder.provider']
             $scope.logic = @model.logic
             $scope.category = @model.category
             $scope.pointRules = @model.pointRules
+            $scope.conversionType = @model.conversionType
 ]
 
 # ----------------------------------------
