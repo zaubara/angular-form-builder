@@ -60,31 +60,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
-                          <div class="form-group m-t" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
-                              Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
-                            </div>
-                          </div>
-                          <div class="form-group m-t">
-                            <label class="control-label">Add Rule</label>
-                            <form class="form-inline">
-                              <div class="form-group">
-                                <label for="">Add</label>
-                                <input ng-model="newRule.points" type="text" class="form-control">
-                                <label for="">points</label>
-                              </div>
-                            </form>
-                          </div>
-                          <div class="from-group m-t">
-                            <label for="">if this field</label>
-                            <select ng-model="newRule.predicate" ng-options="predicate.value as predicate.label for predicate in predicates" class="form-control"></select>
-                          </div>
-                          <div class="input-group">
-                            <input ng-readonly="newRule.predicate === 'null' || newRule.predicate === 'not_null'" ng-model="newRule.value" type="text" class="form-control" placeholder="value" aria-describedby="basic-addon2">
-                            <span class="input-group-addon" id="basic-addon2" ng-click="addRule()">+</span>
-                          </div>
-                          <p class="text-danger">{{rulesErrorMessage}}</p>
                         </div>
                     </div>
                 </div>
@@ -195,18 +170,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -340,18 +313,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -501,18 +472,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -626,18 +595,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -761,18 +728,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -894,18 +859,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -1039,18 +1002,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
-                            <div ng-repeat="rule in formObject.pointRules">
+                            <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <div class="form-group">
+                          <div class="form-group custom-m-b">
                               <div class="input-group">
                                 <span class="input-group-addon add-points">Add</span>
                                 <input type="text" class="form-control" ng-model="newRule.points">
                                 <span class="input-group-addon add-points">points</span>
                               </div>
-                            </div>
                           </div>
 
                           <div class="form-group custom-m-b">
@@ -1170,18 +1131,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                 <label class="control-label m-t-c--5">Active Rules</label>
-                                <div ng-repeat="rule in formObject.pointRules">
+                                <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                                   Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                                 </div>
                               </div>
-                              <div class="form-group">
-                                <div class="form-group">
+                              <div class="form-group custom-m-b">
                                   <div class="input-group">
                                     <span class="input-group-addon add-points">Add</span>
                                     <input type="text" class="form-control" ng-model="newRule.points">
                                     <span class="input-group-addon add-points">points</span>
                                   </div>
-                                </div>
                               </div>
 
                               <div class="form-group custom-m-b">
@@ -1389,18 +1348,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
 
                                   <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                     <label class="control-label m-t-c--5">Active Rules</label>
-                                    <div ng-repeat="rule in formObject.pointRules">
+                                    <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
                                       Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                                     </div>
                                   </div>
-                                  <div class="form-group">
-                                    <div class="form-group">
+                                  <div class="form-group custom-m-b">
                                       <div class="input-group">
                                         <span class="input-group-addon add-points">Add</span>
                                         <input type="text" class="form-control" ng-model="newRule.points">
                                         <span class="input-group-addon add-points">points</span>
                                       </div>
-                                    </div>
                                   </div>
 
                                   <div class="form-group custom-m-b">
