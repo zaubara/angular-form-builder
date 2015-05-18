@@ -110,6 +110,9 @@ angular.module 'builder.controller', ['builder.provider']
         $scope.formObject.pointRules.push $scope.newRule
         $scope.newRule = {}
 
+    $scope.removeRule = (rule) ->
+      $scope.formObject.pointRules.splice($scope.formObject.pointRules.indexOf(rule),1)
+
     if !$scope.formObject.logic?
       $scope.formObject.logic = {
         action: 'Hide'

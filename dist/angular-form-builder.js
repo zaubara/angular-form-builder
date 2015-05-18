@@ -79,6 +79,9 @@
           return $scope.newRule = {};
         }
       };
+      $scope.removeRule = function(rule) {
+        return $scope.formObject.pointRules.splice($scope.formObject.pointRules.indexOf(rule), 1);
+      };
       if ($scope.formObject.logic == null) {
         $scope.formObject.logic = {
           action: 'Hide'
