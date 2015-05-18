@@ -35,8 +35,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
-                                <label class='control-label m-t'>Placeholder</label>
+                            <div class="form-group m-t-sm">
+                                <label class='control-label'>Placeholder</label>
                                 <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
                             <div class="form-group m-t">
@@ -146,7 +146,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -191,7 +191,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             </div>
                         </div>
 
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -279,7 +279,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -336,7 +336,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -432,7 +432,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -497,7 +497,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -583,7 +583,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -622,7 +622,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -717,7 +717,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -757,7 +757,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -849,7 +849,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -889,7 +889,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -985,7 +986,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                            <div class="form-group m-t-">
+                            <div class="form-group m-t-sm">
                                 <label class='control-label'>Label</label>
                                 <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                             </div>
@@ -1034,7 +1035,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                        <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label">Active Rules</label>
@@ -1126,7 +1127,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                                <div class="form-group m-t">
+                                <div class="form-group m-t-sm">
                                     <label class='control-label'>Label</label>
                                     <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                                 </div>
@@ -1165,7 +1166,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                            <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                 <label class="control-label">Active Rules</label>
@@ -1349,7 +1350,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="{{'properties' + date + index}}">
-                                    <div class="form-group">
+                                    <div class="form-group m-t-sm">
                                         <label class='control-label'>Label</label>
                                         <input type='text' ng-model="label" validator="[required]" class='form-control'/>
                                     </div>
@@ -1384,7 +1385,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane p-t-sm" id="{{'points' + date + index}}">
+                                <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                                   <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                     <label class="control-label">Active Rules</label>
