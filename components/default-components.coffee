@@ -171,7 +171,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -314,7 +314,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -473,7 +473,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -596,7 +596,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -729,7 +729,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -860,7 +860,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -1003,7 +1003,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
                             <label class="control-label m-t-c--5">Active Rules</label>
                             <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                              Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                             </div>
                           </div>
                           <div class="form-group custom-m-b">
@@ -1132,7 +1132,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                 <label class="control-label m-t-c--5">Active Rules</label>
                                 <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                                  Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                                  Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                                 </div>
                               </div>
                               <div class="form-group custom-m-b">
@@ -1349,7 +1349,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                   <div class="form-group" ng-if="formObject.pointRules.length > 0">
                                     <label class="control-label m-t-c--5">Active Rules</label>
                                     <div class="m-t-xs" ng-repeat="rule in formObject.pointRules">
-                                      Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>. <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
+                                      Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span> <a ng-click="removeRule(rule)" class="pull-right btn btn-sm btn-link hover-dark-grey-link btn-xs"><i class="fa fa-times-circle"></i></a>
                                     </div>
                                   </div>
                                   <div class="form-group custom-m-b">
