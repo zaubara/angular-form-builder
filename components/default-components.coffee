@@ -61,7 +61,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
                           <div class="form-group m-t" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add {{rule.points}} points if this field {{rule.predicate | predicate}}<span ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'"> {{rule.value}}</span>.
                             </div>
@@ -194,7 +194,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
 
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -339,7 +339,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -500,7 +500,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -625,7 +625,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -760,7 +760,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -893,7 +893,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -1038,7 +1038,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                           <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                            <label class="control-label">Active Rules</label>
+                            <label class="control-label m-t-c--5">Active Rules</label>
                             <div ng-repeat="rule in formObject.pointRules">
                               Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                             </div>
@@ -1169,7 +1169,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                               <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                                <label class="control-label">Active Rules</label>
+                                <label class="control-label m-t-c--5">Active Rules</label>
                                 <div ng-repeat="rule in formObject.pointRules">
                                   Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                                 </div>
@@ -1388,7 +1388,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
                           
                                   <div class="form-group" ng-if="formObject.pointRules.length > 0">
-                                    <label class="control-label">Active Rules</label>
+                                    <label class="control-label m-t-c--5">Active Rules</label>
                                     <div ng-repeat="rule in formObject.pointRules">
                                       Add <span class="label label-primary">{{rule.points}}</span> points if this field <span class="label label-primary">{{rule.predicate | predicate}}</span>&nbsp;<span class="label label-primary" ng-if="rule.predicate !== 'null' && rule.predicate !== 'not_null'">{{rule.value}}</span>.
                                     </div>
