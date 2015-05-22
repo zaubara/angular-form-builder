@@ -69,7 +69,7 @@
       ];
       $scope.addRule = function() {
         if (($scope.newRule.predicate == null) || !$scope.newRule.points || (($scope.newRule.value == null) && $scope.newRule.predicate !== 'null' && $scope.newRule.predicate !== 'not_null')) {
-          return $scope.rulesErrorMessage = 'Please updade all fields.';
+          return $scope.rulesErrorMessage = 'Please update all fields.';
         } else {
           $scope.rulesErrorMessage = '';
           if (angular.isDate($scope.newRule.value)) {
