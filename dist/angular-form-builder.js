@@ -25,48 +25,285 @@
       if ($scope.formObject.pointRules == null) {
         $scope.formObject.pointRules = [];
       }
-      $scope.predicates = [
-        {
-          value: 'eq',
-          label: 'Equals'
-        }, {
-          value: 'not_eq',
-          label: 'Does not equal'
-        }, {
-          value: 'matches',
-          label: 'Matches'
-        }, {
-          value: 'does_not_match',
-          label: 'Does not match'
-        }, {
-          value: 'contains',
-          label: 'Contains'
-        }, {
-          value: 'does_not_contain',
-          label: 'Does not contain'
-        }, {
-          value: 'lt',
-          label: 'Less than'
-        }, {
-          value: 'lteq',
-          label: 'Less than or equal to'
-        }, {
-          value: 'gt',
-          label: 'Greather than'
-        }, {
-          value: 'gteq',
-          label: 'Greater than or equal to'
-        }, {
-          value: 'not_in',
-          label: 'Not in'
-        }, {
-          value: 'not_null',
-          label: 'Not Empty'
-        }, {
-          value: 'null',
-          label: 'Empty'
-        }
-      ];
+      switch ($scope.formObject.component) {
+        case 'checkbox':
+          $scope.predicates = [
+            {
+              value: 'in',
+              label: 'In'
+            }, {
+              value: 'not_in',
+              label: 'Not in'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not Empty'
+            }
+          ];
+          break;
+        case 'radio':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'lt',
+              label: 'Less than'
+            }, {
+              value: 'lteq',
+              label: 'Less than or equal to'
+            }, {
+              value: 'gt',
+              label: 'Greater than'
+            }, {
+              value: 'gteq',
+              label: 'Greater than or equal to'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              valu: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'select':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'lt',
+              label: 'Less than'
+            }, {
+              value: 'lteq',
+              label: 'Less than or equal to'
+            }, {
+              value: 'gt',
+              label: 'Greater than'
+            }, {
+              value: 'gteq',
+              label: 'Greater than or equal to'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              valu: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'product':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'in',
+              label: 'In'
+            }, {
+              value: 'not_in',
+              label: 'Not in'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'email':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'matches',
+              label: 'Matches'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'area':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'matches',
+              label: 'Matches'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'phone':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'matches',
+              label: 'Matches'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'text':
+          $scope.predicates = [
+            {
+              value: 'eq',
+              label: 'Equals'
+            }, {
+              value: 'not_eq',
+              label: 'Does not equal'
+            }, {
+              value: 'matches',
+              label: 'Matches'
+            }, {
+              value: 'does_not_match',
+              label: 'Does not match'
+            }, {
+              value: 'contains',
+              label: 'Contains'
+            }, {
+              value: 'does_not_contain',
+              label: 'Does not contain'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }, {
+              value: 'lt',
+              label: 'Less than'
+            }, {
+              value: 'lteq',
+              label: 'Less than or equal to'
+            }, {
+              value: 'gt',
+              label: 'Greater than'
+            }, {
+              value: 'gteq',
+              label: 'Greater than or equal to'
+            }
+          ];
+          break;
+        case 'date':
+          $scope.predicates = [
+            {
+              value: 'lt',
+              label: 'Less than'
+            }, {
+              value: 'lteq',
+              label: 'Less than or equal to'
+            }, {
+              value: 'gt',
+              label: 'Greater than'
+            }, {
+              value: 'gteq',
+              label: 'Greater than or equal to'
+            }, {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'signature':
+          $scope.predicates = [
+            {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+      }
       $scope.addRule = function() {
         if (($scope.newRule.predicate == null) || !$scope.newRule.points || (($scope.newRule.value == null) && $scope.newRule.predicate !== 'null' && $scope.newRule.predicate !== 'not_null')) {
           return $scope.rulesErrorMessage = 'Please update all fields.';

@@ -45,60 +45,27 @@ angular.module 'builder.controller', ['builder.provider']
     if !$scope.formObject.pointRules?
       $scope.formObject.pointRules = []
 
-    $scope.predicates = [
-      {
-        value: 'eq',
-        label: 'Equals'
-      },
-      {
-        value: 'not_eq',
-        label: 'Does not equal'
-      },
-      {
-        value: 'matches',
-        label: 'Matches'
-      },
-      {
-        value: 'does_not_match',
-        label: 'Does not match'
-      },
-      {
-        value: 'contains',
-        label: 'Contains'
-      },
-      {
-        value: 'does_not_contain',
-        label: 'Does not contain'
-      },
-      {
-        value: 'lt',
-        label: 'Less than'
-      },
-      {
-        value: 'lteq',
-        label: 'Less than or equal to'
-      },
-      {
-        value: 'gt',
-        label: 'Greather than'
-      },
-      {
-        value: 'gteq',
-        label: 'Greater than or equal to'
-      },
-      {
-        value: 'not_in',
-        label: 'Not in'
-      },
-      {
-        value: 'not_null',
-        label: 'Not Empty'
-      },
-      {
-        value: 'null',
-        label: 'Empty'
-      }
-    ]
+    switch $scope.formObject.component
+      when 'checkbox'
+        $scope.predicates = [{value: 'in',label: 'In'  },{value: 'not_in',label: 'Not in'},{value: 'null',label: 'Empty'},{value: 'not_null', label: 'Not Empty'}]
+      when 'radio'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'lt',label: 'Less than'},{value: 'lteq',label: 'Less than or equal to'},{value: 'gt',label: 'Greater than'},{value: 'gteq',label: 'Greater than or equal to'},{value: 'null',label: 'Empty'},{valu: 'not_null',label: 'Not empty'}]
+      when 'select'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'lt',label: 'Less than'},{value: 'lteq',label: 'Less than or equal to'},{value: 'gt',label: 'Greater than'},{value: 'gteq',label: 'Greater than or equal to'},{value: 'null',label: 'Empty'},{valu: 'not_null',label: 'Not empty'}]
+      when 'product'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'in',label: 'In'},{value: 'not_in',label: 'Not in'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'email'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'matches',label: 'Matches'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'area'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'matches',label: 'Matches'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'phone'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'matches',label: 'Matches'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'text'
+        $scope.predicates = [{value: 'eq',label: 'Equals'},{value: 'not_eq',label: 'Does not equal'},{value: 'matches',label: 'Matches'},{value: 'does_not_match',label: 'Does not match'},{value: 'contains',label: 'Contains'},{value: 'does_not_contain',label: 'Does not contain'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'},{value: 'lt',label: 'Less than'},{value: 'lteq',label: 'Less than or equal to'},{value: 'gt',label: 'Greater than'},{value: 'gteq',label: 'Greater than or equal to'}]
+      when 'date'
+        $scope.predicates = [{value: 'lt',label: 'Less than'},{value: 'lteq',label: 'Less than or equal to'},{value: 'gt',label: 'Greater than'},{value: 'gteq',label: 'Greater than or equal to'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'signature'
+        $scope.predicates = [{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
 
     $scope.addRule = ->
       if !$scope.newRule.predicate? or !$scope.newRule.points or (!$scope.newRule.value? and $scope.newRule.predicate isnt 'null' and $scope.newRule.predicate isnt 'not_null')
