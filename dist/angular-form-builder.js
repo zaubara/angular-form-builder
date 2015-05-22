@@ -303,6 +303,39 @@
               label: 'Not empty'
             }
           ];
+          break;
+        case 'upload':
+          $scope.predicates = [
+            {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'cpr':
+          $scope.predicates = [
+            {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
+          break;
+        case 'address':
+          $scope.predicates = [
+            {
+              value: 'null',
+              label: 'Empty'
+            }, {
+              value: 'not_null',
+              label: 'Not empty'
+            }
+          ];
       }
       $scope.addRule = function() {
         if (($scope.newRule.predicate == null) || !$scope.newRule.points || (($scope.newRule.value == null) && $scope.newRule.predicate !== 'null' && $scope.newRule.predicate !== 'not_null')) {

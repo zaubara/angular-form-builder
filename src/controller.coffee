@@ -66,6 +66,12 @@ angular.module 'builder.controller', ['builder.provider']
         $scope.predicates = [{value: 'lt',label: 'Less than'},{value: 'lteq',label: 'Less than or equal to'},{value: 'gt',label: 'Greater than'},{value: 'gteq',label: 'Greater than or equal to'},{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
       when 'signature'
         $scope.predicates = [{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'upload'
+        $scope.predicates = [{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'cpr'
+        $scope.predicates = [{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
+      when 'address'
+        $scope.predicates = [{value: 'null',label: 'Empty'},{value: 'not_null',label: 'Not empty'}]
 
     $scope.addRule = ->
       if !$scope.newRule.predicate? or !$scope.newRule.points or (!$scope.newRule.value? and $scope.newRule.predicate isnt 'null' and $scope.newRule.predicate isnt 'not_null')
