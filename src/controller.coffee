@@ -116,13 +116,13 @@ angular.module 'builder.controller', ['builder.provider']
           when 'graphic'
             $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain']
 
-    # $scope.cancel = ->
-    #   $scope.modalInstance.dismiss('cancel')
-    #
-    # $scope.save = (text) ->
-    #   $scope.placeholder = text
-    #   $scope.modalInstance.close()
-    #
+    $scope.cancel = ->
+      $scope.modalInstance.dismiss('cancel')
+
+    $scope.save = (text) ->
+      $scope.placeholder = text
+      $scope.modalInstance.close()
+
     $scope.openPoints = ($event) ->
       $event.preventDefault()
       $event.stopPropagation()

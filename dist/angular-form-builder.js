@@ -400,6 +400,13 @@
           }
         }
       });
+      $scope.cancel = function() {
+        return $scope.modalInstance.dismiss('cancel');
+      };
+      $scope.save = function(text) {
+        $scope.placeholder = text;
+        return $scope.modalInstance.close();
+      };
       $scope.openPoints = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
