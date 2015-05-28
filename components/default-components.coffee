@@ -48,12 +48,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -154,12 +150,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -298,12 +290,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -457,12 +445,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -580,12 +564,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
-
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
+                                <component-selector></component-selector>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -713,12 +692,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -843,12 +818,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control" ng-model="formObject.logic.action" ng-options="action for action in ['Hide', 'Show']"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control  custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -987,12 +958,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                             <div class="form-group m-t">
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                <component-selector></component-selector>
 
-                                  <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                      <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                  </optgroup>
-                                </select>
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -1116,12 +1083,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                 <div class="form-group m-t">
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                    <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                    <component-selector></component-selector>
 
-                                      <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                          <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                      </optgroup>
-                                    </select>
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                     </select>
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -1244,12 +1207,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             #                     <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
             #                         <div class="form-group m-t">
             #                             <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-            #                             <select ng-model="formObject.logic.component" class="form-control custom-m-b">
-            #
-            #                               <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-            #                                   <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-            #                               </optgroup>
-            #                             </select>
+            # <component-selector></component-selector>
+
             #                             <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
             #                             </select>
             #                             <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
@@ -1333,12 +1292,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
                                     <div class="form-group m-t">
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.action" ng-options="action for action in actions"></select><p> this element if</p>
-                                        <select ng-model="formObject.logic.component" class="form-control custom-m-b">
+                                        <component-selector></component-selector>
 
-                                          <optgroup ng-repeat="(groupName, items) in fields" label="{{'Page: ' + groupName}}">
-                                              <option ng-selected="item.id === formObject.logic.component.id" ng-show="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
-                                          </optgroup>
-                                        </select>
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                         </select>
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">

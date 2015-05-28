@@ -400,13 +400,6 @@
           }
         }
       });
-      $scope.cancel = function() {
-        return $scope.modalInstance.dismiss('cancel');
-      };
-      $scope.save = function(text) {
-        $scope.placeholder = text;
-        return $scope.modalInstance.close();
-      };
       $scope.openPoints = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
@@ -428,7 +421,6 @@
         }
       }
       $scope.keys = Object.keys($builder.forms);
-      $scope.fields = $builder.forms;
       $scope.setupScope = function(formObject) {
 
         /*
@@ -585,9 +577,11 @@
     }
   ]).controller('fbFormController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $timeout;
+      var $builder, $rootScope, $timeout;
       $builder = $injector.get('$builder');
       $timeout = $injector.get('$timeout');
+      $rootScope = $injector.get('$rootScope');
+      $rootScope.fields = $builder.forms;
       if ($scope.input == null) {
         $scope.input = [];
       }
@@ -968,6 +962,24 @@
             }, 300);
             return false;
           });
+        }
+      };
+    }
+  ]).directive('componentSelector', [
+    '$injector', function($injector) {
+      var $builder;
+      $builder = $injector.get('$builder');
+      return {
+        restrict: 'E',
+        template: "<select ng-model=\"formObject.logic.component\" class=\"form-control custom-m-b\">\n  <optgroup ng-repeat=\"(groupName, items) in fields()\" label=\"{{'Page: ' + groupName}}\">\n      <option ng-selected=\"item.id === formObject.logic.component.id\" ng-if=\"keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)\" ng-repeat=\"item in fields()[groupName]\" value=\"{{item}}\">{{item.component}} - {{item.label}}</option>\n  </optgroup>\n</select>",
+        link: function(scope, elem, attrs) {
+          return scope.fields = function() {
+            if (elem.parent().parent().parent().parent().parent().is(':visible') === true) {
+              return $builder.forms;
+            } else {
+              return [];
+            }
+          };
         }
       };
     }

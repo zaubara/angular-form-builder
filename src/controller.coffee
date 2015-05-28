@@ -23,22 +23,6 @@ angular.module 'builder.controller', ['builder.provider']
     $builder = $injector.get '$builder'
     $modal = $injector.get '$modal'
     $filter = $injector.get '$filter'
-    # $rootScope = $injector.get '$rootScope'
-    # $timeout = $injector.get '$timeout'
-    #
-    # # init timeout for debounce purposes
-    # timeout = null
-    #
-    # # broadcast saveNeeded event which will then be intercepted for auto-save
-    # broadcastSave = ->
-    #   $rootScope.$broadcast 'saveNeeded'
-    #
-    # # watch formObject for changes and broadcast to $rootScope for auto-save purposes
-    # $scope.$watch 'formObject', ->
-    #   if timeout?
-    #     $timeout.cancel timeout
-    #   timeout = $timeout(broadcastSave, 1000)
-    # , yes
 
     $scope.newRule = {}
 
@@ -132,13 +116,13 @@ angular.module 'builder.controller', ['builder.provider']
           when 'graphic'
             $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain']
 
-    $scope.cancel = ->
-      $scope.modalInstance.dismiss('cancel')
-
-    $scope.save = (text) ->
-      $scope.placeholder = text
-      $scope.modalInstance.close()
-
+    # $scope.cancel = ->
+    #   $scope.modalInstance.dismiss('cancel')
+    #
+    # $scope.save = (text) ->
+    #   $scope.placeholder = text
+    #   $scope.modalInstance.close()
+    #
     $scope.openPoints = ($event) ->
       $event.preventDefault()
       $event.stopPropagation()
@@ -177,51 +161,6 @@ angular.module 'builder.controller', ['builder.provider']
 
     # old canSee func, moved to inline
     $scope.keys = Object.keys $builder.forms
-
-    # $scope.canSee = (item, groupName) ->
-    #   keys = Object.keys $builder.forms
-    #   if keys.indexOf(groupName) < keys.indexOf($scope.currentForm)
-    #     return yes
-    #   else if keys.indexOf(groupName) is keys.indexOf($scope.currentForm) and item.index < $scope.formObject.index
-    #     return yes
-    #   else
-    #     return no
-
-    # old isEqual func, moved to inline
-    # $scope.isEqual = (item) ->
-    #   if $scope.formObject.logic? and $scope.formObject.logic.component?
-    #     return angular.equals(item, $scope.formObject.logic.component) or angular.equals(item, angular.fromJson($scope.formObject.logic.component))
-    #   else
-    #     return no
-
-    $scope.fields = $builder.forms
-
-
-    # dump code from when skipLogic page existed
-
-    # $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, $scope.formObject)
-    # countElements = 0
-    # for form of $builder.forms
-    #         unless form is 'skipLogic'
-    #             countElements = countElements + $builder.forms[form].length
-    # unless countElements is $builder.forms.skipLogic.length
-    #     $builder.forms.skipLogic = []
-    #     for form of $builder.forms
-    #         unless form is 'skipLogic'
-    #             angular.forEach($builder.forms[form], (element) ->
-    #                 $builder.insertFormObject('skipLogic', $builder.forms.skipLogic.length + 1, element)
-    #                 )
-    # countElements = 0
-
-    # $scope.fields = []
-    # $builder.forms.skipLogic.forEach((element) ->
-    #   element.niceName = element.component + ' - ' + element.label
-    #   unless element.id is $scope.formObject.id
-    #     $scope.fields.push(element);
-    #   )
-
-
-
 
     $scope.setupScope = (formObject) ->
         ###
@@ -363,6 +302,9 @@ angular.module 'builder.controller', ['builder.provider']
     # providers
     $builder = $injector.get '$builder'
     $timeout = $injector.get '$timeout'
+    $rootScope = $injector.get '$rootScope'
+
+    $rootScope.fields = $builder.forms
 
     # set default for input
     $scope.input ?= []
