@@ -366,7 +366,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="row" id="{{formName+index | nospace}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
+                    <input type="text" ng-if="validation != '[numberRange]'" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
+                    <input type="tel" ng-if="validation === '[numberRange]'" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
                 </div>
               <div class="col-sm-10 col-sm-offset-2">
                 <small ng-show="description" class="help-block text-muted custom-small">{{description}}</small>
