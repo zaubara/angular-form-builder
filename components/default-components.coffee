@@ -1025,7 +1025,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <div class="col-sm-10">
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
+                        <input type="tel" ng-readonly="readOnly" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter"/>
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor"/>
                         <input type="text" ng-readonly="readOnly" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name"/>
