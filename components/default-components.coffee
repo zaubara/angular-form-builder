@@ -1019,19 +1019,28 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             description: ''
             required: no
             readOnly: no
+            placeholder: {
+              StreetName: 'Street Name',
+              Number: 'Number',
+              Letter: 'Letter',
+              Floor: 'Floor',
+              PlaceName: 'Place Name',
+              PostCode: 'Post Code',
+              City: 'City'
+            }
             options: []
             template:
                 """
                 <div class="row" id="{{formName+index | nospace}}">
                     <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                     <div class="col-sm-10">
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="Street Name"/>
-                        <input type="tel" ng-readonly="readOnly" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="Number"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="Letter"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="Floor"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="Place Name"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="Post Code"/>
-                        <input type="text" ng-readonly="readOnly" ng-model="inputText.City" class="form-control m-b" placeholder="City" validator-required={{required}} validator-group={{formName}}/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.StreetName" class="form-control custom-m-b" placeholder="{{placeholder.StreetName}}"/>
+                        <input type="tel" ng-readonly="readOnly" ng-model="inputText.Number" class="form-control custom-m-b" placeholder="{{placeholder.Number}}"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Letter" class="form-control custom-m-b" placeholder="{{placeholder.Letter}}"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.Floor" class="form-control custom-m-b" placeholder="{{placeholder.Floor}}"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PlaceName" class="form-control custom-m-b" placeholder="{{placeholder.PlaceName}}"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.PostCode" class="form-control custom-m-b" placeholder="{{placeholder.PostCode}}"/>
+                        <input type="text" ng-readonly="readOnly" ng-model="inputText.City" class="form-control m-b" placeholder="{{placeholder.City}}" validator-required={{required}} validator-group={{formName}}/>
                     </div>
                     <div class="col-sm-10 col-sm-offset-2">
                         <small ng-show="description" class="help-block text-muted custom-small">{{description}}</small>
@@ -1068,6 +1077,16 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <label>
                                         <input type='checkbox' check-repeat ng-model="readOnly" />
                                         Read Only</label>
+                                </div>
+                                <div class="form-group">
+                                <label class='control-label'>Placeholders</label>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.StreetName" class="form-control custom-m-b"/>
+                                <input type="tel" ng-readonly="readOnly" ng-model="placeholder.Number" class="form-control custom-m-b"/>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.Letter" class="form-control custom-m-b"/>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.Floor" class="form-control custom-m-b"/>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.PlaceName" class="form-control custom-m-b"/>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.PostCode" class="form-control custom-m-b"/>
+                                <input type="text" ng-readonly="readOnly" ng-model="placeholder.City" class="form-control m-b"/>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="{{'validations' + date + index}}">
