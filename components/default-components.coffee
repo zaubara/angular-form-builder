@@ -629,7 +629,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         readOnly: no
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}">
+            <div class="row" id="{{formName+index | nospace}}" ng-if="!hiddenLogic">
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
@@ -757,7 +757,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         options: ['value one', 'value two']
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}">
+            <div class="row" id="{{formName+index | nospace}}" ng-if="!hiddenLogic">
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <div class='radio' ng-repeat="item in options track by $index">
