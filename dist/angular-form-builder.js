@@ -414,6 +414,11 @@
         $event.stopPropagation();
         return $scope.openedPoints = true;
       };
+      $scope.resetLogic = function() {
+        return $scope.formObject.logic = {
+          action: 'Hide'
+        };
+      };
       $scope.openSummerNote = function() {
         return $scope.modalInstance = $modal.open({
           template: '<div class="modal-header">' + '<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' + '<h4 class="modal-title">Edit Rich Content</div>' + '</div>' + '<div class="modal-body no-padding">' + '<div summernote ng-model="summerNoteText"></div>' + '</div>' + '<div class="modal-footer">' + '<button class="btn btn-white pull-left" ng-click="cancel()">Cancel</button>' + '<button class="btn btn-primary pull-right" ng-click="save(summerNoteText)">Apply</button>' + '</div>',

@@ -53,6 +53,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'points' + date + index}}">
@@ -155,6 +157,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
 
@@ -295,6 +299,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -451,6 +457,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -569,6 +577,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -698,6 +708,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -824,6 +836,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control  custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
 
@@ -964,6 +978,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                 <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                 </select>
                                 <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                <br>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -1108,6 +1124,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                     <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                     </select>
                                     <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                    <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                    <br>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">
@@ -1317,6 +1335,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                                         <select class="form-control custom-m-b" ng-model="formObject.logic.comparator" ng-options="comparator for comparator in comparatorChoices">
                                         </select>
                                         <input type="text" ng-model="formObject.logic.value" class="form-control" placeholder="Value">
+                                        <button type="button" ng-click="resetLogic()" class="btn btn-default pull-right">Reset</button>
+                                        <br>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane p-t-n" id="{{'points' + date + index}}">

@@ -130,6 +130,10 @@ angular.module 'builder.controller', ['builder.provider']
       $event.stopPropagation()
       $scope.openedPoints = yes
 
+    $scope.resetLogic = () ->
+      $scope.formObject.logic = {
+        action: 'Hide'
+      }
 
     $scope.openSummerNote = ->
       $scope.modalInstance = $modal.open({
