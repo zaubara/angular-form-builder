@@ -892,7 +892,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         group: 'Choice'
         label: 'Select'
         description: ''
-        placeholder: 'placeholder'
+        placeholder: 'Choose..'
         multiple: no
         required: no
         readOnly: no
@@ -908,7 +908,8 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10 dropdown">
                     <select ng-show="!multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
-                        ng-model="inputText" ng-init="inputText = options[0]"/>
+                        ng-model="inputText" ng-init="inputText = ''">
+                        <option value="">{{placeholder}}</option>
                     <select ng-show="multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
                         ng-model="inputText" multiple ng-init="inputText = options[0]"/>
                 </div>
@@ -942,6 +943,10 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group">
                                 <label class='control-label'>Description</label>
                                 <input type='text' ng-model="description" class='form-control'/>
+                            </div>
+                            <div class="form-group">
+                                <label class='control-label'>Placeholder</label>
+                                <input type='text' ng-model="placeholder" class='form-control'/>
                             </div>
                             <div class="form-group">
                                 <label class='control-label'>Options</label>
