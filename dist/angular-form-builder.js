@@ -986,13 +986,18 @@
       $builder = $injector.get('$builder');
       return {
         restrict: 'E',
-        template: "<select ng-model=\"formObject.logic.component\" class=\"form-control custom-m-b\">\n  <optgroup ng-repeat=\"(groupName, items) in fields()\" label=\"{{'Page: ' + groupName}}\">\n      <option ng-selected=\"item.id === formObject.logic.component.id\" ng-if=\"keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)\" ng-repeat=\"item in fields()[groupName]\" value=\"{{item}}\">{{item.component}} - {{item.label}}</option>\n  </optgroup>\n</select>",
+        template: "<select ng-model=\"formObject.logic.component\" class=\"form-control custom-m-b\">\n  <optgroup ng-repeat=\"(groupName, items) in fields()\" label=\"{{'Page: ' + groupName}}\">\n      <option ng-selected=\"item.id === componentize(formObject.logic.component)\" ng-if=\"keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)\" ng-repeat=\"item in fields()[groupName]\" value=\"{{item}}\">{{item.component}} - {{item.label}}</option>\n  </optgroup>\n</select>",
         link: function(scope, elem, attrs) {
-          return scope.fields = function() {
+          scope.fields = function() {
             if (elem.parent().parent().parent().parent().parent().is(':visible') === true) {
               return $builder.forms;
             } else {
               return [];
+            }
+          };
+          return scope.componentize = function(component) {
+            if (component != null) {
+              return angular.fromJson(component).id;
             }
           };
         }

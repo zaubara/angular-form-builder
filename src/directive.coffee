@@ -354,7 +354,7 @@ angular.module 'builder.directive', [
     """
     <select ng-model="formObject.logic.component" class="form-control custom-m-b">
       <optgroup ng-repeat="(groupName, items) in fields()" label="{{'Page: ' + groupName}}">
-          <option ng-selected="item.id === formObject.logic.component.id" ng-if="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields()[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
+          <option ng-selected="item.id === componentize(formObject.logic.component)" ng-if="keys.indexOf(groupName) < keys.indexOf(currentForm) || (keys.indexOf(groupName) === keys.indexOf(currentForm) && item.index < formObject.index)" ng-repeat="item in fields()[groupName]" value="{{item}}">{{item.component}} - {{item.label}}</option>
       </optgroup>
     </select>
     """
@@ -364,6 +364,10 @@ angular.module 'builder.directive', [
         $builder.forms
       else
         []
+
+    scope.componentize = (component) ->
+      if component?
+        return angular.fromJson(component).id
 
 ]
 
