@@ -398,7 +398,7 @@
             case 'graphic':
               return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain'];
             case 'product':
-              return $scope.comparatorChoices = ['Equal to', 'Not equal to'];
+              return $scope.comparatorChoices = ['Equal to', 'Not equal to', 'Contains', 'Does not contain'];
           }
         }
       });
