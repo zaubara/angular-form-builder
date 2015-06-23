@@ -14,11 +14,11 @@ angular.module 'builder.components', ['builder', 'validator.rules']
             <div class="row" id="{{formName+index | nospace}}">
             <label class="col-sm-2 control-label" for="{{formName+index}}">
             </label>
-              <div class="col-sm-10 text-left">
+              <div class="col-sm-10 form-group text-left">
                   <rich-text><strong>Text Message</strong></rich-text>
                 </div>
-              <div id="dashedline" class="hr-line-dashed"></div>
             </div>
+            <div id="dashedline" class="hr-line-dashed"></div>
             """
         popoverTemplate:
             """
