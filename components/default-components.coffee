@@ -12,7 +12,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         template:
             """
             <div class="row" id="{{formName+index | nospace}}">
-              <div class="form-group text-center">
+            <label class="col-sm-2 control-label" for="{{formName+index}}">
+            </label>
+              <div class="col-sm-10 text-left">
                   <rich-text><strong>Text Message</strong></rich-text>
                 </div>
               <div id="dashedline" class="hr-line-dashed"></div>
