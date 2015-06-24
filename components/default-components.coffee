@@ -645,12 +645,9 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}">{{label}}</label>
                 <div class="col-sm-10">
                     <input type='hidden' ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}"/>
-                    <div class='checkbox' ng-repeat="item in options track by $index">
-                      <label>
-                        <input checked="" ng-disabled="readOnly" type='checkbox'  ng-model="inputArray[$index]" ng-value='item'/>
-                            <i></i>
-                            {{item}}
-                      </label>
+                    <div class='checkbox icheck-label' ng-repeat="item in options track by $index">
+                      <input id="check{{$index}}" ng-model="inputArray[$index]" ng-value='item' ng-disabled="readOnly" type="checkbox" checked="">
+                      <label for="check{{$index}}">{{item}}</label>
                     </div>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
