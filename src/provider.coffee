@@ -216,8 +216,8 @@ angular.module 'builder.provider', []
                 </div>
                 <div class="modal-body text-center">
                   <p class="no-margins"><b>Warning!</b><br>Warning! The following elements are logically depenendent on the element you are trying to delete!</p>
-                  <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="elem in elems">
+                  <ul class="list-group m-t-md">
+                    <li class="list-group-item list-group-item-warning" ng-repeat="elem in elems">
                       {{elem.label}}
                     </li>
                   </ul>
