@@ -1728,9 +1728,11 @@
     })(this);
     this.setupProviders = (function(_this) {
       return function(injector) {
+        var $modal;
         $injector = injector;
         $http = $injector.get('$http');
-        return $templateCache = $injector.get('$templateCache');
+        $templateCache = $injector.get('$templateCache');
+        return $modal = $injector.get('$modal');
       };
     })(this);
     this.loadTemplate = function(component) {
@@ -1855,34 +1857,87 @@
         @param name: The form name.
         @param index: The form object index.
          */
-        var formObjects;
-        _this.checkDependencies(_this.forms[name][index].id);
-        formObjects = _this.forms[name];
-        formObjects.splice(index, 1);
-        return _this.reindexFormObject(name);
+        var $modal, elems, forms, id, key, modal, reindexFormObject, value, _ref;
+        forms = _this.forms;
+        reindexFormObject = _this.reindexFormObject;
+        $modal = $injector.get('$modal');
+        id = _this.forms[name][index].id;
+        elems = [];
+        _ref = _this.forms;
+        for (key in _ref) {
+          value = _ref[key];
+          value.forEach(function(elem) {
+            if (elem.id !== id && elem.logic && elem.logic.component && angular.fromJson(elem.logic.component).id === id) {
+              return elems.push(elem);
+            }
+          });
+        }
+        if (elems.length > 0) {
+          modal = $modal.open({
+            template: "<h3 class=\"text-danger\">Warning! The following elements are logically depenendent on the element you are trying to delete!</h3>\n<ul class=\"list-group\">\n  <li class=\"list-group-item\" ng-repeat=\"elem in elems\">\n    {{elem.label}}\n  </li>\n</ul>\n<btn class=\"btn btn-default\" ng-click=\"$close()\">Cancel</btn>\n<btn class=\"btn btn-primary\" ng-click=\"$dismiss()\">OK</btn>",
+            controller: function($scope, $modal) {
+              return $scope.elems = elems;
+            },
+            elems: function() {
+              return elems;
+            }
+          });
+          return modal.result.then(function() {
+            return angular.noop();
+          }, function() {
+            var formObjects;
+            elems.forEach(function(elem) {
+              return elem.logic = {
+                action: 'Hide'
+              };
+            });
+            formObjects = forms[name];
+            formObjects.splice(index, 1);
+            return reindexFormObject(name);
+          });
+        }
       };
     })(this);
     this.checkDependencies = (function(_this) {
-      return function(id) {
+      return function(id, name) {
 
         /*
         Check for dependent logic of an item by id.
         @param id: The id of the element.
+        @param name: The name of the element.
          */
-        var key, value, _ref, _results;
+        var $modal, elems, key, modal, value, _ref;
+        $modal = $injector.get('$modal');
+        elems = [];
         _ref = _this.forms;
-        _results = [];
         for (key in _ref) {
           value = _ref[key];
-          _results.push(value.forEach(function(elem) {
+          value.forEach(function(elem) {
             if (elem.id !== id && elem.logic && elem.logic.component && angular.fromJson(elem.logic.component).id === id) {
+              return elems.push(elem);
+            }
+          });
+        }
+        if (elems.length > 0) {
+          modal = $modal.open({
+            template: "<h3 class=\"text-danger\">Warning! The following elements are logically depenendent on the element you are trying to delete!</h3>\n<ul class=\"list-group\">\n  <li class=\"list-group-item\" ng-repeat=\"elem in elems\">\n    {{elem.label}}\n  </li>\n</ul>\n<btn class=\"btn btn-default\" ng-click=\"$close()\">Cancel</btn>\n<btn class=\"btn btn-primary\" ng-click=\"$dismiss()\">OK</btn>",
+            controller: function($scope, $modal) {
+              return $scope.elems = elems;
+            },
+            elems: function() {
+              return elems;
+            }
+          });
+          return modal.result.then(function() {
+            return angular.noop();
+          }, function() {
+            return elems.forEach(function(elem) {
               return elem.logic = {
                 action: 'Hide'
               };
-            }
-          }));
+            });
+          });
         }
-        return _results;
       };
     })(this);
     this.updateFormObjectIndex = (function(_this) {

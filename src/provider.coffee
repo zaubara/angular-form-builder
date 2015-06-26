@@ -105,6 +105,7 @@ angular.module 'builder.provider', []
         $injector = injector
         $http = $injector.get '$http'
         $templateCache = $injector.get '$templateCache'
+        $modal = $injector.get '$modal'
 
     @loadTemplate = (component) ->
         ###
@@ -194,20 +195,78 @@ angular.module 'builder.provider', []
         @param name: The form name.
         @param index: The form object index.
         ###
-        @checkDependencies @forms[name][index].id
-        formObjects = @forms[name]
-        formObjects.splice index, 1
-        @reindexFormObject name
-
-    @checkDependencies = (id) =>
-        ###
-        Check for dependent logic of an item by id.
-        @param id: The id of the element.
-        ###
+        forms = @forms
+        reindexFormObject = @reindexFormObject
+        $modal = $injector.get '$modal'
+        id = @forms[name][index].id
+        elems = []
         for key,value of @forms
           value.forEach (elem) ->
             if elem.id isnt id and elem.logic and elem.logic.component and angular.fromJson(elem.logic.component).id is id
+              elems.push elem
+        if elems.length > 0
+          modal = $modal.open({
+            template: """
+                <h3 class="text-danger">Warning! The following elements are logically depenendent on the element you are trying to delete!</h3>
+                <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="elem in elems">
+                    {{elem.label}}
+                  </li>
+                </ul>
+                <btn class="btn btn-default" ng-click="$close()">Cancel</btn>
+                <btn class="btn btn-primary" ng-click="$dismiss()">OK</btn>
+            """,
+            controller: ($scope, $modal) ->
+              $scope.elems = elems
+            elems: () ->
+              elems
+            })
+
+          modal.result.then () ->
+            angular.noop()
+          , () ->
+            elems.forEach (elem) ->
               elem.logic = {action: 'Hide'}
+            formObjects = forms[name]
+            formObjects.splice index, 1
+            reindexFormObject name
+
+    @checkDependencies = (id, name) =>
+        ###
+        Check for dependent logic of an item by id.
+        @param id: The id of the element.
+        @param name: The name of the element.
+        ###
+        $modal = $injector.get '$modal'
+        elems = []
+        for key,value of @forms
+          value.forEach (elem) ->
+            if elem.id isnt id and elem.logic and elem.logic.component and angular.fromJson(elem.logic.component).id is id
+              elems.push elem
+        if elems.length > 0
+          modal = $modal.open({
+            template: """
+                <h3 class="text-danger">Warning! The following elements are logically depenendent on the element you are trying to delete!</h3>
+                <ul class="list-group">
+                  <li class="list-group-item" ng-repeat="elem in elems">
+                    {{elem.label}}
+                  </li>
+                </ul>
+                <btn class="btn btn-default" ng-click="$close()">Cancel</btn>
+                <btn class="btn btn-primary" ng-click="$dismiss()">OK</btn>
+            """,
+            controller: ($scope, $modal) ->
+              $scope.elems = elems
+            elems: () ->
+              elems
+            })
+
+          modal.result.then () ->
+            angular.noop()
+          , () ->
+            elems.forEach (elem) ->
+              elem.logic = {action: 'Hide'}
+
 
     @updateFormObjectIndex = (name, oldIndex, newIndex) =>
         ###
