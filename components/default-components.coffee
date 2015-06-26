@@ -222,7 +222,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         # maxDate: '2100-01-01'
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}"> 
+            <div class="row" id="{{formName+index | nospace}}">
                   <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}"><i ng-if ="formObject.logic.component" id="hasLogic" class="fa fa-random label-logic"></i> {{label}}</label>
                   <div class="col-sm-10">
                     <ui-date weekends="{{disableWeekends}}"></ui-date>
@@ -371,7 +371,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         ]
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}"> 
+            <div class="row" id="{{formName+index | nospace}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}"><i ng-if ="formObject.logic.component" id="hasLogic" class="fa fa-random label-logic"></i> {{label}}</label>
                 <div class="col-sm-10">
                     <input type="text" ng-show="validation != '[numberRange]'" ng-readonly="readOnly" ng-model="inputText" validator-required="{{required}}" validator-group="{{formName}}" class="form-control m-b" placeholder="{{placeholder}}"/>
@@ -768,7 +768,7 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         options: ['value one', 'value two']
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}"> 
+            <div class="row" id="{{formName+index | nospace}}">
                 <label for="{{formName+index}}" class="col-sm-2 control-label" ng-class="{'fb-required':required}"><i ng-if ="formObject.logic.component" id="hasLogic" class="fa fa-random label-logic"></i> {{label}}</label>
                 <div class="col-sm-10">
                     <div class='radio icheck-label' ng-repeat="item in options track by $index">
@@ -892,25 +892,18 @@ angular.module 'builder.components', ['builder', 'validator.rules']
         label: 'Select'
         description: ''
         placeholder: 'Choose..'
-        multiple: no
         required: no
         readOnly: no
         options: ['value one', 'value two']
-        # multiple: no
-        # validationOptions: [
-        #     {label: 'single select', rule: '/.*/'}
-        #     {label: 'multiple select', rule: ['multiselect']}
-        # ]
         template:
             """
-            <div class="row" id="{{formName+index | nospace}}"> 
+            <div class="row" id="{{formName+index | nospace}}">
                 <label class="col-sm-2 control-label" for="{{formName+index}}" ng-class="{'fb-required':required}"><i ng-if ="formObject.logic.component" id="hasLogic" class="fa fa-random label-logic"></i> {{label}}</label>
                 <div class="col-sm-10 dropdown">
                     <select ng-show="!multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
                         ng-model="inputText" ng-init="inputText = ''">
                         <option value="">{{placeholder}}</option>
-                    <select ng-show="multiple" ng-readonly="readOnly" ng-options="value for value in options" class="form-control m-b"
-                        ng-model="inputText" multiple ng-init="inputText = options[0]"/>
+                    </select>
                 </div>
                 <div class="col-sm-10 col-sm-offset-2">
                   <small ng-show="description" class="help-block text-muted custom-small">{{description}}</small>
@@ -967,11 +960,6 @@ angular.module 'builder.components', ['builder', 'validator.rules']
                             <div class="form-group" ng-if="validationOptions.length > 0">
                                 <label class='control-label'>Validation</label>
                                 <select ng-model="$parent.validation" class='form-control' ng-options="option.rule as option.label for option in validationOptions"></select>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type='checkbox'  ng-model="multiple" />
-                                    Multiple Select</label>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="{{'logic' + date + index}}">
