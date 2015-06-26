@@ -208,9 +208,9 @@ angular.module 'builder.provider', []
           modal = $modal.open({
             template: """
             <div class="inmodal" auto-focus>
-              <form ng-submit="$dismiss()">
+              <form ng-submit="$close()">
                 <div class="modal-header">
-                  <a type="button" class="close x-close" ng-click="cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
+                  <a type="button" class="close x-close" ng-click="$dismiss()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
                   <i class="fa fa-question modal-icon"></i>
                   <h4 class="modal-title">Delete Component?</h4>
                 </div>
@@ -223,7 +223,7 @@ angular.module 'builder.provider', []
                   </ul>
                 </div>
                 <div class="modal-footer">
-                  <btn class="btn btn-default pull-left" ng-click="$close()">Cancel</btn>
+                  <btn class="btn btn-default pull-left" ng-click="$dismiss()">Cancel</btn>
                   <input type="submit" class="btn btn-primary pull-right" value="OK"></input>
                 </div>
               </form>
@@ -236,8 +236,6 @@ angular.module 'builder.provider', []
             })
 
           modal.result.then () ->
-            angular.noop()
-          , () ->
             elems.forEach (elem) ->
               elem.logic = {action: 'Hide'}
             formObjects = forms[name]
