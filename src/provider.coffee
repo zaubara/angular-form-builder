@@ -77,6 +77,7 @@ angular.module 'builder.provider', []
             options: formObject.options ? component.options
             required: formObject.required ? component.required
             validation: formObject.validation ? component.validation
+            multiple: formObject.multiple ? component.multiple
             minLength: formObject.minLength ? component.minLength
             maxLength: formObject.maxLength ? component.maxLength
             disableWeekends: formObject.disableWeekends ? component.disableWeekends
