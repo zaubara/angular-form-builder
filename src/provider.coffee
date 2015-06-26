@@ -194,9 +194,20 @@ angular.module 'builder.provider', []
         @param name: The form name.
         @param index: The form object index.
         ###
+        @checkDependencies @forms[name][index].id
         formObjects = @forms[name]
         formObjects.splice index, 1
         @reindexFormObject name
+
+    @checkDependencies = (id) =>
+        ###
+        Check for dependent logic of an item by id.
+        @param id: The id of the element.
+        ###
+        for key,value of @forms
+          value.forEach (elem) ->
+            if elem.id isnt id and elem.logic and elem.logic.component and angular.fromJson(elem.logic.component).id is id
+              elem.logic = {action: 'Hide'}
 
     @updateFormObjectIndex = (name, oldIndex, newIndex) =>
         ###

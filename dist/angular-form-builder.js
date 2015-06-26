@@ -1856,9 +1856,33 @@
         @param index: The form object index.
          */
         var formObjects;
+        _this.checkDependencies(_this.forms[name][index].id);
         formObjects = _this.forms[name];
         formObjects.splice(index, 1);
         return _this.reindexFormObject(name);
+      };
+    })(this);
+    this.checkDependencies = (function(_this) {
+      return function(id) {
+
+        /*
+        Check for dependent logic of an item by id.
+        @param id: The id of the element.
+         */
+        var key, value, _ref, _results;
+        _ref = _this.forms;
+        _results = [];
+        for (key in _ref) {
+          value = _ref[key];
+          _results.push(value.forEach(function(elem) {
+            if (elem.id !== id && elem.logic && elem.logic.component && angular.fromJson(elem.logic.component).id === id) {
+              return elem.logic = {
+                action: 'Hide'
+              };
+            }
+          }));
+        }
+        return _results;
       };
     })(this);
     this.updateFormObjectIndex = (function(_this) {
