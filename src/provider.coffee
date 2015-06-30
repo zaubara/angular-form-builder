@@ -204,7 +204,7 @@ angular.module 'builder.provider', []
           value.forEach (elem) ->
             if elem.id isnt id and elem.logic and elem.logic.component and angular.fromJson(elem.logic.component).id is id
               elems.push elem
-        if elems.length > 0
+        if elems.length >= 0
           modal = $modal.open({
             template: """
             <div class="inmodal" auto-focus>
@@ -215,8 +215,9 @@ angular.module 'builder.provider', []
                   <h4 class="modal-title">Delete Component?</h4>
                 </div>
                 <div class="modal-body text-center">
-                  <p class="no-margins"><b>Warning!</b><br>The following elements are logically depenendent on the element you are trying to delete!</p>
-                  <ul class="list-group m-t-md">
+                  <p class="no-margins" ng-if="!elems.length"><b>Warning!</b><br>You are about to delete this element!</p>
+                  <p class="no-margins" ng-if="elems.length"><b>Warning!</b><br>The following elements are logically depenendent on the element you are trying to delete!</p>
+                  <ul class="list-group m-t-md" ng-if="elems.length">
                     <li class="list-group-item list-group-item-warning" ng-repeat="elem in elems">
                       {{elem.label}}
                     </li>
