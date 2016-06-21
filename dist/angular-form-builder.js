@@ -17,9 +17,9 @@
 
   angular.module('builder.controller', ['builder.provider']).controller('fbFormObjectEditableController', [
     '$scope', '$injector', function($scope, $injector) {
-      var $builder, $filter, $modal, form, inThisForm;
+      var $builder, $filter, $uibModal, form, inThisForm;
       $builder = $injector.get('$builder');
-      $modal = $injector.get('$modal');
+      $uibModal = $injector.get('$uibModal');
       $filter = $injector.get('$filter');
       $scope.newRule = {};
       if ($scope.formObject.pointRules == null) {
@@ -421,7 +421,7 @@
       };
       $scope.openSummerNote = function() {
         $scope.summerNoteText = $scope.formObject.placeholder;
-        return $scope.modalInstance = $modal.open({
+        return $scope.modalInstance = $uibModal.open({
           template: '<div class="modal-header">' + '<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>' + '<h4 class="modal-title">Edit Rich Content</div>' + '</div>' + '<div class="modal-body no-padding">' + '<div summernote ng-model="summerNoteText"></div>' + '</div>' + '<div class="modal-footer">' + '<button class="btn btn-white pull-left" ng-click="cancel()">Cancel</button>' + '<button class="btn btn-primary pull-right" ng-click="save(summerNoteText)">Apply</button>' + '</div>',
           scope: $scope
         });
@@ -1728,11 +1728,11 @@
     })(this);
     this.setupProviders = (function(_this) {
       return function(injector) {
-        var $modal;
+        var $uibModal;
         $injector = injector;
         $http = $injector.get('$http');
         $templateCache = $injector.get('$templateCache');
-        return $modal = $injector.get('$modal');
+        return $uibModal = $injector.get('$uibModal');
       };
     })(this);
     this.loadTemplate = function(component) {
@@ -1857,10 +1857,10 @@
         @param name: The form name.
         @param index: The form object index.
          */
-        var $modal, elems, formObjects, forms, id, key, modal, reindexFormObject, value, _ref;
+        var $uibModal, elems, formObjects, forms, id, key, modal, reindexFormObject, value, _ref;
         forms = _this.forms;
         reindexFormObject = _this.reindexFormObject;
-        $modal = $injector.get('$modal');
+        $uibModal = $injector.get('$uibModal');
         id = _this.forms[name][index].id;
         elems = [];
         _ref = _this.forms;
@@ -1873,9 +1873,9 @@
           });
         }
         if (elems.length >= 0) {
-          modal = $modal.open({
+          modal = $uibModal.open({
             template: "<div class=\"inmodal\" auto-focus>\n  <form ng-submit=\"$close()\">\n    <div class=\"modal-header\">\n      <a type=\"button\" class=\"close x-close\" ng-click=\"$dismiss()\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></a>\n      <i class=\"fa fa-question modal-icon\"></i>\n      <h4 class=\"modal-title\">Delete Component?</h4>\n    </div>\n    <div class=\"modal-body text-center\">\n      <p class=\"no-margins\" ng-if=\"!elems.length\"><b>Warning!</b><br>You are about to delete this element!</p>\n      <p class=\"no-margins\" ng-if=\"elems.length\"><b>Warning!</b><br>The following elements are logically depenendent on the element you are trying to delete!</p>\n      <ul class=\"list-group m-t-md\" ng-if=\"elems.length\">\n        <li class=\"list-group-item list-group-item-warning\" ng-repeat=\"elem in elems\">\n          {{elem.label}} \n        </li>\n      </ul>\n    </div>\n    <div class=\"modal-footer\">\n      <btn class=\"btn btn-default pull-left\" ng-click=\"$dismiss()\">Cancel</btn>\n      <input type=\"submit\" class=\"btn btn-primary pull-right\" value=\"OK\"></input>\n    </div>\n  </form>\n</div>",
-            controller: function($scope, $modal) {
+            controller: function($scope, $uibModal) {
               return $scope.elems = elems;
             },
             elems: function() {

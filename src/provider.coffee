@@ -105,7 +105,7 @@ angular.module 'builder.provider', []
         $injector = injector
         $http = $injector.get '$http'
         $templateCache = $injector.get '$templateCache'
-        $modal = $injector.get '$modal'
+        $uibModal = $injector.get '$uibModal'
 
     @loadTemplate = (component) ->
         ###
@@ -197,7 +197,7 @@ angular.module 'builder.provider', []
         ###
         forms = @forms
         reindexFormObject = @reindexFormObject
-        $modal = $injector.get '$modal'
+        $uibModal = $injector.get '$uibModal'
         id = @forms[name][index].id
         elems = []
         for key,value of @forms
@@ -205,7 +205,7 @@ angular.module 'builder.provider', []
             if elem.id isnt id and elem.logic and elem.logic.component and angular.fromJson(elem.logic.component).id is id
               elems.push elem
         if elems.length >= 0
-          modal = $modal.open({
+          modal = $uibModal.open({
             template: """
             <div class="inmodal" auto-focus>
               <form ng-submit="$close()">
@@ -230,7 +230,7 @@ angular.module 'builder.provider', []
               </form>
             </div>
             """,
-            controller: ($scope, $modal) ->
+            controller: ($scope, $uibModal) ->
               $scope.elems = elems
             elems: () ->
               elems

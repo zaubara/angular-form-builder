@@ -21,7 +21,7 @@ angular.module 'builder.controller', ['builder.provider']
 # ----------------------------------------
 .controller 'fbFormObjectEditableController', ['$scope', '$injector', ($scope, $injector) ->
     $builder = $injector.get '$builder'
-    $modal = $injector.get '$modal'
+    $uibModal = $injector.get '$uibModal'
     $filter = $injector.get '$filter'
 
     $scope.newRule = {}
@@ -137,7 +137,7 @@ angular.module 'builder.controller', ['builder.provider']
 
     $scope.openSummerNote = ->
       $scope.summerNoteText = $scope.formObject.placeholder;
-      $scope.modalInstance = $modal.open({
+      $scope.modalInstance = $uibModal.open({
         template:   '<div class="modal-header">'+
                         '<button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>'+
                         '<h4 class="modal-title">Edit Rich Content</div>'+
